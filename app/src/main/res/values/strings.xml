@@ -6,11 +6,12 @@
     <string name="info">Info</string>
     <string name="stan_zapisow">Stan zapisów</string>
     <string name="twoja_klasa">Twoja klasa</string>
-    <string name="harmonogram">harmonogram</string>
-    <string name="zastepstwa">zastępstwa</string>
+    <string name="harmonogram">Harmonogram</string>
+    <string name="zastepstwa">Zastępstwa</string>
     <string name="i">I</string>
     <string name="dzienniczek">Dzienniczek</string>
     <string name="facebook_puszkinowa_pomoc">Facebook - Puszkinowa Pomoc</string>
     <string name="facebook_i_lo">Facebook - I LO</string>
     <string name="plan_lekcji">Plan Lekcji</string>
+    <string name="ostatnio_wybrana">Ostatnio wybrana</string>
 </resources>

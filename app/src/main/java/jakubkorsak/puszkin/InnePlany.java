@@ -17,6 +17,6 @@ public class InnePlany extends AppCompatActivity {
         w = (WebView)findViewById(R.id.w);
         String h = getIntent().getExtras().getString("nauczyciel");
         String p = "http://plan.1lo.gorzow.pl/plany/"+h+".html";
-        new WebRequestsHandler(w, p);
+        new WebRequestsHandler(w, p, false, getApplicationContext(), null);
     }
 }

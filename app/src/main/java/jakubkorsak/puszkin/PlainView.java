@@ -14,6 +14,6 @@ public class PlainView extends AppCompatActivity {
         String h = getIntent().getExtras().getString("tag");
         String p = "http://plan.1lo.gorzow.pl/plany/o"+h+".html";
         WebView w = (WebView)findViewById(R.id.w);
-        new WebRequestsHandler(w, p);
+        new WebRequestsHandler(w, p, false, getApplicationContext(), null);
     }
 }

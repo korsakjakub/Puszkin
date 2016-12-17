@@ -68,7 +68,7 @@
         android:layout_alignBottom="@+id/editText"
         android:layout_toRightOf="@+id/editText"
         android:layout_toEndOf="@+id/editText"
-        android:id="@+id/button2" />
+        android:id="@+id/zapis_button" />
 
 
     <TextView
@@ -82,14 +82,33 @@
         android:layout_marginStart="10dp" />
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/stan_plików"
         android:layout_marginTop="5dp">
 
+
         <LinearLayout
-            android:orientation="vertical"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/presence_invisible"
+                android:id="@+id/harmonogram_image"/>
+            <TextView
+                android:text="@string/harmonogram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/harmonogram_textView" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -100,48 +119,54 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@android:drawable/presence_invisible"
-                android:id="@+id/harmonogram_image"
-                android:contentDescription="" />
-
-            <ImageView
+                android:id="@+id/zastepstwa_image" />
+            <TextView
+                android:text="@string/zastepstwa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/presence_invisible"
-                android:id="@+id/zastepstwa_image" />
+                android:id="@+id/zastepstwa_textView" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@android:drawable/presence_invisible"
                 android:id="@+id/twoja_klasa_image" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:text="@string/harmonogram"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/harmonogram_textView" />
-
-            <TextView
-                android:text="@string/zastepstwa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/zastepstwa_textView" />
-
             <TextView
                 android:text="@string/twoja_klasa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/twoja_klasa_textView" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/presence_invisible"
+                android:id="@+id/ostatnia_klasa_image" />
+            <TextView
+                android:text="@string/ostatnio_wybrana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ostatnia_klasa_textView" />
         </LinearLayout>
 
     </LinearLayout>
+
+
 
 </RelativeLayout>

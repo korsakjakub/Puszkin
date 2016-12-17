@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -17,10 +18,12 @@ import android.widget.Toast;
  *
  * PuszkinowaPomoc jest ZAMKNIĘTĄ uczniowską grupą na facebooku. Aby jej content dobrze się wyświetlał
  * trzeba być zalogowanym na konto do niej należące.
- */ 
+ *
+ */
 public class MainActivity extends AppCompatActivity {
 
     Button planSave;
+    TextView planSaveText;
     Button zastepstwa;
     Button planLekcji;
     Button harmonogram;
@@ -28,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     Button settings;
     Button facebook;
     Button puszkinowaPomoc;
+    Button twojaKlasa;
+    TextView twojaKlasaText;
 
     /**
      * zastosowanie tego inta niżej.
@@ -110,8 +115,9 @@ public class MainActivity extends AppCompatActivity {
          * PlanLekcji.java.
          *
          */
+        planSaveText = (TextView)findViewById(R.id.text_ostatnia);
         planSave = (Button) findViewById(R.id.plan_save);
-        setTextAndTagAndSetVisibilityOfTheButtonsView();
+        setTextAndTagAndSetVisibilityOfTheButtonsView(planSave, planSaveText, "save");
         planSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,6 +130,24 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
             }
         });
+
+        twojaKlasa = (Button)findViewById(R.id.twoja_klasa);
+        twojaKlasaText = (TextView)findViewById(R.id.text_twoja);
+        setTextAndTagAndSetVisibilityOfTheButtonsView(twojaKlasa, twojaKlasaText, "twoja_klasa_index");
+        twojaKlasa.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, PlainView.class);
+                Button button = (Button) v;
+                String tag = button.getTag().toString();
+                Bundle b = new Bundle();
+                b.putString("tag", revCH(tag));
+                intent.putExtras(b);
+                startActivity(intent);
+            }
+        });
+
+
 
 
         /**
@@ -179,7 +203,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         resetOnBackCounter();
-        setTextAndTagAndSetVisibilityOfTheButtonsView();
+        setTextAndTagAndSetVisibilityOfTheButtonsView(planSave, planSaveText, "save");
+        setTextAndTagAndSetVisibilityOfTheButtonsView(twojaKlasa, twojaKlasaText, "twoja_klasa_index");
     }
 
     /**
@@ -263,7 +288,7 @@ public class MainActivity extends AppCompatActivity {
         return ch;
     }
     public String revCH(String ch) {
-        switch (ch) {
+        switch (ch.toUpperCase()) {
             case "1A":
                 ch = "1";
                 break;
@@ -326,15 +351,17 @@ public class MainActivity extends AppCompatActivity {
     /**
      * nazwa metody jest self-explaining
      */
-    private void setTextAndTagAndSetVisibilityOfTheButtonsView(){
+    private void setTextAndTagAndSetVisibilityOfTheButtonsView(Button button, TextView textView, String source){
 
-        String h = ch(FileHandler.readFileAsString("save", getApplicationContext()));
-        planSave.setText(h);
-        planSave.setTag(h);
-        if (planSave.getText() == "" || planSave.getText() == null) {
-            planSave.setVisibility(View.GONE);
+        String h = ch(FileHandler.readFileAsString(source, getApplicationContext()));
+        button.setText(h);
+        button.setTag(h);
+        if (button.getText() == "" || button.getText() == null) {
+            button.setVisibility(View.GONE);
+            textView.setVisibility(View.GONE);
         } else {
-            planSave.setVisibility(View.VISIBLE);
+            button.setVisibility(View.VISIBLE);
+            textView.setVisibility(View.VISIBLE);
         }
     }
 

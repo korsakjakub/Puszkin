@@ -17,7 +17,8 @@ import android.widget.Toast;
  *
  * PuszkinowaPomoc jest ZAMKNIĘTĄ uczniowską grupą na facebooku. Aby jej content dobrze się wyświetlał
  * trzeba być zalogowanym na konto do niej należące.
- */ 
+ *
+ */
 public class MainActivity extends AppCompatActivity {
 
     Button planSave;

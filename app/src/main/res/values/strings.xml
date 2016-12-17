@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Puszkin</string>
+    <string name="title_activity_zastepstwa">Zastepstwa</string>
+    <string name="zapis">Zapis</string>
+    <string name="usun_wszystkie_zapisane">Usuń wszystkie zapisane</string>
+    <string name="info">Info</string>
+    <string name="stan_zapisow">Stan zapisów</string>
+    <string name="twoja_klasa">Twoja klasa</string>
+    <string name="harmonogram">harmonogram</string>
+    <string name="zastepstwa">zastępstwa</string>
+    <string name="i">I</string>
+    <string name="dzienniczek">Dzienniczek</string>
+    <string name="facebook_puszkinowa_pomoc">Facebook - Puszkinowa Pomoc</string>
+    <string name="facebook_i_lo">Facebook - I LO</string>
+    <string name="plan_lekcji">Plan Lekcji</string>
+</resources>

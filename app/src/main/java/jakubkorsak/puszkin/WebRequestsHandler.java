@@ -1,13 +1,12 @@
 package jakubkorsak.puszkin;
 
-import android.content.Context;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 class WebRequestsHandler {
 
-    WebRequestsHandler(WebView web, String path, boolean whetherToSaveTheSite, Context context, String fileName) {
+    WebRequestsHandler(WebView web, String path) {
         try {
 
             WebSettings c = web.getSettings();
@@ -20,9 +19,6 @@ class WebRequestsHandler {
         }
         catch(Exception e){
             web.loadDataWithBaseURL(null, e.getMessage(),"text/html","UTF-8",null);
-        }
-        if(whetherToSaveTheSite){
-            FileHandler.getSourceFromUrl(context, path, fileName);
         }
     }
 }

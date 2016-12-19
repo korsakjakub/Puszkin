@@ -11,22 +11,17 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        app:title="Gabinety"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:minHeight="25dp"
-        android:minWidth="25dp"
-        android:background="@color/colorPrimary"
-        android:layout_alignParentTop="true" />
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:title="Gabinety"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/listView1"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_marginLeft="10dp" />
 </LinearLayout>
 </RelativeLayout>

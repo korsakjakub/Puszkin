@@ -11,12 +11,10 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         app:title="Ustawienia"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:minHeight="25dp"
-        android:minWidth="25dp"
-        android:background="@color/colorPrimary"
-        android:layout_alignParentTop="true" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
 
 
     <Button
@@ -88,44 +86,6 @@
         android:layout_below="@id/stan_plików"
         android:layout_marginTop="5dp">
 
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/presence_invisible"
-                android:id="@+id/harmonogram_image"/>
-            <TextView
-                android:text="@string/harmonogram"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/harmonogram_textView" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp">
-
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/presence_invisible"
-                android:id="@+id/zastepstwa_image" />
-            <TextView
-                android:text="@string/zastepstwa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/zastepstwa_textView" />
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"

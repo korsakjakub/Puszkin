@@ -44,7 +44,15 @@ public class PlanLekcji extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        assert toolbar != null;
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
         toolbar.setTitleTextColor(Color.WHITE);
 
         List<Button> buttons = new ArrayList<>(BUTTON_IDS.length);
@@ -85,10 +93,8 @@ public class PlanLekcji extends AppCompatActivity {
         Intent intentPlain = new Intent(PlanLekcji.this,PlainView.class);
         Button button = (Button) v;
 
-
         String tag = button.getTag().toString();
-
-        FileHandler.writeStringAsFile(tag,"save",getApplicationContext());
+        FileHandler.writeStringAsFile(tag,Settings.zrodla[0],getApplicationContext());
 
         Bundle b = new Bundle();
         b.putString("tag", tag);

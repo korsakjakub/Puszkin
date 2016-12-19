@@ -1,4 +1,4 @@
-#Sun Dec 18 16:30:17 CET 2016
+#Wed Dec 21 23:26:03 CET 2016
 base.0=/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6f0aa4b384c4f9397c2fcce0019dbc4ea66c0849
 renamed.1=classes.dex
 renamed.0=classes2.dex

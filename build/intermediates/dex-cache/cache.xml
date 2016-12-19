@@ -138,15 +138,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/jakub/.gradle/caches/modules-2/files-2.1/org.jsoup/jsoup/1.8.3/65fd012581ded67bc20945d85c32b4598c3a9cf1/jsoup-1.8.3.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="65fd012581ded67bc20945d85c32b4598c3a9cf1">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/jsoup-1.8.3_c7ef4b6ad36a34b44ba377aca2060091a6b04bf0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/jakub/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.7.2/20f6463eb19ac61960c5d91a094c2f4f0727dc2e/okhttp-2.7.2.jar"
         jumboMode="true"
         optimize="true"
@@ -261,6 +252,15 @@
         revision="23.0.2"
         sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
         <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_83f3b9875dee1afea81624b19278b500533b6c88/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jakub/.gradle/caches/modules-2/files-2.1/org.jsoup/jsoup/1.10.1/645f1ad2f6f4cbad1cde4c483eae71e4051be6ef/jsoup-1.10.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="645f1ad2f6f4cbad1cde4c483eae71e4051be6ef">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/jsoup-1.10.1_464e243e63070fffe2fbe77fcd02208ef7cc6bfc/classes.dex" />
     </item>
 
 </items>

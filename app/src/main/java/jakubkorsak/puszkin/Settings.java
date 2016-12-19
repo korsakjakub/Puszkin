@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.io.File;
@@ -22,24 +23,23 @@ import java.util.Set;
 public class Settings extends AppCompatActivity {
 
 
-    Toolbar toolbar;
-    EditText editText;
-    PackageInfo pInfo;
-    Button info;
-    Button zapisButton;
-    String zrodla[] = {
-            "save", "twoja_klasa_index"
-    };
-    ImageView ostatniaKlasaImageView;
-    ImageView twojaKlasaImageView;
-    Button deleteAll;
-
     private static final Set<String> classNames = new HashSet<>(Arrays.asList(
             new String[]{
                     "1a", "1b", "1c", "1d", "1e", "1f",
                     "2a", "2b", "2c", "2d", "2e", "2f",
                     "3a", "3b", "3c", "3d", "3e", "3f",}
     ));
+    public static String zrodla[] = {
+            "ostatnia_save", "twoja_save"
+    };
+    Toolbar toolbar;
+    EditText editText;
+    PackageInfo pInfo;
+    Button info;
+    Button zapisButton;
+    ImageView ostatniaKlasaImageView;
+    ImageView twojaKlasaImageView;
+    Button deleteAll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,14 @@ public class Settings extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
         assert toolbar != null;
         toolbar.setTitleTextColor(Color.WHITE);
         editText = (EditText) findViewById(R.id.editText);
@@ -59,6 +67,7 @@ public class Settings extends AppCompatActivity {
 
         checkIfFilesNonNull();
         zapisButton = (Button)findViewById(R.id.zapis_button);
+        final RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.activity_settings);
         zapisButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -66,8 +75,9 @@ public class Settings extends AppCompatActivity {
                 if(classNames.contains(s)){
                     FileHandler.writeStringAsFile(s, zrodla[1], getApplicationContext());
                     Toast.makeText(Settings.this, "Zapisano: "+s, Toast.LENGTH_SHORT).show();
+                    recreate();
                 }else{
-                    Toast.makeText(Settings.this, "nie ma takiej klasy. Pamiętaj o formacie \"1a\"", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Settings.this, "Nie ma takiej klasy. Pamiętaj o formacie \"1a\"", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -80,6 +90,7 @@ public class Settings extends AppCompatActivity {
                 Toast.makeText(Settings.this, "Deleted: "+zrodla[0], Toast.LENGTH_SHORT).show();
                 FileHandler.writeStringAsFile("",zrodla[1],getApplicationContext());
                 Toast.makeText(Settings.this, "Deleted: "+zrodla[1], Toast.LENGTH_SHORT).show();
+                recreate();
             }
         });
 
@@ -115,14 +126,14 @@ public class Settings extends AppCompatActivity {
         File fileOstatniaKlasa = new File(getFilesDir()+"/"+zrodla[0]);
         File fileTwojaKlasa = new File(getFilesDir()+"/"+zrodla[1]);
         if(fileOstatniaKlasa.exists()&&FileHandler.readFileAsString(zrodla[0], getApplicationContext())!=""){
-            ostatniaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.mipmap.image_online));
+            ostatniaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_online));
         }else{
-            ostatniaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.mipmap.image_invisible));
+            ostatniaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_invisible));
         }
         if(fileTwojaKlasa.exists()&&FileHandler.readFileAsString(zrodla[1], getApplicationContext())!=""){
-            twojaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.mipmap.image_online));
+            twojaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_online));
         }else{
-            twojaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.mipmap.image_invisible));
+            twojaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_invisible));
         }
     }
 }

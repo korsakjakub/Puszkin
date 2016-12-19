@@ -12,6 +12,6 @@ public class Dzienniczek extends AppCompatActivity {
         setContentView(R.layout.activity_dzienniczek);
         WebView w = (WebView) findViewById(R.id.w);
         String p = "http://aplikacje.vulcan.pl/dziennik/00081/dzienniczek.aspx?view=Oceny";
-        new WebRequestsHandler(w, p, false, getApplicationContext(), null);
+        new WebRequestsHandler(w, p);
     }
 }

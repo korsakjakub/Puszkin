@@ -1,14 +1,1 @@
-[
-    {
-        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/mipmap-hdpi/image_invisible.png",
-        "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/mipmap-hdpi/image_invisible.png"
-    },
-    {
-        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/mipmap-hdpi/image_online.png",
-        "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/mipmap-hdpi/image_online.png"
-    },
-    {
-        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
-        "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/mipmap-hdpi/ic_launcher.png"
-    }
-]
+[]

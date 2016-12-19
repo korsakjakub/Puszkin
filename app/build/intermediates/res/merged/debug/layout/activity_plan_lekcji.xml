@@ -10,12 +10,10 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         app:title="Plan Lekcji"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:minHeight="25dp"
-        android:minWidth="25dp"
-        android:background="@color/colorPrimary"
-        android:layout_alignParentTop="true" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
 
 
     <LinearLayout
@@ -26,43 +24,37 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
-        android:layout_weight="1"
         android:layout_below="@id/toolbar"
         android:layout_above="@+id/horiz">
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/toolbar"
-            android:layout_marginTop="10dp"
-            android:layout_alignParentTop="false"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentLeft="false"
-            android:layout_alignParentStart="false">
+            android:layout_marginTop="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:orientation="horizontal"
                     android:layout_weight="1">
                     <Button
-                        android:text="1A"
+                        android:text="@string/_1a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/klasa1"
                         android:tag="1" />
                     <Button
-                        android:text="2A"
+                        android:text="@string/_2a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/klasa7"
                         android:tag="7"/>
                     <Button
-                        android:text="3A"
+                        android:text="@string/_3a"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/klasa13"
@@ -73,20 +65,20 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <Button
-                        android:text="1B"
+                        android:text="@string/_1b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/klasa2"
                         android:tag="2"/>
                     <Button
-                        android:text="2B"
+                        android:text="@string/_2b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:id="@+id/klasa8"
                         android:tag="8"/>
                     <Button
-                        android:text="3B"
+                        android:text="@string/_3b"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/klasa14"
@@ -97,20 +89,20 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <Button
-                    android:text="1C"
+                    android:text="@string/_1c"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/klasa3"
                     android:tag="3" />
                 <Button
-                    android:text="2C"
+                    android:text="@string/_2c"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:id="@+id/klasa9"
                     android:tag="9"/>
                 <Button
-                    android:text="3C"
+                    android:text="@string/_3c"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/klasa15"
@@ -121,20 +113,20 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <Button
-                    android:text="1D"
+                    android:text="@string/_1d"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/klasa4"
                     android:tag="4"/>
                 <Button
-                    android:text="2D"
+                    android:text="@string/_2d"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:id="@+id/klasa10"
                     android:tag="10"/>
                 <Button
-                    android:text="3D"
+                    android:text="@string/_3d"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/klasa16"
@@ -145,20 +137,20 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <Button
-                    android:text="1E"
+                    android:text="@string/_1e"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/klasa5"
                     android:tag="5" />
                 <Button
-                    android:text="2E"
+                    android:text="@string/_2e"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:id="@+id/klasa11"
                     android:tag="11"/>
                 <Button
-                    android:text="3E"
+                    android:text="@string/_3e"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/klasa17"
@@ -170,20 +162,20 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <Button
-                    android:text="1F"
+                    android:text="@string/_1f"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/klasa6"
                     android:tag="6" />
                 <Button
-                    android:text="2F"
+                    android:text="@string/_2f"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:id="@+id/klasa12"
                     android:tag="12"/>
                 <Button
-                    android:text="3F"
+                    android:text="@string/_3f"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/klasa18"

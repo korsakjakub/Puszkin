@@ -27,8 +27,8 @@ public class Settings extends AppCompatActivity {
     PackageInfo pInfo;
     Button info;
     Button zapisButton;
-    String zrodla[] = {
-            "save", "twoja_klasa_index"
+    public static String zrodla[] = {
+            "ostatnia_save", "twoja_save", "ostatnia_source", "twoja_source"
     };
     ImageView ostatniaKlasaImageView;
     ImageView twojaKlasaImageView;
@@ -65,9 +65,11 @@ public class Settings extends AppCompatActivity {
                 String s = editText.getText().toString();
                 if(classNames.contains(s)){
                     FileHandler.writeStringAsFile(s, zrodla[1], getApplicationContext());
+                    //FileHandler.getSourceFromUrl(getApplicationContext(), "", zrodla[3]);//TODO "" zamienić na prawdziwy url
                     Toast.makeText(Settings.this, "Zapisano: "+s, Toast.LENGTH_SHORT).show();
+                    recreate();
                 }else{
-                    Toast.makeText(Settings.this, "nie ma takiej klasy. Pamiętaj o formacie \"1a\"", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Settings.this, "Nie ma takiej klasy. Pamiętaj o formacie \"1a\"", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -80,6 +82,7 @@ public class Settings extends AppCompatActivity {
                 Toast.makeText(Settings.this, "Deleted: "+zrodla[0], Toast.LENGTH_SHORT).show();
                 FileHandler.writeStringAsFile("",zrodla[1],getApplicationContext());
                 Toast.makeText(Settings.this, "Deleted: "+zrodla[1], Toast.LENGTH_SHORT).show();
+                recreate();
             }
         });
 
@@ -115,14 +118,14 @@ public class Settings extends AppCompatActivity {
         File fileOstatniaKlasa = new File(getFilesDir()+"/"+zrodla[0]);
         File fileTwojaKlasa = new File(getFilesDir()+"/"+zrodla[1]);
         if(fileOstatniaKlasa.exists()&&FileHandler.readFileAsString(zrodla[0], getApplicationContext())!=""){
-            ostatniaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.mipmap.image_online));
+            ostatniaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_online));
         }else{
-            ostatniaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.mipmap.image_invisible));
+            ostatniaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_invisible));
         }
         if(fileTwojaKlasa.exists()&&FileHandler.readFileAsString(zrodla[1], getApplicationContext())!=""){
-            twojaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.mipmap.image_online));
+            twojaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_online));
         }else{
-            twojaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.mipmap.image_invisible));
+            twojaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_invisible));
         }
     }
 }

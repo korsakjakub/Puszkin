@@ -108,10 +108,6 @@
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/drawable/abc_btn_colored_material.xml"
     },
     {
-        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable/s.xml",
-        "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/drawable/s.xml"
-    },
-    {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable/notification_bg_low.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/drawable/notification_bg_low.xml"
     },
@@ -122,6 +118,10 @@
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/drawable/abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable/presence_invisible.png",
+        "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/drawable/presence_invisible.png"
     },
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
@@ -198,6 +198,10 @@
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/res/drawable/design_snackbar_background.xml"
+    },
+    {
+        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable/presence_online.png",
+        "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/drawable/presence_online.png"
     },
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",

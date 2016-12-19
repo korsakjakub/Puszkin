@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
          */
         planSaveText = (TextView)findViewById(R.id.text_ostatnia);
         planSave = (Button) findViewById(R.id.plan_save);
-        setTextAndTagAndSetVisibilityOfTheButtonsView(planSave, planSaveText, "save");
+        setTextAndTagAndSetVisibilityOfTheButtonsView(planSave, planSaveText, Settings.zrodla[1]);
         planSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
         twojaKlasa = (Button)findViewById(R.id.twoja_klasa);
         twojaKlasaText = (TextView)findViewById(R.id.text_twoja);
-        setTextAndTagAndSetVisibilityOfTheButtonsView(twojaKlasa, twojaKlasaText, "twoja_klasa_index");
+        setTextAndTagAndSetVisibilityOfTheButtonsView(twojaKlasa, twojaKlasaText, Settings.zrodla[1]);
         twojaKlasa.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -203,8 +203,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         resetOnBackCounter();
-        setTextAndTagAndSetVisibilityOfTheButtonsView(planSave, planSaveText, "save");
-        setTextAndTagAndSetVisibilityOfTheButtonsView(twojaKlasa, twojaKlasaText, "twoja_klasa_index");
+        setTextAndTagAndSetVisibilityOfTheButtonsView(planSave, planSaveText, Settings.zrodla[0]);
+        setTextAndTagAndSetVisibilityOfTheButtonsView(twojaKlasa, twojaKlasaText, Settings.zrodla[1]);
     }
 
     /**
@@ -287,7 +287,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return ch;
     }
-    public String revCH(String ch) {
+    public static String revCH(String ch) {
         switch (ch.toUpperCase()) {
             case "1A":
                 ch = "1";

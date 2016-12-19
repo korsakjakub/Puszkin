@@ -5,27 +5,54 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="14659620179613"
+    timestamp="5843156676759"
     token="-416647866239221738"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="727" />
+        duration="283" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="33" />
+        duration="7" />
     <task
         name="verifier"
         duration="0" />
 
     <artifact
-        location="/home/jakub/Documents/Projects/Puszkin/app/build/outputs/apk/app-debug.apk"
-        type="MAIN" />
+        location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
+        type="DEX" />
 
+    <build
+        timestamp="4250679254271"
+        verifier="BINARY_MANIFEST_FILE_CHANGE" >
+        <artifact
+            location="/home/jakub/Documents/Projects/Puszkin/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="4626105771436"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="5843156676759"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
+            type="DEX" />
+    </build>
     <build
         timestamp="14659620179613"
         verifier="FULL_BUILD_REQUESTED" >

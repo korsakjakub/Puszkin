@@ -12,12 +12,12 @@
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
-        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/activity_splash_screen.xml",
-        "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/layout/activity_splash_screen.xml"
-    },
-    {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_custom.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/activity_splash_screen.xml",
+        "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/layout/activity_splash_screen.xml"
     },
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/activity_dzienniczek.xml",

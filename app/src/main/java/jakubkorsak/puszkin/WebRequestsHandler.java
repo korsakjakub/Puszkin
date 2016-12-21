@@ -21,4 +21,5 @@ class WebRequestsHandler {
             web.loadDataWithBaseURL(null, e.getMessage(),"text/html","UTF-8",null);
         }
     }
+
 }

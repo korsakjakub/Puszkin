@@ -156,10 +156,6 @@
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/abc_screen_content_include.xml"
     },
     {
-        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/activity_inne_plany.xml",
-        "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/layout/activity_inne_plany.xml"
-    },
-    {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout/support_simple_spinner_dropdown_item.xml"
     },

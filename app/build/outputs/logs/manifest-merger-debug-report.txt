@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:2:1-40:12
+ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:2:1-36:12
 	package
 		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:3:5-34
 		INJECTED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml
@@ -26,7 +26,7 @@ ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.x
 	android:name
 		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:7:22-73
 application
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:9:5-38:19
+ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:9:5-34:19
 MERGED from [com.android.support:design:25.0.1] /home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:appcompat-v7:25.0.1] /home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:25.0.1] /home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/AndroidManifest.xml:22:5-20
@@ -103,16 +103,6 @@ activity#jakubkorsak.puszkin.Nauczyciele
 ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:32:9-49
 	android:name
 		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:32:19-46
-activity#jakubkorsak.puszkin.Gabinety
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:33:9-46
-	android:name
-		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:33:19-43
-activity#jakubkorsak.puszkin.InnePlany
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:34:9-36:12
-	android:theme
-		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:35:13-50
-	android:name
-		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:34:19-44
 uses-sdk
 INJECTED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:25.0.1] /home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/AndroidManifest.xml:21:5-23:62

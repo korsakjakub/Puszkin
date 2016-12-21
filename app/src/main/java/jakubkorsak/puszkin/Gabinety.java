@@ -31,28 +31,20 @@ public class Gabinety extends AppCompatActivity {
                 onBackPressed();
             }
         });
-        assert toolbar != null;
         toolbar.setTitleTextColor(Color.WHITE);
-
         list = (ListView) findViewById(R.id.listView1);
-
-
-
         ArrayList<String> carL = new ArrayList<>();
         carL.addAll(Arrays.asList(Sources.Gabinety));
-
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.row, carL);
-
         list.setAdapter(adapter);
         list.setClickable(true);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                Object o = list.getItemAtPosition(position);
-                String str = (String)o;
-                Toast.makeText(getApplicationContext(),"Wybrano: "+str,Toast.LENGTH_SHORT).show();
-
-                Intent intent = new Intent(Gabinety.this,InnePlany.class);
-                intent.putExtra("nauczyciel",str);
+                Object sender = list.getItemAtPosition(position);
+                String str = Sources.getID((String) sender, Sources.Gabinety);
+                Toast.makeText(getApplicationContext(), "Wybrano: " + sender, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Gabinety.this, PlainView.class);
+                intent.putExtra("tag", str);
                 startActivity(intent);
             }
         });

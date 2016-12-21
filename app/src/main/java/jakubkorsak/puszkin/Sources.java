@@ -3,7 +3,7 @@ package jakubkorsak.puszkin;
 
 class Sources {
 
-    public static String Nauczyciele[] = {
+    static String Nauczyciele[] = {
             "Ewa Andrzejewska-Sidorowicz",
             "Marta Bagińska",
             "Mariusz Biniewski",
@@ -53,7 +53,7 @@ class Sources {
             "Paulina Wysocka",
             "Paweł Zaborowski"
     };
-    public static String Gabinety[] = {
+    static String Gabinety[] = {
             "j.polski (1)",
             "j.polski (14)",
             "j.polski (15)",
@@ -87,7 +87,16 @@ class Sources {
             "j. polski (5)",
             "j. obcy (czyt)"
     };
-    public static String Klasy[] = {
 
-    };
+    static String getID(String h, String[] source) {
+        int i = 0;
+
+        while (true) {
+            if (h == source[i]) {
+                h = "n" + String.valueOf(i + 1);
+                return h;
+            }
+            i++;
+        }
+    }
 }

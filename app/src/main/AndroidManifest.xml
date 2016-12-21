@@ -30,10 +30,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Nauczyciele" />
-        <activity android:name=".Gabinety" />
-        <activity android:name=".InnePlany"
-            android:theme="@style/PlainViewTheme">
-</activity>
 
     </application>
 

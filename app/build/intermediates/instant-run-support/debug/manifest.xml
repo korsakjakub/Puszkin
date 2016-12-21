@@ -38,11 +38,6 @@
             </intent-filter>
         </activity>
         <activity android:name="jakubkorsak.puszkin.Nauczyciele" />
-        <activity android:name="jakubkorsak.puszkin.Gabinety" />
-        <activity
-            android:name="jakubkorsak.puszkin.InnePlany"
-            android:theme="@style/PlainViewTheme" >
-        </activity>
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

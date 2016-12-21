@@ -10,119 +10,119 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        app:title="Ustawienia"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        app:popupTheme="@style/AppTheme.PopupOverlay" />
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="Ustawienia" />
 
 
     <Button
-        android:text="@string/info"
+        android:id="@+id/info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/info"
-        android:layout_below="@+id/toolbar"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/toolbar"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/info" />
 
     <Button
-        android:text="@string/usun_wszystkie_zapisane"
+        android:id="@+id/delete_all"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/info"
-        android:id="@+id/delete_all"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="10dp"
+        android:text="@string/usun_wszystkie_zapisane" />
 
     <EditText
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_below="@+id/twoja_klasa"
         android:layout_alignLeft="@+id/delete_all"
         android:layout_alignStart="@+id/delete_all"
-        android:id="@+id/editText"
-        android:layout_marginTop="10dp" />
+        android:layout_below="@+id/twoja_klasa"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
     <TextView
-        android:text="@string/twoja_klasa"
+        android:id="@+id/twoja_klasa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/twoja_klasa"
-        android:layout_below="@+id/delete_all"
         android:layout_alignLeft="@+id/editText"
         android:layout_alignStart="@+id/editText"
-        android:paddingTop="20dp" />
+        android:layout_below="@+id/delete_all"
+        android:paddingTop="20dp"
+        android:text="@string/twoja_klasa" />
 
     <Button
-        android:text="@string/zapis"
+        android:id="@+id/zapis_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editText"
-        android:layout_toRightOf="@+id/editText"
         android:layout_toEndOf="@+id/editText"
-        android:id="@+id/zapis_button" />
+        android:layout_toRightOf="@+id/editText"
+        android:text="@string/zapis" />
 
 
     <TextView
-        android:text="@string/stan_zapisow"
+        android:id="@+id/stan_plików"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/stan_plików"
         android:layout_below="@id/editText"
         android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="10dp" />
+        android:text="@string/stan_zapisow" />
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/stan_plików"
-        android:layout_marginTop="5dp">
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
 
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp">
+            android:layout_marginStart="10dp"
+            android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/twoja_klasa_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/presence_invisible"
-                android:id="@+id/twoja_klasa_image" />
+                app:srcCompat="@android:drawable/presence_invisible" />
             <TextView
-                android:text="@string/twoja_klasa"
+                android:id="@+id/twoja_klasa_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/twoja_klasa_textView" />
+                android:text="@string/twoja_klasa" />
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp">
+            android:layout_marginStart="10dp"
+            android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/ostatnia_klasa_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/presence_invisible"
-                android:id="@+id/ostatnia_klasa_image" />
+                app:srcCompat="@android:drawable/presence_invisible" />
             <TextView
-                android:text="@string/ostatnio_wybrana"
+                android:id="@+id/ostatnia_klasa_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/ostatnia_klasa_textView" />
+                android:text="@string/ostatnio_wybrana" />
         </LinearLayout>
 
     </LinearLayout>

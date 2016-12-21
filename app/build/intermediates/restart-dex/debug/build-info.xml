@@ -1,51 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="arm64-v8a,armeabi-v7a,armeabi"
-    api-level="23"
-    density="xhdpi"
+    abi="x86"
+    api-level="25"
+    density="hdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="10717045345935"
+    timestamp="4201206757822"
     token="-416647866239221738"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="371" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="28" />
+        duration="0" />
     <task
         name="verifier"
         duration="0" />
 
-    <artifact
-        location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
-        type="DEX" />
-
     <build
-        timestamp="9000200347713"
-        verifier="BINARY_MANIFEST_FILE_CHANGE" >
+        timestamp="2732455963559"
+        verifier="MANIFEST_FILE_CHANGE" >
         <artifact
             location="/home/jakub/Documents/Projects/Puszkin/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="10717045345935"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="4140506076226"
+        verifier="FIELD_TYPE_CHANGE" >
         <artifact
             location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
             type="DEX" />
     </build>
     <build
-        timestamp="14659620179613"
-        verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="/home/jakub/Documents/Projects/Puszkin/app/build/outputs/apk/app-debug.apk"
-            type="MAIN" />
-    </build>
+        timestamp="4201206757822"
+        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

@@ -42,28 +42,28 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:text="1A"
+                    android:text="@string/_1a"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/klasa1"
                     android:layout_gravity="left"
-                    android:tag="1" />
+                    android:tag="o1" />
 
                 <Button
-                    android:text="2A"
+                    android:text="@string/_2a"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:id="@+id/klasa7"
-                    android:tag="7"/>
+                    android:tag="o7"/>
 
                 <Button
-                    android:text="3A"
+                    android:text="@string/_3a"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/klasa13"
                     android:layout_gravity="right"
-                    android:tag="13" />
+                    android:tag="o13" />
                 </LinearLayout>
 
 
@@ -74,28 +74,28 @@
 
 
                 <Button
-                    android:text="1B"
+                    android:text="@string/_1b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/klasa2"
-                    android:tag="2"/>
+                    android:tag="o2"/>
 
 
                 <Button
-                    android:text="2B"
+                    android:text="@string/_2b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:id="@+id/klasa8"
-                    android:tag="8"/>
+                    android:tag="o8"/>
 
 
                 <Button
-                    android:text="3B"
+                    android:text="@string/_3b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/klasa14"
-                    android:tag="14" />
+                    android:tag="o14" />
 
             </LinearLayout>
 
@@ -107,29 +107,29 @@
 
 
             <Button
-                android:text="1C"
+                android:text="@string/_1c"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/klasa3"
-                android:tag="3" />
+                android:tag="o3" />
 
 
 
             <Button
-                android:text="2C"
+                android:text="@string/_2c"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/klasa9"
-                android:tag="9"/>
+                android:tag="o9"/>
 
 
             <Button
-                android:text="3C"
+                android:text="@string/_3c"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/klasa15"
-                android:tag="15" />
+                android:tag="o15" />
 
             </LinearLayout>
 
@@ -142,28 +142,28 @@
 
 
             <Button
-                android:text="1D"
+                android:text="@string/_1d"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/klasa4"
-                android:tag="4"/>
+                android:tag="o4"/>
 
 
             <Button
-                android:text="2D"
+                android:text="@string/_2d"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/klasa10"
-                android:tag="10"/>
+                android:tag="o10"/>
 
 
             <Button
-                android:text="3D"
+                android:text="@string/_3d"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/klasa16"
-                android:tag="16"/>
+                android:tag="o16"/>
 
         </LinearLayout>
 
@@ -175,29 +175,29 @@
             android:orientation="horizontal">
 
             <Button
-                android:text="1E"
+                android:text="@string/_1e"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/klasa5"
-                android:tag="5" />
+                android:tag="o5" />
 
 
             <Button
-                android:text="2E"
+                android:text="@string/_2e"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/klasa11"
-                android:tag="11"/>
+                android:tag="o11"/>
 
 
 
             <Button
-                android:text="3E"
+                android:text="@string/_3e"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/klasa17"
-                android:tag="17" />
+                android:tag="o17" />
 
         </LinearLayout>
 
@@ -210,40 +210,27 @@
 
 
             <Button
-                android:text="1F"
+                android:text="@string/_1f"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/klasa6"
-                android:tag="6" />
-
-
-
-
+                android:tag="o6" />
 
             <Button
-                android:text="2F"
+                android:text="@string/_2f"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/klasa12"
-                android:tag="12"/>
-
-
-
-
-
+                android:tag="o12"/>
 
             <Button
-                android:text="3F"
+                android:text="@string/_3f"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/klasa18"
-                android:tag="18" />
-
-
+                android:tag="o18" />
         </LinearLayout>
-
-
         </LinearLayout>
     </ScrollView>
 

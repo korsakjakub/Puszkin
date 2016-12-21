@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import java.io.File;
@@ -29,8 +28,9 @@ public class Settings extends AppCompatActivity {
                     "2a", "2b", "2c", "2d", "2e", "2f",
                     "3a", "3b", "3c", "3d", "3e", "3f",}
     ));
+
     public static String zrodla[] = {
-            "ostatnia_save", "twoja_save"
+            "ostatnia", "twoja"
     };
     Toolbar toolbar;
     EditText editText;
@@ -67,7 +67,7 @@ public class Settings extends AppCompatActivity {
 
         checkIfFilesNonNull();
         zapisButton = (Button)findViewById(R.id.zapis_button);
-        final RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.activity_settings);
+        findViewById(R.id.activity_settings);
         zapisButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -87,9 +87,9 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 FileHandler.writeStringAsFile("", zrodla[0], getApplicationContext());
-                Toast.makeText(Settings.this, "Deleted: "+zrodla[0], Toast.LENGTH_SHORT).show();
+                Toast.makeText(Settings.this, "Usunięto: " + zrodla[0], Toast.LENGTH_SHORT).show();
                 FileHandler.writeStringAsFile("",zrodla[1],getApplicationContext());
-                Toast.makeText(Settings.this, "Deleted: "+zrodla[1], Toast.LENGTH_SHORT).show();
+                Toast.makeText(Settings.this, "Usunięto: " + zrodla[1], Toast.LENGTH_SHORT).show();
                 recreate();
             }
         });

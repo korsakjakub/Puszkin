@@ -32,58 +32,58 @@ public class MainActivity extends AppCompatActivity {
     public static String revCH(String ch) {
         switch (ch.toUpperCase()) {
             case "1A":
-                ch = "1";
+                ch = "o1";
                 break;
             case "1B":
-                ch = "2";
+                ch = "o2";
                 break;
             case "1C":
-                ch = "3";
+                ch = "o3";
                 break;
             case "1D":
-                ch = "4";
+                ch = "o4";
                 break;
             case "1E":
-                ch = "5";
+                ch = "o5";
                 break;
             case "1F":
-                ch = "6";
+                ch = "o6";
                 break;
             case "2A":
-                ch = "7";
+                ch = "o7";
                 break;
             case "2B":
-                ch = "8";
+                ch = "o8";
                 break;
             case "2C":
-                ch = "9";
+                ch = "o9";
                 break;
             case "2D":
-                ch = "10";
+                ch = "o10";
                 break;
             case "2E":
-                ch = "11";
+                ch = "o11";
                 break;
             case "2F":
-                ch = "12";
+                ch = "o12";
                 break;
             case "3A":
-                ch = "13";
+                ch = "o13";
                 break;
             case "3B":
-                ch = "14";
+                ch = "o14";
                 break;
             case "3C":
-                ch = "15";
+                ch = "o15";
                 break;
             case "3D":
-                ch = "16";
+                ch = "o16";
                 break;
             case "3E":
-                ch = "17";
+                ch = "o17";
                 break;
             case "3F":
-                ch = "18";
+                ch = "o18";
                 break;
 
         }
@@ -230,58 +230,58 @@ public class MainActivity extends AppCompatActivity {
 
     public String ch(String ch) {
         switch (ch) {
-            case "1":
+            case "o1":
                 ch = "1A";
                 break;
-            case "2":
+            case "o2":
                 ch = "1B";
                 break;
-            case "3":
+            case "o3":
                 ch = "1C";
                 break;
-            case "4":
+            case "o4":
                 ch = "1D";
                 break;
-            case "5":
+            case "o5":
                 ch = "1E";
                 break;
-            case "6":
+            case "o6":
                 ch = "1F";
                 break;
-            case "7":
+            case "o7":
                 ch = "2A";
                 break;
-            case "8":
+            case "o8":
                 ch = "2B";
                 break;
-            case "9":
+            case "o9":
                 ch = "2C";
                 break;
-            case "10":
+            case "o10":
                 ch = "2D";
                 break;
-            case "11":
+            case "o11":
                 ch = "2E";
                 break;
-            case "12":
+            case "o12":
                 ch = "2F";
                 break;
-            case "13":
+            case "o13":
                 ch = "3A";
                 break;
-            case "14":
+            case "o14":
                 ch = "3B";
                 break;
-            case "15":
+            case "o15":
                 ch = "3C";
                 break;
-            case "16":
+            case "o16":
                 ch = "3D";
                 break;
-            case "17":
+            case "o17":
                 ch = "3E";
                 break;
-            case "18":
+            case "o18":
                 ch = "3F";
                 break;
         }

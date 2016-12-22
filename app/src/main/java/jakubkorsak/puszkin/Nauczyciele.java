@@ -41,14 +41,12 @@ public class Nauczyciele extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 Object sender = list.getItemAtPosition(position);
-                String str = Sources.getID((String) sender, Sources.Nauczyciele);
+                String str = Sources.getID((String) sender, "n", Sources.Nauczyciele);
                 Toast.makeText(getApplicationContext(), "Wybrano: " + sender, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Nauczyciele.this, PlainView.class);
                 intent.putExtra("tag", str);
                 startActivity(intent);
             }
         });
-
     }
-
 }

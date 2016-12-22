@@ -88,12 +88,12 @@ class Sources {
             "j. obcy (czyt)"
     };
 
-    static String getID(String h, String[] source) {
+    static String getID(String h, String salaOrNauczyciel, String[] source) {
         int i = 0;
 
         while (true) {
             if (h == source[i]) {
-                h = "n" + String.valueOf(i + 1);
+                h = salaOrNauczyciel + String.valueOf(i + 1);
                 return h;
             }
             i++;

@@ -20,9 +20,6 @@
         android:theme="@style/AppTheme" >
         <activity android:name="jakubkorsak.puszkin.MainActivity" />
         <activity android:name="jakubkorsak.puszkin.PlanLekcji" />
-        <activity android:name="jakubkorsak.puszkin.Zastepstwa" />
-        <activity android:name="jakubkorsak.puszkin.Harmonogram" />
-        <activity android:name="jakubkorsak.puszkin.Dzienniczek" />
         <activity android:name="jakubkorsak.puszkin.Settings" />
         <activity
             android:name="jakubkorsak.puszkin.PlainView"
@@ -37,6 +34,7 @@
             </intent-filter>
         </activity>
         <activity android:name="jakubkorsak.puszkin.Nauczyciele" />
+        <activity android:name="jakubkorsak.puszkin.Gabinety" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

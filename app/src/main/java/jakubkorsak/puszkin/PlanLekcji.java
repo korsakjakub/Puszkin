@@ -95,10 +95,9 @@ public class PlanLekcji extends AppCompatActivity {
 
         String tag = button.getTag().toString();
         FileHandler.writeStringAsFile(tag,Settings.zrodla[0],getApplicationContext());
-
         Bundle b = new Bundle();
         b.putString("tag", tag);
-
+        b.putString("senderActivity", "plan");
         intentPlain.putExtras(b);
         startActivity(intentPlain);
 

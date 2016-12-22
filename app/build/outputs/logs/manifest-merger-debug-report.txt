@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:2:1-36:12
+ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:2:1-34:12
 	package
 		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:3:5-34
 		INJECTED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml
@@ -26,7 +26,7 @@ ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.x
 	android:name
 		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:7:22-73
 application
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:9:5-34:19
+ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:9:5-32:19
 MERGED from [com.android.support:design:25.0.1] /home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:appcompat-v7:25.0.1] /home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:25.0.1] /home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/AndroidManifest.xml:22:5-20
@@ -61,48 +61,40 @@ activity#jakubkorsak.puszkin.PlanLekcji
 ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:16:9-48
 	android:name
 		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:16:19-45
-activity#jakubkorsak.puszkin.Zastepstwa
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:17:9-48
-	android:name
-		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:17:19-45
-activity#jakubkorsak.puszkin.Harmonogram
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:18:9-49
-	android:name
-		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:18:19-46
-activity#jakubkorsak.puszkin.Dzienniczek
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:19:9-49
-	android:name
-		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:19:19-46
 activity#jakubkorsak.puszkin.Settings
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:20:9-46
+ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:17:9-46
 	android:name
-		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:20:19-43
+		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:17:19-43
 activity#jakubkorsak.puszkin.PlainView
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:21:9-23:53
+ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:18:9-20:53
 	android:theme
-		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:23:13-50
+		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:20:13-50
 	android:name
-		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:22:13-38
+		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:19:13-38
 activity#jakubkorsak.puszkin.SplashScreen
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:24:9-31:20
+ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:21:9-28:20
 	android:theme
-		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:26:13-47
+		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:23:13-47
 	android:name
-		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:25:13-41
+		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:22:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:27:13-30:29
+ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:24:13-27:29
 action#android.intent.action.MAIN
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:28:17-69
+ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:25:17-69
 	android:name
-		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:28:25-66
+		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:29:17-77
+ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:26:17-77
 	android:name
-		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:29:27-74
+		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:26:27-74
 activity#jakubkorsak.puszkin.Nauczyciele
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:32:9-49
+ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:29:9-49
 	android:name
-		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:32:19-46
+		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:29:19-46
+activity#jakubkorsak.puszkin.Gabinety
+ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:30:9-45
+	android:name
+		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:30:19-43
 uses-sdk
 INJECTED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:25.0.1] /home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/AndroidManifest.xml:21:5-23:62

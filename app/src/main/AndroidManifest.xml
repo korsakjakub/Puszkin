@@ -14,9 +14,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
         <activity android:name=".PlanLekcji" />
-        <activity android:name=".Zastepstwa" />
-        <activity android:name=".Harmonogram" />
-        <activity android:name=".Dzienniczek" />
         <activity android:name=".Settings" />
         <activity
             android:name=".PlainView"
@@ -30,6 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Nauczyciele" />
+        <activity android:name=".Gabinety" />
 
     </application>
 

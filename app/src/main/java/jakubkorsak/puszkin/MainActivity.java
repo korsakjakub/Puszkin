@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitleTextColor(Color.WHITE);
 
 
-        planLekcji= (Button) findViewById(R.id.plan_lekcji);
+        planLekcji = (Button) findViewById(R.id.plan_lekcji);
         assert planLekcji != null;
         planLekcji.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,36 +112,42 @@ public class MainActivity extends AppCompatActivity {
         });
 
         zastepstwa = (Button) findViewById(R.id.zastepstwa);
-        assert zastepstwa != null;
         zastepstwa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Zastepstwa.class);
+                Intent intent = new Intent(MainActivity.this, PlainView.class);
+                Bundle b = new Bundle();
+                b.putString("senderActivity", "zastepstwa");
+                intent.putExtras(b);
                 startActivity(intent);
             }
         });
 
         harmonogram = (Button) findViewById(R.id.harmonogram);
-        assert harmonogram != null;
         harmonogram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Harmonogram.class);
+                Intent intent = new Intent(MainActivity.this, PlainView.class);
+                Bundle b = new Bundle();
+                b.putString("senderActivity", "harmonogram");
+                intent.putExtras(b);
                 startActivity(intent);
             }
         });
 
         dzienniczek = (Button) findViewById(R.id.dzienniczek);
-        assert dzienniczek != null;
         dzienniczek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Dzienniczek.class);
+                Intent intent = new Intent(MainActivity.this, PlainView.class);
+                Bundle b = new Bundle();
+                b.putString("senderActivity", "dzienniczek");
+                intent.putExtras(b);
                 startActivity(intent);
             }
         });
 
-        planSaveText = (TextView)findViewById(R.id.text_ostatnia);
+        planSaveText = (TextView) findViewById(R.id.text_ostatnia);
         planSave = (Button) findViewById(R.id.plan_save);
         setTextAndTagAndSetVisibilityOfTheButtonsView(planSave, planSaveText, Settings.zrodla[1]);
         planSave.setOnClickListener(new View.OnClickListener() {
@@ -149,25 +155,27 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PlainView.class);
                 Button button = (Button) v;
-                    String tag = button.getTag().toString();
-                    Bundle b = new Bundle();
-                    b.putString("tag", revCH(tag));
-                    intent.putExtras(b);
-                    startActivity(intent);
+                String tag = button.getTag().toString();
+                Bundle b = new Bundle();
+                b.putString("tag", revCH(tag));
+                b.putString("senderActivity", "plan");
+                intent.putExtras(b);
+                startActivity(intent);
             }
         });
 
-        twojaKlasa = (Button)findViewById(R.id.twoja_klasa);
-        twojaKlasaText = (TextView)findViewById(R.id.text_twoja);
+        twojaKlasa = (Button) findViewById(R.id.twoja_klasa);
+        twojaKlasaText = (TextView) findViewById(R.id.text_twoja);
         setTextAndTagAndSetVisibilityOfTheButtonsView(twojaKlasa, twojaKlasaText, Settings.zrodla[1]);
-        twojaKlasa.setOnClickListener(new View.OnClickListener(){
+        twojaKlasa.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PlainView.class);
                 Button button = (Button) v;
                 String tag = button.getTag().toString();
                 Bundle b = new Bundle();
                 b.putString("tag", revCH(tag));
+                b.putString("senderActivity", "plan");
                 intent.putExtras(b);
                 startActivity(intent);
             }
@@ -288,7 +296,7 @@ public class MainActivity extends AppCompatActivity {
         return ch;
     }
 
-    private void setTextAndTagAndSetVisibilityOfTheButtonsView(Button button, TextView textView, String source){
+    private void setTextAndTagAndSetVisibilityOfTheButtonsView(Button button, TextView textView, String source) {
 
         String h = ch(FileHandler.readFileAsString(source, getApplicationContext()));
         button.setText(h);
@@ -302,7 +310,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void resetOnBackCounter(){
+    private void resetOnBackCounter() {
         onBackCounter = 0;
     }
 

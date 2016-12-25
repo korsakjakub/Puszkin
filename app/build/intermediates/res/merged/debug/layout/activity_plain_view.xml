@@ -5,19 +5,17 @@
     android:id="@+id/activity_plain_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="jakubkorsak.puszkin.PlainView">
+    tools:context="jakubkorsak.puszkin.WebViewer">
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        app:srcCompat="?attr/actionModeCloseDrawable"
-        android:layout_x="9dp"
-        android:layout_y="11dp"
-        android:id="@+id/floatingActionButton"
-        app:fabSize="normal"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        app:fabSize="normal"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <WebView
         android:id="@+id/w"

@@ -65,7 +65,7 @@ activity#jakubkorsak.puszkin.Settings
 ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:17:9-46
 	android:name
 		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:17:19-43
-activity#jakubkorsak.puszkin.PlainView
+activity#jakubkorsak.puszkin.WebViewer
 ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:18:9-20:53
 	android:theme
 		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:20:13-50
@@ -87,12 +87,12 @@ category#android.intent.category.LAUNCHER
 ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:26:17-77
 	android:name
 		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:26:27-74
-activity#jakubkorsak.puszkin.Nauczyciele
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:29:9-49
+activity#jakubkorsak.puszkin.NauczycieleView
+ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:29:9-53
 	android:name
-		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:29:19-46
-activity#jakubkorsak.puszkin.Gabinety
-ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:30:9-45
+		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:29:19-50
+activity#jakubkorsak.puszkin.SaleView
+ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:30:9-46
 	android:name
 		ADDED from /home/jakub/Documents/Projects/Puszkin/app/src/main/AndroidManifest.xml:30:19-43
 uses-sdk

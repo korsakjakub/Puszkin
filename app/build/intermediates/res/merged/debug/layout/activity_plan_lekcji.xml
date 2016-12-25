@@ -36,151 +36,175 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:orientation="horizontal">
+
                     <Button
                         android:id="@+id/klasa1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:tag="o1"
+                        android:tag="1"
                         android:text="@string/_1a" />
+
                     <Button
                         android:id="@+id/klasa7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:tag="o7"
+                        android:tag="7"
                         android:text="@string/_2a" />
+
                     <Button
                         android:id="@+id/klasa13"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:tag="o13"
+                        android:tag="13"
                         android:text="@string/_3a" />
-                    </LinearLayout>
+                </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <Button
                         android:id="@+id/klasa2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:tag="o2"
+                        android:tag="2"
                         android:text="@string/_1b" />
+
                     <Button
                         android:id="@+id/klasa8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:tag="o8"
+                        android:tag="8"
                         android:text="@string/_2b" />
+
                     <Button
                         android:id="@+id/klasa14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:tag="o14"
+                        android:tag="14"
                         android:text="@string/_3b" />
                 </LinearLayout>
+
                 <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/klasa3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:tag="o3"
-                    android:text="@string/_1c" />
-                <Button
-                    android:id="@+id/klasa9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:tag="o9"
-                    android:text="@string/_2c" />
-                <Button
-                    android:id="@+id/klasa15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:tag="o15"
-                    android:text="@string/_3c" />
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/klasa3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="3"
+                        android:text="@string/_1c" />
+
+                    <Button
+                        android:id="@+id/klasa9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:tag="9"
+                        android:text="@string/_2c" />
+
+                    <Button
+                        android:id="@+id/klasa15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="15"
+                        android:text="@string/_3c" />
                 </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/klasa4"
-                    android:layout_width="wrap_content"
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:tag="o4"
-                    android:text="@string/_1d" />
-                <Button
-                    android:id="@+id/klasa10"
-                    android:layout_width="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/klasa4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="4"
+                        android:text="@string/_1d" />
+
+                    <Button
+                        android:id="@+id/klasa10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:tag="10"
+                        android:text="@string/_2d" />
+
+                    <Button
+                        android:id="@+id/klasa16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="16"
+                        android:text="@string/_3d" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:tag="o10"
-                    android:text="@string/_2d" />
-                <Button
-                    android:id="@+id/klasa16"
-                    android:layout_width="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/klasa5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="5"
+                        android:text="@string/_1e" />
+
+                    <Button
+                        android:id="@+id/klasa11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:tag="11"
+                        android:text="@string/_2e" />
+
+                    <Button
+                        android:id="@+id/klasa17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contextClickable="true"
+                        android:tag="17"
+                        android:text="@string/_3e" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:tag="o16"
-                    android:text="@string/_3d" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/klasa5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:tag="o5"
-                    android:text="@string/_1e" />
-                <Button
-                    android:id="@+id/klasa11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:tag="o11"
-                    android:text="@string/_2e" />
-                <Button
-                    android:id="@+id/klasa17"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contextClickable="true"
-                    android:tag="o17"
-                    android:text="@string/_3e" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <Button
-                    android:id="@+id/klasa6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:tag="o6"
-                    android:text="@string/_1f" />
-                <Button
-                    android:id="@+id/klasa12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:tag="o12"
-                    android:text="@string/_2f" />
-                <Button
-                    android:id="@+id/klasa18"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:tag="o18"
-                    android:text="@string/_3f" />
-            </LinearLayout>
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/klasa6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="6"
+                        android:text="@string/_1f" />
+
+                    <Button
+                        android:id="@+id/klasa12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:tag="12"
+                        android:text="@string/_2f" />
+
+                    <Button
+                        android:id="@+id/klasa18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="18"
+                        android:text="@string/_3f" />
+                </LinearLayout>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

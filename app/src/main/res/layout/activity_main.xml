@@ -9,12 +9,12 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:minHeight="25dp"
-        android:minWidth="25dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:background="@color/colorPrimary"
-        android:layout_alignParentTop="true" />
+        android:minHeight="25dp"
+        android:minWidth="25dp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,65 +27,65 @@
             android:orientation="vertical">
 
             <Button
-                android:text="@string/plan_lekcji"
+                android:id="@+id/plan_lekcji"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/plan_lekcji"
-                android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/plan_lekcji" />
 
 
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:weightSum="2">
 
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:text="@string/ostatnio_wybrana"
+                        android:id="@+id/text_ostatnia"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:layout_marginRight="5dp"
-                        android:id="@+id/text_ostatnia"
-                        android:layout_weight="1" />
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/ostatnio_wybrana" />
 
                     <Button
+                        android:id="@+id/plan_save"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/plan_save"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginRight="10dp"
                         android:layout_weight="1"/>
                 </LinearLayout>
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:text="@string/twoja_klasa"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="15dp"
                         android:id="@+id/text_twoja"
-                        android:layout_weight="1" />
-                    <Button
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:text="@string/twoja_klasa" />
+                    <Button
                         android:id="@+id/twoja_klasa"
-                        android:layout_marginLeft="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"/>
 
@@ -94,53 +94,53 @@
 
 
             <Button
-                android:text="@string/zastepstwa"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/zastepstwa"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
-
-            <Button
-                android:text="@string/harmonogram"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/zastepstwa" />
+
+            <Button
                 android:id="@+id/harmonogram"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
-
-            <Button
-                android:text="@string/facebook_i_lo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/harmonogram" />
+
+            <Button
                 android:id="@+id/facebook"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
-
-            <Button
-                android:text="@string/facebook_puszkinowa_pomoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/facebook_i_lo" />
+
+            <Button
                 android:id="@+id/facebook2"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
-
-            <Button
-                android:text="@string/dzienniczek"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/dzienniczek"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
+                android:layout_marginRight="10dp"
+                android:text="@string/facebook_puszkinowa_pomoc" />
 
             <Button
-                android:text="@string/i"
+                android:id="@+id/dzienniczek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/dzienniczek" />
+
+            <Button
+                android:id="@+id/info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/info"
-                android:layout_marginLeft="10dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginTop="25dp" />
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="25dp"
+                android:text="@string/i" />
         </LinearLayout>
         </ScrollView>
 </RelativeLayout>

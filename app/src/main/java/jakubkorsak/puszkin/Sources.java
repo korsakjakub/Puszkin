@@ -3,6 +3,13 @@ package jakubkorsak.puszkin;
 
 class Sources {
 
+
+    static String SENDER_ACTIVITY = "senderActivity";
+
+    static String TYPE_OF_WEB_VIEW[] = {"plan", "harmonogram", "zastepstwa", "dzienniczek"};
+
+    static String TAG = "tag";
+
     static String Nauczyciele[] = {
             "Ewa Andrzejewska-Sidorowicz",
             "Marta Bagińska",
@@ -87,16 +94,70 @@ class Sources {
             "j. polski (5)",
             "j. obcy (czyt)"
     };
+    static String klasy[] = {
+            "1a", "1b", "1c", "1d", "1e", "1f",
+            "2a", "2b", "2c", "2d", "2e", "2f",
+            "3a", "3b", "3c", "3d", "3e", "3f"
+    };
 
-    static String getID(String h, String salaOrNauczyciel, String[] source) {
+    static String index[] = {
+            "1", "2", "3", "4", "5", "6", "7", "8", "9",
+            "10", "11", "12", "13", "14", "15", "16", "17", "18"
+    };
+
+    static String zrodla[] = {
+            "ostatnia", "twoja"
+    };
+
+
+    /**
+     * n - nauczyciel
+     * s - sala
+     * o - oddział
+     *
+     * @param prefix to jest ta część odpowiedzialna za (n, s, o)
+     * @param source to jest część odpowiedzialna za indeks obiektu
+     * @return String w postaci h = "(n, s, o) + indeks tego obiektu"
+     **/
+     /*
+     * Zasada działania:
+     * dostajemy input h, jakiś ciąg znaków. Sprawdzamy czy znajduje się on w którejś z tablic w Sources
+     * jeśli tak, to zwracamy dany "prefix" + indeks w jakim znaleziono tą wartość + 1 bo
+     * tablice liczą od 0.
+     *
+     * Jeśli nie ma tego ciągu znaków w tablicy (nie powinno się zdarzyć) dostaniemy jakiś
+     * NullPointerException albo coś takiego. Zaznaczam, że nie powinno się to nigdy zdarzyć ze
+     * względu na to, że wartość inputu h pochodzi z tablicy z Resources.
+     */
+    static String getID(String h, String prefix, String[] source) {
         int i = 0;
-
-        while (true) {
-            if (h == source[i]) {
-                h = salaOrNauczyciel + String.valueOf(i + 1);
-                return h;
+        while (i <= source.length) {
+            if (h.equalsIgnoreCase(source[i])) {
+                h = prefix + String.valueOf(i + 1);
+                break;
             }
             i++;
         }
+        return h;
+    }
+
+
+    /**
+     * @param h      "[o,n,s] + index[1;18]"
+     * @param prefix w tej wersji jest to zawsze "o" ale w późniejszych wersjach rozszerzę tą funkcję
+     * @param source tablica do której ma porównywać "h"
+     * @return odpowiadająca nazwa klasy w postaci "[1;3] + [A;F]"
+     */
+    static String getIndex(String h, String prefix, String[] source) {
+        int i = 0;
+        h = h.replace(prefix, "");
+        while (i <= source.length) {
+            if (h.equalsIgnoreCase(source[i])) {
+                h = Sources.klasy[i];
+                break;
+            }
+            i++;
+        }
+        return h;
     }
 }

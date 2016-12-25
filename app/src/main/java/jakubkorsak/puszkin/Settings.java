@@ -16,22 +16,9 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Settings extends AppCompatActivity {
 
-
-    private static final Set<String> classNames = new HashSet<>(Arrays.asList(
-            new String[]{
-                    "1a", "1b", "1c", "1d", "1e", "1f",
-                    "2a", "2b", "2c", "2d", "2e", "2f",
-                    "3a", "3b", "3c", "3d", "3e", "3f",}
-    ));
-
-    public static String zrodla[] = {
-            "ostatnia", "twoja"
-    };
     Toolbar toolbar;
     EditText editText;
     PackageInfo pInfo;
@@ -71,10 +58,10 @@ public class Settings extends AppCompatActivity {
         zapisButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String s = editText.getText().toString();
-                if(classNames.contains(s)){
-                    FileHandler.writeStringAsFile(s, zrodla[1], getApplicationContext());
-                    Toast.makeText(Settings.this, "Zapisano: "+s, Toast.LENGTH_SHORT).show();
+                String TextFromForm = editText.getText().toString();
+                if (Arrays.asList(Sources.klasy).contains(TextFromForm)) {
+                    FileHandling.writeStringAsFile(TextFromForm, Sources.zrodla[1], getApplicationContext());
+                    Toast.makeText(Settings.this, "Zapisano: " + TextFromForm, Toast.LENGTH_SHORT).show();
                     recreate();
                 }else{
                     Toast.makeText(Settings.this, "Nie ma takiej klasy. Pamiętaj o formacie \"1a\"", Toast.LENGTH_SHORT).show();
@@ -86,10 +73,9 @@ public class Settings extends AppCompatActivity {
         deleteAll.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                FileHandler.writeStringAsFile("", zrodla[0], getApplicationContext());
-                Toast.makeText(Settings.this, "Usunięto: " + zrodla[0], Toast.LENGTH_SHORT).show();
-                FileHandler.writeStringAsFile("",zrodla[1],getApplicationContext());
-                Toast.makeText(Settings.this, "Usunięto: " + zrodla[1], Toast.LENGTH_SHORT).show();
+                FileHandling.writeStringAsFile("", Sources.zrodla[0], getApplicationContext());
+                FileHandling.writeStringAsFile("", Sources.zrodla[1], getApplicationContext());
+                Toast.makeText(Settings.this, "Usunięto: " + Sources.zrodla[0] + ", " + Sources.zrodla[1], Toast.LENGTH_SHORT).show();
                 recreate();
             }
         });
@@ -122,15 +108,19 @@ public class Settings extends AppCompatActivity {
         checkIfFilesNonNull();
     }
 
+    /**
+     * sprawdza czy istnieją pliki z zapisanymi nazwami przycisków i odpowiednio dopasowuje źródła
+     * ImageView
+     */
     private void checkIfFilesNonNull(){
-        File fileOstatniaKlasa = new File(getFilesDir()+"/"+zrodla[0]);
-        File fileTwojaKlasa = new File(getFilesDir()+"/"+zrodla[1]);
-        if(fileOstatniaKlasa.exists()&&FileHandler.readFileAsString(zrodla[0], getApplicationContext())!=""){
+        File fileOstatniaKlasa = new File(getFilesDir() + "/" + Sources.zrodla[0]);
+        File fileTwojaKlasa = new File(getFilesDir() + "/" + Sources.zrodla[1]);
+        if (fileOstatniaKlasa.exists() && FileHandling.readFileAsString(Sources.zrodla[0], getApplicationContext()) != "") {
             ostatniaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_online));
         }else{
             ostatniaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_invisible));
         }
-        if(fileTwojaKlasa.exists()&&FileHandler.readFileAsString(zrodla[1], getApplicationContext())!=""){
+        if (fileTwojaKlasa.exists() && FileHandling.readFileAsString(Sources.zrodla[1], getApplicationContext()) != "") {
             twojaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_online));
         }else{
             twojaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_invisible));

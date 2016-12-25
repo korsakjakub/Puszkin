@@ -16,7 +16,7 @@
         <activity android:name=".PlanLekcji" />
         <activity android:name=".Settings" />
         <activity
-            android:name=".PlainView"
+            android:name=".WebViewer"
             android:theme="@style/PlainViewTheme" />
         <activity
             android:name=".SplashScreen"
@@ -26,8 +26,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Nauczyciele" />
-        <activity android:name=".Gabinety" />
+        <activity android:name=".NauczycieleView" />
+        <activity android:name=".SaleView" />
 
     </application>
 

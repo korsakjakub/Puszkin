@@ -52,9 +52,12 @@ public class PlanLekcji extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
         toolbar.setTitleTextColor(Color.WHITE);
 
+        /*
+         * Lista z przyciskami (jest ich dużo ok?)
+         * używam pętli for żeby oszczędzić miejsca
+         */
         List<Button> buttons = new ArrayList<>(BUTTON_IDS.length);
         for(int id : BUTTON_IDS){
             Button button = (Button)findViewById(id);
@@ -62,19 +65,17 @@ public class PlanLekcji extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    c(v);
+                    buttonOnClick(v);
                 }
             });
             buttons.add(button);
         }
-
-
         Button nauczyciele = (Button)findViewById(R.id.Nauczyciele);
         assert nauczyciele != null;
         nauczyciele.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PlanLekcji.this , Nauczyciele.class);
+                Intent intent = new Intent(PlanLekcji.this, NauczycieleView.class);
                 startActivity(intent);
             }
         });
@@ -83,21 +84,27 @@ public class PlanLekcji extends AppCompatActivity {
         gabinety.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PlanLekcji.this , Gabinety.class);
+                Intent intent = new Intent(PlanLekcji.this, SaleView.class);
                 startActivity(intent);
             }
         });
     }
-    void c(View v){
 
-        Intent intentPlain = new Intent(PlanLekcji.this,PlainView.class);
+    /**
+     * Inicjujemy przycisk, zapisujemy do "tag" jego tag po czym wpisujemy do pamięci urządzenia
+     * intentem przenosimy tag i SENDER_ACTIVITY
+     * zmieniamy activity
+     *
+     * @param v nasz sender
+     */
+    void buttonOnClick(View v) {
+        Intent intentPlain = new Intent(PlanLekcji.this, WebViewer.class);
         Button button = (Button) v;
-
-        String tag = button.getTag().toString();
-        FileHandler.writeStringAsFile(tag,Settings.zrodla[0],getApplicationContext());
+        String tag = Sources.getID(button.getTag().toString(), "o", Sources.index);
+        FileHandling.writeStringAsFile(Sources.getIndex(tag, "o", Sources.index), Sources.zrodla[0], getApplicationContext());
         Bundle b = new Bundle();
-        b.putString("tag", tag);
-        b.putString("senderActivity", "plan");
+        b.putString(Sources.TAG, tag);
+        b.putString(Sources.SENDER_ACTIVITY, Sources.TYPE_OF_WEB_VIEW[0]);
         intentPlain.putExtras(b);
         startActivity(intentPlain);
 

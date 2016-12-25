@@ -5,7 +5,7 @@
     android:id="@+id/activity_gabinety"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="jakubkorsak.puszkin.Gabinety">
+    tools:context="jakubkorsak.puszkin.SaleView">
 
     <LinearLayout
         android:layout_width="match_parent"

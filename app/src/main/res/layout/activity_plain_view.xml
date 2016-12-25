@@ -5,7 +5,7 @@
     android:id="@+id/activity_plain_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="jakubkorsak.puszkin.PlainView">
+    tools:context="jakubkorsak.puszkin.WebViewer">
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"

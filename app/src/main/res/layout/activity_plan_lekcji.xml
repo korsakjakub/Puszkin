@@ -225,7 +225,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:paddingLeft="10dp"
-            android:text="Nauczyciele" />
+            android:text="@string/nauczyciele" />
 
         <Button
             android:id="@+id/gabinety"
@@ -234,7 +234,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:paddingRight="10dp"
-            android:text="Gabinety" />
+            android:text="@string/gabinety" />
     </LinearLayout>
 
 

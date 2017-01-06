@@ -25,6 +25,9 @@
             android:name="jakubkorsak.puszkin.WebViewer"
             android:theme="@style/PlainViewTheme" />
         <activity
+            android:name="jakubkorsak.puszkin.ParsedHTMLViewer"
+            android:theme="@style/ParsedTheme" />
+        <activity
             android:name="jakubkorsak.puszkin.SplashScreen"
             android:theme="@style/SplashTheme" >
             <intent-filter>
@@ -35,6 +38,8 @@
         </activity>
         <activity android:name="jakubkorsak.puszkin.NauczycieleView" />
         <activity android:name="jakubkorsak.puszkin.SaleView" />
+        <activity android:name="jakubkorsak.puszkin.WebViewActivity" >
+        </activity>
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

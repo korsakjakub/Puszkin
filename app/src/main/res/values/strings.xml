@@ -32,4 +32,6 @@
     <string name="_1f">1F</string>
     <string name="_2f">2F</string>
     <string name="_3f">3F</string>
+    <string name="gabinety">Gabinety</string>
+    <string name="nauczyciele">Nauczyciele</string>
 </resources>

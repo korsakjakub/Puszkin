@@ -46,7 +46,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:tag="o1"
+                    android:tag="1"
                     android:text="@string/_1a" />
 
                 <Button
@@ -54,7 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:tag="o7"
+                    android:tag="7"
                     android:text="@string/_2a" />
 
                 <Button
@@ -62,7 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:tag="o13"
+                    android:tag="13"
                     android:text="@string/_3a" />
                 </LinearLayout>
 
@@ -77,7 +77,7 @@
                     android:id="@+id/klasa2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:tag="o2"
+                    android:tag="2"
                     android:text="@string/_1b" />
 
 
@@ -86,7 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:tag="o8"
+                    android:tag="8"
                     android:text="@string/_2b" />
 
 
@@ -94,7 +94,7 @@
                     android:id="@+id/klasa14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:tag="o14"
+                    android:tag="14"
                     android:text="@string/_3b" />
 
             </LinearLayout>
@@ -110,7 +110,7 @@
                 android:id="@+id/klasa3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:tag="o3"
+                android:tag="3"
                 android:text="@string/_1c" />
 
 
@@ -120,7 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:tag="o9"
+                android:tag="9"
                 android:text="@string/_2c" />
 
 
@@ -128,7 +128,7 @@
                 android:id="@+id/klasa15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:tag="o15"
+                android:tag="15"
                 android:text="@string/_3c" />
 
             </LinearLayout>
@@ -145,7 +145,7 @@
                 android:id="@+id/klasa4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:tag="o4"
+                android:tag="4"
                 android:text="@string/_1d" />
 
 
@@ -154,7 +154,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:tag="o10"
+                android:tag="10"
                 android:text="@string/_2d" />
 
 
@@ -162,7 +162,7 @@
                 android:id="@+id/klasa16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:tag="o16"
+                android:tag="16"
                 android:text="@string/_3d" />
 
         </LinearLayout>
@@ -178,7 +178,7 @@
                 android:id="@+id/klasa5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:tag="o5"
+                android:tag="5"
                 android:text="@string/_1e" />
 
 
@@ -187,7 +187,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:tag="o11"
+                android:tag="11"
                 android:text="@string/_2e" />
 
 
@@ -196,7 +196,7 @@
                 android:id="@+id/klasa17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:tag="o17"
+                android:tag="17"
                 android:text="@string/_3e" />
 
         </LinearLayout>
@@ -213,7 +213,7 @@
                 android:id="@+id/klasa6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:tag="o6"
+                android:tag="6"
                 android:text="@string/_1f" />
 
             <Button
@@ -221,14 +221,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:tag="o12"
+                android:tag="12"
                 android:text="@string/_2f" />
 
             <Button
                 android:id="@+id/klasa18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:tag="o18"
+                android:tag="18"
                 android:text="@string/_3f" />
         </LinearLayout>
         </LinearLayout>
@@ -250,7 +250,7 @@
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:paddingLeft="10dp"
-            android:text="Nauczyciele" />
+            android:text="@string/nauczyciele" />
 
         <Button
             android:id="@+id/gabinety"
@@ -259,7 +259,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:paddingRight="10dp"
-            android:text="Gabinety" />
+            android:text="@string/gabinety" />
     </LinearLayout>
 
 

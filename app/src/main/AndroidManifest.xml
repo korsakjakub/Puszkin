@@ -15,9 +15,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".PlanLekcji" />
         <activity android:name=".Settings" />
-        <activity
-            android:name=".WebViewer"
-            android:theme="@style/PlainViewTheme" />
+        <activity android:name=".ParsedHTMLViewer" android:theme="@style/ParsedTheme"/>
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">
@@ -28,6 +26,9 @@
         </activity>
         <activity android:name=".NauczycieleView" />
         <activity android:name=".SaleView" />
+        <activity android:name=".WebViewActivity">
+
+        </activity>
 
     </application>
 

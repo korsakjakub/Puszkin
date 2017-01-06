@@ -38,6 +38,7 @@
     <color name="common_google_signin_btn_text_light_disabled">#1F000000</color>
     <color name="common_google_signin_btn_text_light_focused">#90000000</color>
     <color name="common_google_signin_btn_text_light_pressed">#DE000000</color>
+    <color name="darkerGray">#b7b7b7</color>
     <color name="design_bottom_navigation_shadow_color">#14000000</color>
     <color name="design_fab_shadow_end_color">@android:color/transparent</color>
     <color name="design_fab_shadow_mid_color">#14000000</color>
@@ -57,6 +58,7 @@
     <color name="foreground_material_light">@android:color/black</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
+    <color name="lightGray">#cccccc</color>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
     <color name="material_blue_grey_950">#ff21272b</color>
@@ -715,9 +717,11 @@
     <string name="dzienniczek">Dzienniczek</string>
     <string name="facebook_i_lo">Facebook - I LO</string>
     <string name="facebook_puszkinowa_pomoc">Facebook - Puszkinowa Pomoc</string>
+    <string name="gabinety">Gabinety</string>
     <string name="harmonogram">Harmonogram</string>
     <string name="i">I</string>
     <string name="info">Info</string>
+    <string name="nauczyciele">Nauczyciele</string>
     <string name="ostatnio_wybrana">Ostatnio wybrana</string>
     <string name="plan_lekcji">Plan Lekcji</string>
     <string name="search_menu_title">Search</string>
@@ -1756,6 +1760,12 @@
         <item name="tabBackground">?attr/selectableItemBackground</item>
         <item name="tabTextAppearance">@style/TextAppearance.Design.Tab</item>
         <item name="tabSelectedTextColor">?android:textColorPrimary</item>
+    </style>
+    <style name="ParsedTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/darkerGray</item>
+        <item name="colorPrimaryDark">@color/darkerGray</item>
+        <item name="colorAccent">@color/lightGray</item>
+
     </style>
     <style name="PlainViewTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/pink</item>

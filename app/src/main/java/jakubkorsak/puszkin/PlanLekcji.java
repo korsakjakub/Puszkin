@@ -98,7 +98,7 @@ public class PlanLekcji extends AppCompatActivity {
      * @param v nasz sender
      */
     void buttonOnClick(View v) {
-        Intent intentPlain = new Intent(PlanLekcji.this, WebViewer.class);
+        Intent intentPlain = new Intent(PlanLekcji.this, WebViewActivity.class);
         Button button = (Button) v;
         String tag = Sources.getID(button.getTag().toString(), "o", Sources.index);
         FileHandling.writeStringAsFile(Sources.getIndex(tag, "o", Sources.index), Sources.zrodla[0], getApplicationContext());

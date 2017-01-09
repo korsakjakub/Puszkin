@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
+import org.jsoup.safety.Whitelist;
 
 public class ParsedHTMLViewer extends AppCompatActivity {
 
@@ -47,10 +47,14 @@ public class ParsedHTMLViewer extends AppCompatActivity {
         switch (senderActivity) {
             case "harmonogram":
                 p = "http://www.zso1.edu.gorzow.pl/?lng=1&view=k&k=23";
+                FileHandling.writeStringAsFile(Sources.TYPE_OF_WEB_VIEW[1], Sources.SENDER_ACTIVITY,
+                    getApplicationContext());
                 new doIt().execute();
                 break;
             case "zastepstwa":
                 p = "http://www.zso1.edu.gorzow.pl/?lng=1&view=k&k=20";
+                FileHandling.writeStringAsFile(Sources.TYPE_OF_WEB_VIEW[2], Sources.SENDER_ACTIVITY,
+                        getApplicationContext());
                 new doIt().execute();
                 break;
         }
@@ -61,20 +65,41 @@ public class ParsedHTMLViewer extends AppCompatActivity {
      */
     public class doIt extends AsyncTask<Void, Void, Void> {
         String words;
+        String s;
 
         @Override
         protected Void doInBackground(Void... params) {
 
+            String senderActivity = FileHandling.readFileAsString
+                    (Sources.SENDER_ACTIVITY, getApplicationContext());
+
             try {
                 Document doc = Jsoup.connect(p).get();
-                Element tekst = doc.select("div.tekst").first();
-                words = tekst.html().replaceAll("<br>", "\n")
-                        .replaceAll("&nbsp;", " ")
-                        .replaceAll("<.*?>", " ")
-                        .replaceAll("<td.*?>", "")
-                        .replaceAll("drukuj", ""); //trochę łopatologiczne ale działa
+                doc.outputSettings(new Document.OutputSettings().prettyPrint(false));
+                doc.select("br").append("\\n");
+                doc.select("p").prepend("\\n\\n");
 
+                switch (senderActivity) {
+                    case "zastepstwa":
+                        s = doc.getElementsContainingText("Zastępstwa")
+                                .select("div.tekst")
+                                .html()
+                                .replaceAll("\\\\n", "\n")
+                                .replaceAll("&nbsp;", " ")
+                                .replaceAll("drukuj", "");
+                        break;
 
+                    case "harmonogram":
+                        s = doc.getElementsContainingText("Harmonogram")
+                                .select("p")
+                                .html()
+                                .replaceAll("\\\\n", "\n")
+                                .replaceAll("&nbsp;", " ")
+                                .replaceAll("drukuj", "");
+
+                        break;
+                }
+                words = Jsoup.clean(s, "", Whitelist.none(), new Document.OutputSettings().prettyPrint(false));
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/jakub/Dokumenty/Projects/Puszkin/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
+        "outputFile": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "/home/jakub/Dokumenty/Projects/Puszkin/app/src/main/res/values-w820dp/dimens.xml",
+                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values-w820dp/dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

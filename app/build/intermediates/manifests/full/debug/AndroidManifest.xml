@@ -22,9 +22,6 @@
         <activity android:name="jakubkorsak.puszkin.PlanLekcji" />
         <activity android:name="jakubkorsak.puszkin.Settings" />
         <activity
-            android:name="jakubkorsak.puszkin.WebViewer"
-            android:theme="@style/PlainViewTheme" />
-        <activity
             android:name="jakubkorsak.puszkin.ParsedHTMLViewer"
             android:theme="@style/ParsedTheme" />
         <activity

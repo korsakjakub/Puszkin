@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         planSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+                Intent intent = new Intent(MainActivity.this, ParsedHTMLViewer.class);//WebViewActivity.class);
                 String tag = Sources.getID(FileHandling.readFileAsString(Sources.zrodla[0],
                         getApplicationContext()), "o", Sources.klasy);
                 Bundle b = new Bundle();
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         twojaKlasa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+                Intent intent = new Intent(MainActivity.this, ParsedHTMLViewer.class);//WebViewActivity.class);
                 String tag = Sources.getID(FileHandling.readFileAsString(Sources.zrodla[1],
                         getApplicationContext()), "o", Sources.klasy);
                 Bundle b = new Bundle();

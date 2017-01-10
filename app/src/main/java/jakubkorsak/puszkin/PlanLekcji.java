@@ -55,7 +55,7 @@ public class PlanLekcji extends AppCompatActivity {
         toolbar.setTitleTextColor(Color.WHITE);
 
         /*
-         * Lista z przyciskami (jest ich dużo ok?)
+         * Tablica z przyciskami (jest ich dużo ok?)
          * używam pętli for żeby oszczędzić miejsca
          */
         List<Button> buttons = new ArrayList<>(BUTTON_IDS.length);
@@ -98,7 +98,7 @@ public class PlanLekcji extends AppCompatActivity {
      * @param v nasz sender
      */
     void buttonOnClick(View v) {
-        Intent intentPlain = new Intent(PlanLekcji.this, WebViewActivity.class);
+        Intent intentPlain = new Intent(PlanLekcji.this, ParsedHTMLViewer.class);//WebViewActivity.class);
         Button button = (Button) v;
         String tag = Sources.getID(button.getTag().toString(), "o", Sources.index);
         FileHandling.writeStringAsFile(Sources.getIndex(tag, "o", Sources.index), Sources.zrodla[0], getApplicationContext());

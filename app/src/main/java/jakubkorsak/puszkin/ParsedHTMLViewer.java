@@ -21,6 +21,8 @@ public class ParsedHTMLViewer extends AppCompatActivity {
     FloatingActionButton fab;
     String p;
     TextView t;
+    String path;
+    String h;
 
 
     @Override
@@ -57,6 +59,14 @@ public class ParsedHTMLViewer extends AppCompatActivity {
                         getApplicationContext());
                 new doIt().execute();
                 break;
+
+            case "plan":
+                h = getIntent().getExtras().getString(Sources.TAG);
+                p = "http://www.plan.1lo.gorzow.pl/plany/" + h + ".html";
+                FileHandling.writeStringAsFile(Sources.TYPE_OF_WEB_VIEW[0], Sources.SENDER_ACTIVITY,
+                        getApplicationContext());
+                new doIt().execute();
+                break;
         }
     }
 
@@ -83,25 +93,28 @@ public class ParsedHTMLViewer extends AppCompatActivity {
                     case "zastepstwa":
                         s = doc.getElementsContainingText("Zastępstwa")
                                 .select("div.tekst")
-                                .html()
-                                .replaceAll("\\\\n", "\n")
-                                .replaceAll("&nbsp;", " ")
-                                .replaceAll("drukuj", "");
+                                .html();
                         break;
 
                     case "harmonogram":
                         s = doc.getElementsContainingText("Harmonogram")
                                 .select("p")
-                                .html()
-                                .replaceAll("\\\\n", "\n")
-                                .replaceAll("&nbsp;", " ")
-                                .replaceAll("drukuj", "");
+                                .html();
+                        break;
 
+                    case "plan":
+                        s = doc.getElementsByClass("l").append("\\n\\ndalej")
+                                .html();
                         break;
                 }
-                words = Jsoup.clean(s, "", Whitelist.none(), new Document.OutputSettings().prettyPrint(false));
+                words = Jsoup.clean(s
+                        .replaceAll("\\\\n", "\n")
+                        .replaceAll("&nbsp;", " ")
+                        .replaceAll("drukuj", "")
+                        , "", Whitelist.none(), new Document.OutputSettings().prettyPrint(false));
             } catch (Exception e) {
                 e.printStackTrace();
+                words = e.toString();
             }
             return null;
         }

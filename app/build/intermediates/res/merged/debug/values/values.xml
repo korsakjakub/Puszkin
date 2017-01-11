@@ -555,6 +555,7 @@
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
     <dimen name="design_appbar_elevation">4dp</dimen>
     <dimen name="design_bottom_navigation_active_item_max_width">168dp</dimen>
     <dimen name="design_bottom_navigation_active_text_size">14sp</dimen>
@@ -693,6 +694,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="action_settings">Settings</string>
     <string name="app_name">Puszkin</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
@@ -725,6 +727,7 @@
     <string name="ostatnio_wybrana">Ostatnio wybrana</string>
     <string name="plan_lekcji">Plan Lekcji</string>
     <string name="search_menu_title">Search</string>
+    <string name="section_format">Hello World from section: %1$d</string>
     <string name="stan_zapisow">Stan zapisów</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="title_activity_zastepstwa">Zastepstwa</string>

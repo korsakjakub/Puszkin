@@ -5,19 +5,19 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="13628103767094"
+    timestamp="11656386047152"
     token="-416647866239221738"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="227" />
+        duration="113" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="10" />
+        duration="27" />
     <task
         name="verifier"
         duration="0" />
@@ -27,28 +27,28 @@
         type="DEX" />
 
     <build
-        timestamp="12163032811826"
-        verifier="BINARY_MANIFEST_FILE_CHANGE" >
+        timestamp="8997657197510"
+        verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/home/jakub/Documents/Projects/Puszkin/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="13125140019385"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-            type="RESOURCES" />
-    </build>
-    <build
-        timestamp="13606066147561"
+        timestamp="10982701577577"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
             type="DEX" />
     </build>
     <build
-        timestamp="13628103767094"
+        timestamp="11421653530874"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+            type="RESOURCES" />
+    </build>
+    <build
+        timestamp="11656386047152"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"

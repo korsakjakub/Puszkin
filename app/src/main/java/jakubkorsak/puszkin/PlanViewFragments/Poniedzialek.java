@@ -30,18 +30,15 @@ public class Poniedzialek extends Fragment {
             R.id.lekcja_8,
             R.id.lekcja_9,
     };
-    public static Poniedzialek newInstance(int index){
+    public static Poniedzialek newInstance(ArrayList<String> lekcjeArray){
         Poniedzialek p = new Poniedzialek();
         Bundle args = new Bundle();
-        args.putInt("index", index);
+        args.putStringArrayList("lekcjeArray", lekcjeArray);
         p.setArguments(args);
-
         return p;
     }
-    public int getShownIndex() {
-        return getArguments().getInt("index", 0);
-    }
 
+    public ArrayList<String> getLekcjeArray(){ return getArguments().getStringArrayList("lekcjeArray");}
 
 
     @Override
@@ -56,10 +53,9 @@ public class Poniedzialek extends Fragment {
             lekcje.add(lekcjaTextView);
         }
 
-        lekcje.get(0).setText("pleasework");
-        lekcje.get(1).setText("pleaseplease");
-        //WORKS
-        //FUCKING WORKS
+        //    lekcje.get(0).setText(getLekcjeArray().get(0));
+        //lekcje.get(1).setText();
+        //lekcje.get(2).setText();
 
         return view;
     }

@@ -359,7 +359,14 @@
                     "endOffset": 2208
                 },
                 "from": {
-                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/colors.xml"
+                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/colors.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 105,
+                        "endColumn": 50,
+                        "endOffset": 151
+                    }
                 }
             },
             {
@@ -4127,14 +4134,7 @@
                     "endOffset": 57980
                 },
                 "from": {
-                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 37,
-                        "startColumn": 4,
-                        "startOffset": 1644,
-                        "endColumn": 45,
-                        "endOffset": 1685
-                    }
+                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -4146,14 +4146,7 @@
                     "endOffset": 58026
                 },
                 "from": {
-                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 38,
-                        "startColumn": 4,
-                        "startOffset": 1691,
-                        "endColumn": 45,
-                        "endOffset": 1732
-                    }
+                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -4165,14 +4158,7 @@
                     "endOffset": 58072
                 },
                 "from": {
-                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 39,
-                        "startColumn": 4,
-                        "startOffset": 1738,
-                        "endColumn": 45,
-                        "endOffset": 1779
-                    }
+                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -4184,14 +4170,7 @@
                     "endOffset": 58119
                 },
                 "from": {
-                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 40,
-                        "startColumn": 4,
-                        "startOffset": 1785,
-                        "endColumn": 46,
-                        "endOffset": 1827
-                    }
+                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -4203,14 +4182,7 @@
                     "endOffset": 58167
                 },
                 "from": {
-                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 41,
-                        "startColumn": 4,
-                        "startOffset": 1833,
-                        "endColumn": 47,
-                        "endOffset": 1876
-                    }
+                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -4222,14 +4194,7 @@
                     "endOffset": 58215
                 },
                 "from": {
-                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 42,
-                        "startColumn": 4,
-                        "startOffset": 1882,
-                        "endColumn": 47,
-                        "endOffset": 1925
-                    }
+                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -4241,14 +4206,7 @@
                     "endOffset": 58263
                 },
                 "from": {
-                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 43,
-                        "startColumn": 4,
-                        "startOffset": 1931,
-                        "endColumn": 47,
-                        "endOffset": 1974
-                    }
+                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -4260,14 +4218,7 @@
                     "endOffset": 58311
                 },
                 "from": {
-                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 44,
-                        "startColumn": 4,
-                        "startOffset": 1980,
-                        "endColumn": 47,
-                        "endOffset": 2023
-                    }
+                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -4279,14 +4230,7 @@
                     "endOffset": 58359
                 },
                 "from": {
-                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 45,
-                        "startColumn": 4,
-                        "startOffset": 2029,
-                        "endColumn": 47,
-                        "endOffset": 2072
-                    }
+                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml"
                 }
             },
             {
@@ -4298,14 +4242,7 @@
                     "endOffset": 58407
                 },
                 "from": {
-                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 46,
-                        "startColumn": 4,
-                        "startOffset": 2078,
-                        "endColumn": 47,
-                        "endOffset": 2121
-                    }
+                    "file": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/values/strings.xml"
                 }
             },
             {

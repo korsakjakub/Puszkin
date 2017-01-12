@@ -115,7 +115,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="07798613b18090d7bbd972b4bf6fe18258ce604a">
+        sha1="4ea3f2da027be130a931d720b9fbbfd6e56957d9">
         <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6f0aa4b384c4f9397c2fcce0019dbc4ea66c0849/classes.dex" />
     </item>
     <item
@@ -160,7 +160,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="35e68d9e3a72ec27c154eb0bb6bc40cc03a5fd0c">
+        sha1="c32bbf7444f1e7300ef8332b79c08e98fc888c1a">
         <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_568992bc8429df903eccaef093f760a2f2bce31c/classes.dex" />
     </item>
     <item

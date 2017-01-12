@@ -19,13 +19,15 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
+import java.util.ArrayList;
+
 import jakubkorsak.puszkin.PlanViewFragments.Czwartek;
 import jakubkorsak.puszkin.PlanViewFragments.Piatek;
 import jakubkorsak.puszkin.PlanViewFragments.Poniedzialek;
 import jakubkorsak.puszkin.PlanViewFragments.Sroda;
 import jakubkorsak.puszkin.PlanViewFragments.Wtorek;
 
-public class PlanView extends AppCompatActivity {
+public class PlanView extends AppCompatActivity{
 
     String p;
     String h;
@@ -33,6 +35,8 @@ public class PlanView extends AppCompatActivity {
 
     private ViewPager mViewPager;
 
+
+    ArrayList<String> lekcjeArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,11 +66,12 @@ public class PlanView extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
 
-                h = getIntent().getExtras().getString(Sources.TAG);
-                p = "http://www.plan.1lo.gorzow.pl/plany/" + h + ".html";
-                FileHandling.writeStringAsFile(Sources.TYPE_OF_WEB_VIEW[0], Sources.SENDER_ACTIVITY,
-                        getApplicationContext());
-                new doIt().execute();
+        h = getIntent().getExtras().getString(Sources.TAG);
+        p = "http://www.plan.1lo.gorzow.pl/plany/" + h + ".html";
+        FileHandling.writeStringAsFile(Sources.TYPE_OF_WEB_VIEW[0], Sources.SENDER_ACTIVITY,
+                getApplicationContext());
+        new doIt().execute();
+
     }
 
 
@@ -89,13 +94,12 @@ public class PlanView extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     /**
      * Tu dzieje się praktycznie cała magia
      */
     public class doIt extends AsyncTask<Void, Void, Void> {
-        String words;
-        Intent sendArray;
-        String [] lekcjeArray;
+
 
         @Override
         protected Void doInBackground(Void... params) {
@@ -104,27 +108,32 @@ public class PlanView extends AppCompatActivity {
             try {
                 Document doc = Jsoup.connect(p).get();
                 doc.outputSettings(new Document.OutputSettings().prettyPrint(false));
-                        Elements s = doc.getElementsByClass("l");
+                Elements s = doc.getElementsByClass("l");
 
+                lekcjeArray= new ArrayList<>(s.size());
 
-                        lekcjeArray = new String[s.size()+1];
-                        for(int i = 0; i< s.size(); i++){
-                            lekcjeArray[i] = s.get(i).text();
-                        }
-                //sendArray = new Intent(getApplicationContext(), Poniedzialek.class);
+                for(int i = 0; i< s.size(); i++){
+                    lekcjeArray.add(s.get(i).text());
+                }
+
+                Intent sendArray = new Intent(getApplicationContext(), Poniedzialek.class);
+                sendArray.putStringArrayListExtra("lekcjeArray", lekcjeArray);
+
             } catch (Exception e) {
                 e.printStackTrace();
-                words = e.toString();
             }
             return null;
         }
 
+
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            //sendArray.putExtra("lekcjeArray", lekcjeArray);
+
 
         }
+
+
     }
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -136,7 +145,7 @@ public class PlanView extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position){
                 case 0:
-                    return Poniedzialek.newInstance(0);
+                    return Poniedzialek.newInstance(lekcjeArray);
                 case 1:
                     return Wtorek.newInstance(1);
                 case 2:

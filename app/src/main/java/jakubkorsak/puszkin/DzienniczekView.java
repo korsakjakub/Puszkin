@@ -30,8 +30,7 @@ public class DzienniczekView extends AppCompatActivity {
             }
         });
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(Color.parseColor("#ffabab"));
-            fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ffabab")));
+            fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#b53f3f")));
         }
         w = (WebView) findViewById(R.id.w);
         w.setWebViewClient(new WebViewClient());

@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         zastepstwa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ParsedHTMLViewer.class);
+                Intent intent = new Intent(MainActivity.this, HarmonogramZastepstwa.class);
                 Bundle b = new Bundle();
                 b.putString(Sources.SENDER_ACTIVITY, Sources.TYPE_OF_WEB_VIEW[2]);
                 intent.putExtras(b);
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         harmonogram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ParsedHTMLViewer.class);
+                Intent intent = new Intent(MainActivity.this, HarmonogramZastepstwa.class);
                 Bundle b = new Bundle();
                 b.putString(Sources.SENDER_ACTIVITY, Sources.TYPE_OF_WEB_VIEW[1]);
                 intent.putExtras(b);
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         dzienniczek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
+                Intent intent = new Intent(MainActivity.this, DzienniczekView.class);
                 Bundle b = new Bundle();
                 b.putString(Sources.SENDER_ACTIVITY, Sources.TYPE_OF_WEB_VIEW[3]);
                 intent.putExtras(b);
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         planSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ParsedHTMLViewer.class);//WebViewActivity.class);
+                Intent intent = new Intent(MainActivity.this, PlanView.class);//DzienniczekView.class);
                 String tag = Sources.getID(FileHandling.readFileAsString(Sources.zrodla[0],
                         getApplicationContext()), "o", Sources.klasy);
                 Bundle b = new Bundle();
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         twojaKlasa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ParsedHTMLViewer.class);//WebViewActivity.class);
+                Intent intent = new Intent(MainActivity.this, PlanView.class);//DzienniczekView.class);
                 String tag = Sources.getID(FileHandling.readFileAsString(Sources.zrodla[1],
                         getApplicationContext()), "o", Sources.klasy);
                 Bundle b = new Bundle();

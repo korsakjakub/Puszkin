@@ -3,138 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/jars/classes.jar"
+        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.8.0_937953b28fb8008a82bb5d542252e2b949803b63/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.0.1_b9ac62197c2277046c094b699ebfdea4be1376ef/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.0.1_108abfd46691e43c9f67f92c417c7162207a17be/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_368583c6bbe3e11ab7f31e031933883ad2845c67/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.8.0_fa7b4c1a8d8fac3e6efcd3546089fedaf05d6a5c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.0.1_c46276348308ed97bd5c2fd5e623c7449cf1f24c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.8.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="e3234cd25e23069abd48ecd2117bc0e8011bf45a">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-9.8.0_3ca1830d9da870928974e20f13d525061fe3bd7e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.0.1_239c36d2b4c170247fbac4e4d9864f7fb55fea02/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/jakub/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="98476622f10715998eacf9240d6b479f12c66143">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_6a0a0a223d3e5d141a3543146885511e3a253b5b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_433496b755d5c0bfedb57d7856a2da4c1452add5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="f83b00041ecfba705603fec40363416c7de69719">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_fd84973500fbd0e151b2870619c5c63daf61c9c1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.0.1_2b526b3ec64d801b07d5339ff09ad40fe76a0a59/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="f9ea03d3073ccea0740972bc399e2b74a477b1b9">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_568992bc8429df903eccaef093f760a2f2bce31c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/jakub/Documents/android-sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.1/support-annotations-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.0.1_9098909c13c12e9058c64fcdfd276bcd83693e1d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_0030838235f430f652d60ae5d320f458b42036d3/classes.dex" />
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_04ddd4da8b7ff418b7d9bcf2688a202fda38c06c/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -147,12 +21,57 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/classes.jar"
+        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.0.1_bd177344da784ac6bbee6959bd16765e0548c1d2/classes.dex" />
+        sha1="9f6d236bac26d02b410e4ee186ba517ace5ee661">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.8.0_937953b28fb8008a82bb5d542252e2b949803b63/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_15e6e7202a6b329c888ee5b174eb709af8bb5446/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.0_f556c32985ad7e863d74afd24b4447c86c3168d2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.0_a76c5e7f507d59306cd27d664d99b5b581e479b4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.0_27118e6f0d9f01bd59db2efa6a26ea792e44fdca/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-25.1.0_166fc3d9467c606079708d9851c0843fb0268fc9/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -165,48 +84,30 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/jars/classes.jar"
+        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.0.1_f578ab3ba7594e7b8581765d5ecffbfaa66bf6a6/classes.dex" />
+        sha1="bf2e1838e4428616c1aa26edf43de72b5b99bf84">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.8.0_fa7b4c1a8d8fac3e6efcd3546089fedaf05d6a5c/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/jars/classes.jar"
+        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.8.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.0.1_fb61bf8de406a216bd81ff8a703577471e4a639e/classes.dex" />
+        sha1="e3234cd25e23069abd48ecd2117bc0e8011bf45a">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-appindexing-9.8.0_3ca1830d9da870928974e20f13d525061fe3bd7e/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/jars/classes.jar"
+        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/transition/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.0.1_69b9e7903b94d2a974db604ddd0871e3d46a339a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.0.1_07d03e0e7760ed34f926a1e909754635e09edd42/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.0.1_b5eed2256f47c514c7afbf88018a756eb2cc10f2/classes.dex" />
+        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-transition-25.1.0_09bc909327fa7f7728313ce2c0e5e9efb832cf42/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -214,17 +115,17 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="6598fe36684afee8b708e6f85256039b9ff90de6">
+        sha1="07798613b18090d7bbd972b4bf6fe18258ce604a">
         <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6f0aa4b384c4f9397c2fcce0019dbc4ea66c0849/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/jars/classes.jar"
+        jar="/home/jakub/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.0.1_83ad135cea95bfa0eb43d2db1f1b0a72d95f05bb/classes.dex" />
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_6a0a0a223d3e5d141a3543146885511e3a253b5b/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -237,6 +138,51 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_1d0c50d8a1e8258c2fa0907d62c34256d2948b3f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.0_55c12fc662c6a61bbefdca33801784e92622e6ef/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="35e68d9e3a72ec27c154eb0bb6bc40cc03a5fd0c">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_568992bc8429df903eccaef093f760a2f2bce31c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-25.1.0_2411eb1b6b2fb581de782bb015a0697a27ac79e4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jakub/Documents/android-sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_090c92e11973972f3a43f21077ab37a416b39b74/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/jakub/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
         jumboMode="true"
         optimize="true"
@@ -246,12 +192,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/jars/libs/internal_impl-25.0.1.jar"
+        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
-        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_83f3b9875dee1afea81624b19278b500533b6c88/classes.dex" />
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_95b382bc08baa3986cf2b7561f454bf21f953bd2/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -261,6 +207,15 @@
         revision="23.0.2"
         sha1="645f1ad2f6f4cbad1cde4c483eae71e4051be6ef">
         <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/jsoup-1.10.1_464e243e63070fffe2fbe77fcd02208ef7cc6bfc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_463d5c3b7c5ef62fc2122ff5a5c87536d0890b80/classes.dex" />
     </item>
 
 </items>

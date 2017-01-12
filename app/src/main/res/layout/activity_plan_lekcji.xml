@@ -13,7 +13,8 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         app:popupTheme="@style/AppTheme.PopupOverlay"
-        app:title="Plan Lekcji" />
+        app:title="Plan Lekcji"
+        app:titleTextColor="@color/white" />
 
 
     <LinearLayout

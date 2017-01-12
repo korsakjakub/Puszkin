@@ -42,7 +42,7 @@ public class NauczycieleView extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id){
                 Object sender = list.getItemAtPosition(position);
                 String str = Sources.getID((String) sender, "n", Sources.Nauczyciele);
-                Intent intent = new Intent(NauczycieleView.this, ParsedHTMLViewer.class);//WebViewActivity.class);
+                Intent intent = new Intent(NauczycieleView.this, PlanView.class);//DzienniczekView.class);
                 Bundle b = new Bundle();
                 b.putString(Sources.SENDER_ACTIVITY, Sources.TYPE_OF_WEB_VIEW[0]);
                 b.putString(Sources.TAG, str);

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_harmonogram_zastepstwa"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="jakubkorsak.puszkin.HarmonogramZastepstwa">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="?attr/actionBarTheme"
+        android:minHeight="?attr/actionBarSize"
+        android:id="@+id/toolbar"
+        app:title="Harmonogram"
+        app:titleTextColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView" />
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,7 +1,6 @@
 package jakubkorsak.puszkin;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -52,12 +51,7 @@ public class PlanLekcji extends AppCompatActivity {
                 onBackPressed();
             }
         });
-        toolbar.setTitleTextColor(Color.WHITE);
 
-        /*
-         * Tablica z przyciskami (jest ich dużo ok?)
-         * używam pętli for żeby oszczędzić miejsca
-         */
         List<Button> buttons = new ArrayList<>(BUTTON_IDS.length);
         for(int id : BUTTON_IDS){
             Button button = (Button)findViewById(id);
@@ -98,7 +92,7 @@ public class PlanLekcji extends AppCompatActivity {
      * @param v nasz sender
      */
     void buttonOnClick(View v) {
-        Intent intentPlain = new Intent(PlanLekcji.this, ParsedHTMLViewer.class);//WebViewActivity.class);
+        Intent intentPlain = new Intent(PlanLekcji.this, PlanView.class);//DzienniczekView.class);
         Button button = (Button) v;
         String tag = Sources.getID(button.getTag().toString(), "o", Sources.index);
         FileHandling.writeStringAsFile(Sources.getIndex(tag, "o", Sources.index), Sources.zrodla[0], getApplicationContext());

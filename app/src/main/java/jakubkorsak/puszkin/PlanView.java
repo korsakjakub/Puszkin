@@ -14,6 +14,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import jakubkorsak.puszkin.PlanViewFragments.Czwartek;
 import jakubkorsak.puszkin.PlanViewFragments.Piatek;
 import jakubkorsak.puszkin.PlanViewFragments.Poniedzialek;
@@ -43,12 +46,33 @@ public class PlanView extends AppCompatActivity{
             }
         });
         toolbar.setTitleTextColor(Color.WHITE);
-
+        String title = getIntent().getStringExtra(Sources.TAG);
+        /**
+        zmienia tytuł toolbaru i zmienia wg. o1 -> 1A
+         lub n1 -> jakieś imię lub s1 -> jakiś gabinet
+         */
+        if(title.contains("o")) {
+            toolbar.setTitle("Klasa " + Sources.getIndex
+                    (title, "o", Sources.index, Sources.klasy).toUpperCase());
+        }else if(title.contains("n")){
+            toolbar.setTitle(Sources.getIndex
+                    (title, "n", Sources.index, Sources.Nauczyciele).toUpperCase());
+        }else if(title.contains("s")){
+            toolbar.setTitle(Sources.getIndex
+                    (title, "s", Sources.index, Sources.Gabinety).toUpperCase());
+        }
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+
+
+        Date date = new Date();
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+        mViewPager.setCurrentItem(dayOfWeek);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);

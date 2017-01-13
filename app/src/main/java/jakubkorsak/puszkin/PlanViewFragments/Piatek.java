@@ -96,16 +96,28 @@ public class Piatek extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+            if(lekcjeArray.size()>=5)
             lekcja0.setText(lekcjeArray.get(4).replaceAll("-", ""));
+            if(lekcjeArray.size()>=10)
             lekcja1.setText(lekcjeArray.get(9).replaceAll("-", ""));
+            if(lekcjeArray.size()>=15)
             lekcja2.setText(lekcjeArray.get(14).replaceAll("-", ""));
+            if(lekcjeArray.size()>=20)
             lekcja3.setText(lekcjeArray.get(19).replaceAll("-", ""));
+            if(lekcjeArray.size()>=25)
             lekcja4.setText(lekcjeArray.get(24).replaceAll("-", ""));
+            if(lekcjeArray.size()>=30)
             lekcja5.setText(lekcjeArray.get(29).replaceAll("-", ""));
+            if(lekcjeArray.size()>=35)
             lekcja6.setText(lekcjeArray.get(34).replaceAll("-", ""));
-            lekcja7.setText(lekcjeArray.get(39).replaceAll("-", ""));
-            lekcja8.setText(lekcjeArray.get(44).replaceAll("-", ""));
-            lekcja9.setText(lekcjeArray.get(49).replaceAll("-", ""));
+            if(lekcjeArray.size()>=40)
+                lekcja7.setText(lekcjeArray.get(39).replaceAll("-", ""));
+            if(lekcjeArray.size()>=45)
+                lekcja8.setText(lekcjeArray.get(44).replaceAll("-", ""));
+
+            if(lekcjeArray.size()>=50)
+                lekcja9.setText(lekcjeArray.get(49).replaceAll("-", ""));
+
         }
     }
 }

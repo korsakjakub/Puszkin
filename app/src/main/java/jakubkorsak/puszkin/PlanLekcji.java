@@ -95,7 +95,7 @@ public class PlanLekcji extends AppCompatActivity {
         Intent intentPlain = new Intent(PlanLekcji.this, PlanView.class);//DzienniczekView.class);
         Button button = (Button) v;
         String tag = Sources.getID(button.getTag().toString(), "o", Sources.index);
-        FileHandling.writeStringAsFile(Sources.getIndex(tag, "o", Sources.index), Sources.zrodla[0], getApplicationContext());
+        FileHandling.writeStringAsFile(Sources.getIndex(tag, "o", Sources.index, Sources.klasy), Sources.zrodla[0], getApplicationContext());
         Bundle b = new Bundle();
         b.putString(Sources.TAG, tag);
         b.putString(Sources.SENDER_ACTIVITY, Sources.TYPE_OF_WEB_VIEW[0]);

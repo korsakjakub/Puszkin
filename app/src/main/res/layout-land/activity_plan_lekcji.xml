@@ -10,12 +10,13 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:background="@color/colorPrimary"
-        android:minHeight="25dp"
-        android:minWidth="25dp"
-        app:title="Plan Lekcji" />
+        android:background="?attr/colorPrimary"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        android:layout_height="54dp"
+        app:titleTextColor="@color/white"
+        app:title="Plan Lekcji">
+    </android.support.v7.widget.Toolbar>
 
 
 

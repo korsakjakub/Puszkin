@@ -91,16 +91,28 @@ public class Wtorek extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+            if(lekcjeArray.size()>=2)
             lekcja0.setText(lekcjeArray.get(1).replaceAll("-", ""));
+            if(lekcjeArray.size()>=7)
             lekcja1.setText(lekcjeArray.get(6).replaceAll("-", ""));
+            if(lekcjeArray.size()>=12)
             lekcja2.setText(lekcjeArray.get(11).replaceAll("-", ""));
+            if(lekcjeArray.size()>=17)
             lekcja3.setText(lekcjeArray.get(16).replaceAll("-", ""));
+            if(lekcjeArray.size()>=22)
             lekcja4.setText(lekcjeArray.get(21).replaceAll("-", ""));
+            if(lekcjeArray.size()>=27)
             lekcja5.setText(lekcjeArray.get(26).replaceAll("-", ""));
-            lekcja6.setText(lekcjeArray.get(31).replaceAll("-", ""));
-            lekcja7.setText(lekcjeArray.get(36).replaceAll("-", ""));
-            lekcja8.setText(lekcjeArray.get(41).replaceAll("-", ""));
-            lekcja9.setText(lekcjeArray.get(46).replaceAll("-", ""));
+            if(lekcjeArray.size()>=32)
+                lekcja6.setText(lekcjeArray.get(31).replaceAll("-", ""));
+            if(lekcjeArray.size()>=37)
+                lekcja7.setText(lekcjeArray.get(36).replaceAll("-", ""));
+            if(lekcjeArray.size()>=42)
+                lekcja8.setText(lekcjeArray.get(41).replaceAll("-", ""));
+
+            if(lekcjeArray.size()>=47)
+                lekcja9.setText(lekcjeArray.get(46).replaceAll("-", ""));
+
         }
     }
 }

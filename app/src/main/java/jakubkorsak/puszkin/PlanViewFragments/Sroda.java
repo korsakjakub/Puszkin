@@ -91,16 +91,28 @@ public class Sroda extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+            if(lekcjeArray.size()>=3)
             lekcja0.setText(lekcjeArray.get(2).replaceAll("-", ""));
+            if(lekcjeArray.size()>=8)
             lekcja1.setText(lekcjeArray.get(7).replaceAll("-", ""));
+            if(lekcjeArray.size()>=13)
             lekcja2.setText(lekcjeArray.get(12).replaceAll("-", ""));
+            if(lekcjeArray.size()>=18)
             lekcja3.setText(lekcjeArray.get(17).replaceAll("-", ""));
+            if(lekcjeArray.size()>=23)
             lekcja4.setText(lekcjeArray.get(22).replaceAll("-", ""));
+            if(lekcjeArray.size()>=28)
             lekcja5.setText(lekcjeArray.get(27).replaceAll("-", ""));
+            if(lekcjeArray.size()>=33)
             lekcja6.setText(lekcjeArray.get(32).replaceAll("-", ""));
-            lekcja7.setText(lekcjeArray.get(37).replaceAll("-", ""));
-            lekcja8.setText(lekcjeArray.get(42).replaceAll("-", ""));
-            lekcja9.setText(lekcjeArray.get(47).replaceAll("-", ""));
+            if(lekcjeArray.size()>=38)
+                lekcja7.setText(lekcjeArray.get(37).replaceAll("-", ""));
+            if(lekcjeArray.size()>=43)
+                lekcja8.setText(lekcjeArray.get(42).replaceAll("-", ""));
+
+            if(lekcjeArray.size()>=48)
+                lekcja9.setText(lekcjeArray.get(47).replaceAll("-", ""));
+
         }
     }
 }

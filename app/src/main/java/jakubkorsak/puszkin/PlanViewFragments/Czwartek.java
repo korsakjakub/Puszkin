@@ -90,16 +90,28 @@ public class Czwartek extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+            if(lekcjeArray.size()>=4)
             lekcja0.setText(lekcjeArray.get(3).replaceAll("-", ""));
+            if(lekcjeArray.size()>=9)
             lekcja1.setText(lekcjeArray.get(8).replaceAll("-", ""));
+            if(lekcjeArray.size()>=14)
             lekcja2.setText(lekcjeArray.get(13).replaceAll("-", ""));
+            if(lekcjeArray.size()>=19)
             lekcja3.setText(lekcjeArray.get(18).replaceAll("-", ""));
+            if(lekcjeArray.size()>=24)
             lekcja4.setText(lekcjeArray.get(23).replaceAll("-", ""));
+            if(lekcjeArray.size()>=29)
             lekcja5.setText(lekcjeArray.get(28).replaceAll("-", ""));
+            if(lekcjeArray.size()>=34)
             lekcja6.setText(lekcjeArray.get(33).replaceAll("-", ""));
-            lekcja7.setText(lekcjeArray.get(38).replaceAll("-", ""));
-            lekcja8.setText(lekcjeArray.get(43).replaceAll("-", ""));
-            lekcja9.setText(lekcjeArray.get(48).replaceAll("-", ""));
+            if(lekcjeArray.size()>=39)
+                lekcja7.setText(lekcjeArray.get(38).replaceAll("-", ""));
+            if(lekcjeArray.size()>=44)
+                lekcja8.setText(lekcjeArray.get(43).replaceAll("-", ""));
+
+            if(lekcjeArray.size()>=49)
+                lekcja9.setText(lekcjeArray.get(48).replaceAll("-", ""));
+
         }
     }
 }

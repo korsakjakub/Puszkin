@@ -20,6 +20,10 @@
         "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/layout/activity_splash_screen.xml"
     },
     {
+        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/activity_dzienniczek.xml",
+        "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/layout/activity_dzienniczek.xml"
+    },
+    {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/notification_action.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/notification_action.xml"
     },
@@ -54,10 +58,6 @@
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/notification_action_tombstone.xml"
-    },
-    {
-        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/activity_plain_view.xml",
-        "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/layout/activity_plain_view.xml"
     },
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",

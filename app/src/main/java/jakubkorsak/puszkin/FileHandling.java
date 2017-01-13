@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-class FileHandling {
+public class FileHandling {
     /**
      * Odczytuje plik pod daną ścieżką
      *
@@ -16,7 +16,7 @@ class FileHandling {
      * @param context  kontekst sendera
      * @return zawartość pliku
      */
-    static String readFileAsString(String fileName, Context context) {
+    public static String readFileAsString(String fileName, Context context) {
         StringBuilder stringBuilder = new StringBuilder();
         String line;
         BufferedReader in;
@@ -36,7 +36,7 @@ class FileHandling {
      * @param fileName nazwa pliku w domyślnej ścieżce aplikacji
      * @param context konekst sendera
      */
-    static void writeStringAsFile(final String fileContents, String fileName, Context context) {
+    public static void writeStringAsFile(final String fileContents, String fileName, Context context) {
         try {
             FileWriter out = new FileWriter(new File(context.getFilesDir(), fileName));
             out.write(fileContents);

@@ -1,16 +1,16 @@
 package jakubkorsak.puszkin;
 
 
-class Sources {
+public class Sources {
 
 
-    static String SENDER_ACTIVITY = "senderActivity";
+    public static String SENDER_ACTIVITY = "senderActivity";
 
-    static String TYPE_OF_WEB_VIEW[] = {"plan", "harmonogram", "zastepstwa", "dzienniczek"};
+    public static String TYPE_OF_WEB_VIEW[] = {"plan", "harmonogram", "zastepstwa", "dzienniczek"};
 
-    static String TAG = "tag";
+    public static String TAG = "tag";
 
-    static String Nauczyciele[] = {
+    public static String Nauczyciele[] = {
             "Ewa Andrzejewska-Sidorowicz",
             "Marta Bagińska",
             "Mariusz Biniewski",
@@ -60,7 +60,7 @@ class Sources {
             "Paulina Wysocka",
             "Paweł Zaborowski"
     };
-    static String Gabinety[] = {
+    public static String Gabinety[] = {
             "j.polski (1)",
             "j.polski (14)",
             "j.polski (15)",
@@ -94,18 +94,18 @@ class Sources {
             "j. polski (5)",
             "j. obcy (czyt)"
     };
-    static String klasy[] = {
+    public static String klasy[] = {
             "1a", "1b", "1c", "1d", "1e", "1f",
             "2a", "2b", "2c", "2d", "2e", "2f",
             "3a", "3b", "3c", "3d", "3e", "3f"
     };
 
-    static String index[] = {
+    public static String index[] = {
             "1", "2", "3", "4", "5", "6", "7", "8", "9",
             "10", "11", "12", "13", "14", "15", "16", "17", "18"
     };
 
-    static String zrodla[] = {
+    public static String zrodla[] = {
             "ostatnia", "twoja"
     };
 

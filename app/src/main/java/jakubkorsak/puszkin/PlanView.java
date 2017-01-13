@@ -1,9 +1,8 @@
 package jakubkorsak.puszkin;
 
-import android.content.Intent;
 import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,12 +14,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-
-import java.util.ArrayList;
-
 import jakubkorsak.puszkin.PlanViewFragments.Czwartek;
 import jakubkorsak.puszkin.PlanViewFragments.Piatek;
 import jakubkorsak.puszkin.PlanViewFragments.Poniedzialek;
@@ -29,14 +22,9 @@ import jakubkorsak.puszkin.PlanViewFragments.Wtorek;
 
 public class PlanView extends AppCompatActivity{
 
-    String p;
-    String h;
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     private ViewPager mViewPager;
-
-
-    ArrayList<String> lekcjeArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,15 +53,14 @@ public class PlanView extends AppCompatActivity{
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-
-        h = getIntent().getExtras().getString(Sources.TAG);
-        p = "http://www.plan.1lo.gorzow.pl/plany/" + h + ".html";
-        FileHandling.writeStringAsFile(Sources.TYPE_OF_WEB_VIEW[0], Sources.SENDER_ACTIVITY,
-                getApplicationContext());
-        new doIt().execute();
-
     }
 
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -95,46 +82,6 @@ public class PlanView extends AppCompatActivity{
     }
 
 
-    /**
-     * Tu dzieje się praktycznie cała magia
-     */
-    public class doIt extends AsyncTask<Void, Void, Void> {
-
-
-        @Override
-        protected Void doInBackground(Void... params) {
-
-
-            try {
-                Document doc = Jsoup.connect(p).get();
-                doc.outputSettings(new Document.OutputSettings().prettyPrint(false));
-                Elements s = doc.getElementsByClass("l");
-
-                lekcjeArray= new ArrayList<>(s.size());
-
-                for(int i = 0; i< s.size(); i++){
-                    lekcjeArray.add(s.get(i).text());
-                }
-
-                Intent sendArray = new Intent(getApplicationContext(), Poniedzialek.class);
-                sendArray.putStringArrayListExtra("lekcjeArray", lekcjeArray);
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-
-
-        }
-
-
-    }
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         SectionsPagerAdapter(FragmentManager fm) {
@@ -145,7 +92,7 @@ public class PlanView extends AppCompatActivity{
         public Fragment getItem(int position) {
             switch (position){
                 case 0:
-                    return Poniedzialek.newInstance(lekcjeArray);
+                    return Poniedzialek.newInstance(0);
                 case 1:
                     return Wtorek.newInstance(1);
                 case 2:

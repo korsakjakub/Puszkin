@@ -9,13 +9,13 @@
     android:orientation="horizontal"
     android:weightSum="2">
 
-    <TableLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tableLayout"
         android:orientation="vertical">
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/r0">
@@ -32,11 +32,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/lekcja_0"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:layout_weight="1" />
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/r1">
@@ -53,11 +53,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/lekcja_1"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:layout_weight="1" />
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/r2">
@@ -74,11 +74,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/lekcja_2"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:layout_weight="1" />
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/r3">
@@ -95,12 +95,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/lekcja_3"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:layout_weight="1" />
 
-        </TableRow>
+        </LinearLayout>
 
-    <TableRow
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -118,11 +118,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/lekcja_4"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:layout_weight="1" />
-    </TableRow>
+    </LinearLayout>
 
-    <TableRow
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -140,12 +140,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/lekcja_5"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:layout_weight="1" />
-    </TableRow>
+    </LinearLayout>
 
 
-    <TableRow
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -163,11 +163,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/lekcja_6"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:layout_weight="1" />
-    </TableRow>
+    </LinearLayout>
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -185,11 +185,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/lekcja_7"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:layout_weight="1" />
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -207,11 +207,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/lekcja_8"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:layout_weight="1" />
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -229,9 +229,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/lekcja_9"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:layout_weight="1" />
-        </TableRow>
-    </TableLayout>
+        </LinearLayout>
+    </LinearLayout>
 
 </ScrollView>

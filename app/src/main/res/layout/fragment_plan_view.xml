@@ -2,9 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="horizontal"
     android:weightSum="2">
@@ -26,20 +23,23 @@
                 android:layout_height="match_parent"
                 android:id="@+id/godzina_0"
                 android:textSize="24sp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:paddingLeft="16dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/lekcja_0"
                 android:textSize="18sp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:paddingRight="16dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/r1">
+            android:id="@+id/r1"
+            android:background="@color/colorPrimaryLight">
 
             <TextView
                 android:text="@string/lekcja1"
@@ -47,14 +47,16 @@
                 android:layout_height="match_parent"
                 android:id="@+id/godzina_1"
                 android:textSize="24sp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:paddingLeft="16dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/lekcja_1"
                 android:textSize="18sp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:paddingRight="16dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -68,20 +70,23 @@
                 android:layout_height="match_parent"
                 android:id="@+id/godzina_2"
                 android:textSize="24sp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:paddingLeft="16dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/lekcja_2"
                 android:textSize="18sp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:paddingRight="16dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/r3">
+            android:id="@+id/r3"
+            android:background="@color/colorPrimaryLight">
 
             <TextView
                 android:text="@string/lekcja3"
@@ -89,14 +94,16 @@
                 android:layout_height="match_parent"
                 android:id="@+id/godzina_3"
                 android:textSize="24sp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:paddingLeft="16dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/lekcja_3"
                 android:textSize="18sp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:paddingRight="16dp" />
 
         </LinearLayout>
 
@@ -112,21 +119,24 @@
             android:layout_height="match_parent"
             android:id="@+id/godzina_4"
             android:textSize="24sp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:paddingLeft="16dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/lekcja_4"
             android:textSize="18sp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:paddingRight="16dp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:id="@+id/r5">
+        android:id="@+id/r5"
+        android:background="@color/colorPrimaryLight">
 
         <TextView
             android:text="@string/lekcja5"
@@ -134,14 +144,16 @@
             android:layout_height="match_parent"
             android:id="@+id/godzina_5"
             android:textSize="24sp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:paddingLeft="16dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/lekcja_5"
             android:textSize="18sp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:paddingRight="16dp" />
     </LinearLayout>
 
 
@@ -157,21 +169,24 @@
             android:layout_height="match_parent"
             android:id="@+id/godzina_6"
             android:textSize="24sp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:paddingLeft="16dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/lekcja_6"
             android:textSize="18sp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:paddingRight="16dp" />
     </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/r7">
+            android:id="@+id/r7"
+            android:background="@color/colorPrimaryLight">
 
             <TextView
                 android:text="@string/lekcja7"
@@ -179,14 +194,16 @@
                 android:layout_height="match_parent"
                 android:id="@+id/godzina_7"
                 android:textSize="24sp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:paddingLeft="16dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/lekcja_7"
                 android:textSize="18sp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:paddingRight="16dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -201,21 +218,24 @@
                 android:layout_height="match_parent"
                 android:id="@+id/godzina_8"
                 android:textSize="24sp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:paddingLeft="16dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/lekcja_8"
                 android:textSize="18sp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:paddingRight="16dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/r9">
+            android:id="@+id/r9"
+            android:background="@color/colorPrimaryLight">
 
             <TextView
                 android:text="@string/lekcja9"
@@ -223,14 +243,16 @@
                 android:layout_height="match_parent"
                 android:id="@+id/godzina_9"
                 android:textSize="24sp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:paddingLeft="16dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/lekcja_9"
                 android:textSize="18sp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:paddingRight="16dp" />
         </LinearLayout>
     </LinearLayout>
 

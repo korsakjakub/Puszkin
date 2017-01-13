@@ -5,26 +5,26 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="9723265739503"
+    timestamp="11006009464390"
     token="-416647866239221738"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="140" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="18" />
+        duration="0" />
     <task
         name="verifier"
-        duration="1" />
+        duration="0" />
 
     <artifact
-        location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
-        type="DEX" />
+        location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+        type="RESOURCES" />
 
     <build
         timestamp="3139733935317"
@@ -34,25 +34,31 @@
             type="MAIN" />
     </build>
     <build
-        timestamp="7377898366784"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
-            type="DEX" />
-    </build>
-    <build
-        timestamp="9118373840554"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
-            type="RESOURCES" />
-    </build>
-    <build
         timestamp="9723265739503"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
             type="DEX" />
+    </build>
+    <build
+        timestamp="10941092835939"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="11006009464390"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+            type="RESOURCES" />
     </build>
 
 </instant-run>

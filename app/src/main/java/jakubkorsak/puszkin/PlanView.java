@@ -1,8 +1,8 @@
 package jakubkorsak.puszkin;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -67,7 +67,11 @@ public class PlanView extends AppCompatActivity{
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-
+        /**
+         * biorę dzień tygodnia i wg. niego ustawiam domyślny tab
+         * więc kiedy użytkownik włączy plan otworzy mu się od razu
+         * plan na dzisiejszy dzień
+         */
         Date date = new Date();
         Calendar c = Calendar.getInstance();
         c.setTime(date);
@@ -81,17 +85,24 @@ public class PlanView extends AppCompatActivity{
 
 
     @Override
-    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-
-    }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
+    /*int[] lekcje = {
+            R.id.lekcja_0,
+            R.id.lekcja_1,
+            R.id.lekcja_2,
+            R.id.lekcja_3,
+            R.id.lekcja_4,
+            R.id.lekcja_5,
+            R.id.lekcja_6,
+            R.id.lekcja_7,
+            R.id.lekcja_8,
+            R.id.lekcja_9
+};*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -99,6 +110,19 @@ public class PlanView extends AppCompatActivity{
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent goToSettings = new Intent(PlanView.this, Settings.class);
+            startActivity(goToSettings);
+            return true;
+        } else if(id == R.id.action_download_page){
+
+          /*  View p = new Poniedzialek().getView();
+            String pon[] = new String[10];
+            if(p != null) {
+                for (int i = 0; i <= pon.length; i++) {
+                    pon[i] = ((TextView) p.findViewById(lekcje[i])).getText().toString();
+
+                }
+            }*/
             return true;
         }
 

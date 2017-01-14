@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 public class MainActivity extends AppCompatActivity {
 
     Button planSave;
@@ -29,11 +31,14 @@ public class MainActivity extends AppCompatActivity {
     int onBackCounter = 0;
 
     Toolbar toolbar;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -79,6 +84,13 @@ public class MainActivity extends AppCompatActivity {
         dzienniczek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "dzienniczek_button");
+                bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "dzienniczek");
+                bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "button");
+                mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
+
+
                 Intent intent = new Intent(MainActivity.this, DzienniczekView.class);
                 Bundle b = new Bundle();
                 b.putString(Sources.SENDER_ACTIVITY, Sources.TYPE_OF_WEB_VIEW[3]);

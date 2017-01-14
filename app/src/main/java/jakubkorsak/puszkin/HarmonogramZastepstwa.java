@@ -82,8 +82,10 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
                 }
                 words = Jsoup.clean(s
                                 .replaceAll("\\\\n", "\n")
+                                .replaceAll("<sup>", ":")
                                 .replaceAll("&nbsp;", " ")
                                 .replaceAll("drukuj", "")
+                                .replaceAll("\n\n\n", "\n")
                         , "", Whitelist.none(), new Document.OutputSettings().prettyPrint(false));
             } catch (Exception e) {
                 e.printStackTrace();

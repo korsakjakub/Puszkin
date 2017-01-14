@@ -46,4 +46,5 @@
     <string name="lekcja8">14:25–15:10</string>
     <string name="lekcja9">15:15–16:00</string>
     <string name="pobierz_strone">Pobierz stronę</string>
+    <string name="brak_internetu">Nie mam połączenia z internetem.</string>
 </resources>

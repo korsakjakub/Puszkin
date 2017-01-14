@@ -5,33 +5,57 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="3504313055193"
+    timestamp="27494673315039"
     token="-416647866239221738"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="347" />
+        duration="315" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="876" />
+        duration="63" />
     <task
         name="verifier"
-        duration="5" />
+        duration="1" />
 
     <artifact
-        location="/home/jakub/Documents/Projects/Puszkin/app/build/outputs/apk/app-debug.apk"
-        type="MAIN" />
+        location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
+        type="DEX" />
 
     <build
-        timestamp="3504313055193"
+        timestamp="20333435738435"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/home/jakub/Documents/Projects/Puszkin/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="26311640430639"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
+            type="DEX" />
+        <artifact
+            location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
+            type="DEX" />
+    </build>
+    <build
+        timestamp="26506697264053"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+            type="RESOURCES" />
+    </build>
+    <build
+        timestamp="27494673315039"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

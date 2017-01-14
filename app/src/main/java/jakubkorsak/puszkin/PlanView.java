@@ -2,6 +2,7 @@ package jakubkorsak.puszkin;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -28,6 +34,7 @@ public class PlanView extends AppCompatActivity{
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     private ViewPager mViewPager;
+    String title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +53,7 @@ public class PlanView extends AppCompatActivity{
             }
         });
         toolbar.setTitleTextColor(Color.WHITE);
-        String title = getIntent().getStringExtra(Sources.TAG);
+        title = getIntent().getStringExtra(Sources.TAG);
         /**
         zmienia tytuł toolbaru i zmienia wg. o1 -> 1A
          lub n1 -> jakieś imię lub s1 -> jakiś gabinet
@@ -91,7 +98,7 @@ public class PlanView extends AppCompatActivity{
         return true;
     }
 
-    /*int[] lekcje = {
+    int[] lekcje = {
             R.id.lekcja_0,
             R.id.lekcja_1,
             R.id.lekcja_2,
@@ -102,7 +109,7 @@ public class PlanView extends AppCompatActivity{
             R.id.lekcja_7,
             R.id.lekcja_8,
             R.id.lekcja_9
-};*/
+};
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -114,21 +121,40 @@ public class PlanView extends AppCompatActivity{
             startActivity(goToSettings);
             return true;
         } else if(id == R.id.action_download_page){
-
-          /*  View p = new Poniedzialek().getView();
-            String pon[] = new String[10];
-            if(p != null) {
-                for (int i = 0; i <= pon.length; i++) {
-                    pon[i] = ((TextView) p.findViewById(lekcje[i])).getText().toString();
-
-                }
-            }*/
+            new downloadPageInBackground().execute();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
+    public class downloadPageInBackground extends AsyncTask<Void, Void, Void> {
+
+        String p = "http://www.plan.1lo.gorzow.pl/plany/" + title + ".html";
+
+        @Override
+        protected Void doInBackground(Void... params) {
+
+            try {
+                Document doc = Jsoup.connect(p).get();
+                doc.outputSettings(new Document.OutputSettings().prettyPrint(false));
+                Elements s = doc.getElementsByClass("l").append("\n\n");
+                FileHandling.writeStringAsFile(s.text(), "zapisanaklasa", getApplicationContext());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+
+            String n = FileHandling.readFileAsString("zapisanaklasa", getApplicationContext());
+            Toast.makeText(PlanView.this, "Zapisano", Toast.LENGTH_SHORT).show();
+
+        }
+    }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 

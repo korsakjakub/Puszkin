@@ -3,6 +3,7 @@ package jakubkorsak.puszkin;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
@@ -13,6 +14,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 import java.io.File;
 import java.util.Arrays;
@@ -27,6 +32,7 @@ public class Settings extends AppCompatActivity {
     ImageView ostatniaKlasaImageView;
     ImageView twojaKlasaImageView;
     Button deleteAll;
+    String TextFromForm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +64,10 @@ public class Settings extends AppCompatActivity {
         zapisButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String TextFromForm = editText.getText().toString();
+                TextFromForm = editText.getText().toString();
                 if (Arrays.asList(Sources.klasy).contains(TextFromForm)) {
                     FileHandling.writeStringAsFile(TextFromForm, Sources.zrodla[1], getApplicationContext());
+                    new downloadPageInBackground().execute();
                     Toast.makeText(Settings.this, "Zapisano: " + TextFromForm, Toast.LENGTH_SHORT).show();
                     recreate();
                 }else{
@@ -124,6 +131,37 @@ public class Settings extends AppCompatActivity {
             twojaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_online));
         }else{
             twojaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_invisible));
+        }
+    }
+
+
+
+    public class downloadPageInBackground extends AsyncTask<Void, Void, Void> {
+
+        String p = "http://www.plan.1lo.gorzow.pl/plany/" +
+                Sources.getID(TextFromForm, "o", Sources.klasy) +
+                ".html";
+
+        @Override
+        protected Void doInBackground(Void... params) {
+
+            try {
+                Document doc = Jsoup.connect(p).get();
+                doc.outputSettings(new Document.OutputSettings().prettyPrint(false));
+                Elements s = doc.getElementsByClass("l").append("\n\n");
+                FileHandling.writeStringAsFile(s.text(), "zapisanaklasa", getApplicationContext());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+
+            String n = FileHandling.readFileAsString("zapisanaklasa", getApplicationContext());
+
         }
     }
 }

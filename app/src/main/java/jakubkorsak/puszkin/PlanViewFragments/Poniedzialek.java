@@ -89,27 +89,30 @@ public class Poniedzialek extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            if(lekcjeArray.size()>=1)
-            lekcja0.setText(lekcjeArray.get(0).replaceAll("-", ""));
-            if(lekcjeArray.size()>=6)
-            lekcja1.setText(lekcjeArray.get(5).replaceAll("-", ""));
-            if(lekcjeArray.size()>=11)
-            lekcja2.setText(lekcjeArray.get(10).replaceAll("-", ""));
-            if(lekcjeArray.size()>=16)
-            lekcja3.setText(lekcjeArray.get(15).replaceAll("-", ""));
-            if(lekcjeArray.size()>=21)
-            lekcja4.setText(lekcjeArray.get(20).replaceAll("-", ""));
-            if(lekcjeArray.size()>=26)
-            lekcja5.setText(lekcjeArray.get(25).replaceAll("-", ""));
-            if(lekcjeArray.size()>=31)
-                lekcja6.setText(lekcjeArray.get(30).replaceAll("-", ""));
-            if(lekcjeArray.size()>=36)
-                lekcja7.setText(lekcjeArray.get(35).replaceAll("-", ""));
-            if(lekcjeArray.size()>=41)
-                lekcja8.setText(lekcjeArray.get(40).replaceAll("-", ""));
-            if(lekcjeArray.size()>=46)
-                lekcja9.setText(lekcjeArray.get(45).replaceAll("-", ""));
-
+            try {
+                if (lekcjeArray.size() >= 1)
+                    lekcja0.setText(lekcjeArray.get(0).replaceAll("-", ""));
+                if (lekcjeArray.size() >= 6)
+                    lekcja1.setText(lekcjeArray.get(5).replaceAll("-", ""));
+                if (lekcjeArray.size() >= 11)
+                    lekcja2.setText(lekcjeArray.get(10).replaceAll("-", ""));
+                if (lekcjeArray.size() >= 16)
+                    lekcja3.setText(lekcjeArray.get(15).replaceAll("-", ""));
+                if (lekcjeArray.size() >= 21)
+                    lekcja4.setText(lekcjeArray.get(20).replaceAll("-", ""));
+                if (lekcjeArray.size() >= 26)
+                    lekcja5.setText(lekcjeArray.get(25).replaceAll("-", ""));
+                if (lekcjeArray.size() >= 31)
+                    lekcja6.setText(lekcjeArray.get(30).replaceAll("-", ""));
+                if (lekcjeArray.size() >= 36)
+                    lekcja7.setText(lekcjeArray.get(35).replaceAll("-", ""));
+                if (lekcjeArray.size() >= 41)
+                    lekcja8.setText(lekcjeArray.get(40).replaceAll("-", ""));
+                if (lekcjeArray.size() >= 46)
+                    lekcja9.setText(lekcjeArray.get(45).replaceAll("-", ""));
+            }catch (NullPointerException ignored){
+                lekcja0.setText(R.string.brak_internetu);
+            }
         }
     }
 }

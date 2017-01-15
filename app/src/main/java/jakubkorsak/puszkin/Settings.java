@@ -17,12 +17,8 @@ import android.widget.Toast;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.util.Arrays;
 
 public class Settings extends AppCompatActivity {
@@ -68,9 +64,11 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 TextFromForm = editText.getText().toString();
+                FileHandling.writeStringAsFile(TextFromForm, Sources.TWOJA_KLASA_SAVED, getApplicationContext());
                 if (Arrays.asList(Sources.klasy).contains(TextFromForm)) {
-                    FileHandling.writeStringAsFile(TextFromForm, Sources.zrodla[1], getApplicationContext());
                     new downloadPageInBackground().execute();
+                    Toast.makeText(Settings.this, "Zapisano: " + TextFromForm.toUpperCase(), Toast.LENGTH_SHORT).show();
+                    FileHandling.writeStringAsFile(TextFromForm, Sources.zrodla[1], getApplicationContext());
                     recreate();
                 }else{
                     Toast.makeText(Settings.this, "Nie ma takiej klasy. Pamiętaj o formacie \"1a\"", Toast.LENGTH_SHORT).show();
@@ -78,13 +76,20 @@ public class Settings extends AppCompatActivity {
             }
         });
 
+
         deleteAll = (Button)findViewById(R.id.delete_all);
         deleteAll.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+
+                String file = getFilesDir() +  "/ZAPIS_" +
+                        FileHandling.readFileAsString(Sources.TWOJA_KLASA_SAVED,
+                                getApplicationContext()).toUpperCase();
+
+                FileHandling.writeStringAsFile("", file, getApplicationContext());
                 FileHandling.writeStringAsFile("", Sources.zrodla[0], getApplicationContext());
                 FileHandling.writeStringAsFile("", Sources.zrodla[1], getApplicationContext());
-                Toast.makeText(Settings.this, "Usunięto: " + Sources.zrodla[0] + ", " + Sources.zrodla[1], Toast.LENGTH_SHORT).show();
+                Toast.makeText(Settings.this, "Usunięto", Toast.LENGTH_SHORT).show();
                 recreate();
             }
         });
@@ -143,39 +148,17 @@ public class Settings extends AppCompatActivity {
         String p = "http://www.plan.1lo.gorzow.pl/plany/" +
                 Sources.getID(TextFromForm, "o", Sources.klasy) +
                 ".html";
-        Elements s;
 
         @Override
         protected Void doInBackground(Void... params) {
-
             try {
                 Document doc = Jsoup.connect(p).get();
-                doc.outputSettings(new Document.OutputSettings().prettyPrint(false));
-                s = doc.getElementsByClass("l").append("\n\n");
-                FileHandling.writeStringAsFile(s.text(), "zapisanaklasa", getApplicationContext());
+                FileHandling.writeStringAsFile(doc.html(), "ZAPIS_" + TextFromForm.toUpperCase(), getApplicationContext());
             } catch (Exception e) {
                 e.printStackTrace();
             }
             return null;
         }
 
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-
-            /**
-             * write arraylist to file
-             */
-            File file = new File(getFilesDir(), "t.tmp");
-            try {
-                FileOutputStream fos = new FileOutputStream(file);
-                ObjectOutputStream oos = new ObjectOutputStream(fos);
-                oos.writeObject(s);
-                oos.close();
-                Toast.makeText(Settings.this, "Zapisano: " + TextFromForm, Toast.LENGTH_SHORT).show();
-            }catch (IOException e){
-                Toast.makeText(Settings.this, "Błąd: "+ e , Toast.LENGTH_SHORT).show();
-            }
-        }
     }
 }

@@ -13,6 +13,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -71,16 +72,23 @@ public class PlanViewFragment extends Fragment {
     }
 
 
-
     public class GetPlanInBackground extends AsyncTask<Void, Void, Void> {
 
         ArrayList<String> lekcjeArray;
+        String fileName = "ZAPIS_" + Sources.getIndex(h, "o", Sources.index, Sources.klasy).toUpperCase();
+        File saved = new File(getActivity().getFilesDir(), fileName);
 
         @Override
         protected Void doInBackground(Void... params) {
-
+            Document doc;
             try {
-                Document doc = Jsoup.connect(p).get();
+                if(!saved.exists()) {
+                    doc = Jsoup.connect(p).get();
+                }
+                else{
+                    doc = Jsoup.parse(FileHandling.
+                            readFileAsString(fileName, getActivity().getApplicationContext()));
+                }
                 doc.outputSettings(new Document.OutputSettings().prettyPrint(false));
                 Elements s = doc.getElementsByClass("l");
                 lekcjeArray = new ArrayList<>(s.size());

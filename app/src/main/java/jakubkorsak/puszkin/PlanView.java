@@ -14,19 +14,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.File;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -99,19 +92,6 @@ public class PlanView extends AppCompatActivity{
         return true;
     }
 
-    int[] lekcje = {
-            R.id.lekcja_0,
-            R.id.lekcja_1,
-            R.id.lekcja_2,
-            R.id.lekcja_3,
-            R.id.lekcja_4,
-            R.id.lekcja_5,
-            R.id.lekcja_6,
-            R.id.lekcja_7,
-            R.id.lekcja_8,
-            R.id.lekcja_9
-};
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -129,22 +109,27 @@ public class PlanView extends AppCompatActivity{
         return super.onOptionsItemSelected(item);
     }
 
-    public class downloadPageInBackground extends AsyncTask<Void, Void, Void>
-            implements Serializable{
+    public class downloadPageInBackground extends AsyncTask<Void, Void, Void>{
 
         String p = "http://www.plan.1lo.gorzow.pl/plany/" + title + ".html";
-        Elements s;
 
         @Override
         protected Void doInBackground(Void... params) {
+            String fileName = "ZAPIS_" + Sources.getIndex(title, "o", Sources.index, Sources.klasy).toUpperCase();
+            File file = new File(getFilesDir(), fileName);
 
-            try {
-                Document doc = Jsoup.connect(p).get();
-                doc.outputSettings(new Document.OutputSettings().prettyPrint(false));
-                s = doc.getElementsByClass("l").append("\n\n");
-                //FileHandling.writeStringAsFile(s.text(), "zapisanaklasa", getApplicationContext());
-            } catch (Exception e) {
-                e.printStackTrace();
+            boolean fileIsntEmpty = !FileHandling.readFileAsString(fileName, getApplicationContext()).equals("");
+
+            if(!file.exists() && fileIsntEmpty) {
+                try {
+                    Document doc = Jsoup.connect(p).get();
+                    FileHandling.writeStringAsFile(
+                            doc.html(),
+                            fileName,
+                            getApplicationContext());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
             return null;
         }
@@ -153,28 +138,6 @@ public class PlanView extends AppCompatActivity{
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
-            /**
-             * write arraylist to file
-             */
-            try {
-                FileOutputStream fos = new FileOutputStream("t.tmp");
-                ObjectOutputStream oos = new ObjectOutputStream(fos);
-                oos.writeObject(s);
-                oos.close();
-            }catch (IOException ignored){}
-            Toast.makeText(PlanView.this, "Zapisano", Toast.LENGTH_SHORT).show();
-
-            /**
-             * read arraylist from file
-             */
-            try {
-                FileInputStream fis = new FileInputStream("t.tmp");
-                ObjectInputStream ois = new ObjectInputStream(fis);
-                ArrayList a = (ArrayList) ois.readObject();
-                ois.close();
-            }catch (IOException ignored){} catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
         }
     }
 

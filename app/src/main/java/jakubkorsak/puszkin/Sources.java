@@ -10,6 +10,8 @@ public class Sources {
 
     public static String TAG = "tag";
 
+    static String TWOJA_KLASA_SAVED = "twoja_klasa_saved";
+
     public static String Nauczyciele[] = {
             "Ewa Andrzejewska-Sidorowicz",
             "Marta Bagińska",

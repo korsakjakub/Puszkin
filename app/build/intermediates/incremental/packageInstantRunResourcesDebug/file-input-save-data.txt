@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Jan 15 16:55:14 CET 2017
+#Sun Jan 15 17:57:12 CET 2017
 210.set=ANDROID_RESOURCE
 282.file=/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/resources-debug.ap_/resources.arsc
 14.set=ANDROID_RESOURCE

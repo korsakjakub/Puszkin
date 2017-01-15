@@ -20,6 +20,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.Arrays;
 
 public class Settings extends AppCompatActivity {
@@ -68,7 +71,6 @@ public class Settings extends AppCompatActivity {
                 if (Arrays.asList(Sources.klasy).contains(TextFromForm)) {
                     FileHandling.writeStringAsFile(TextFromForm, Sources.zrodla[1], getApplicationContext());
                     new downloadPageInBackground().execute();
-                    Toast.makeText(Settings.this, "Zapisano: " + TextFromForm, Toast.LENGTH_SHORT).show();
                     recreate();
                 }else{
                     Toast.makeText(Settings.this, "Nie ma takiej klasy. Pamiętaj o formacie \"1a\"", Toast.LENGTH_SHORT).show();
@@ -141,6 +143,7 @@ public class Settings extends AppCompatActivity {
         String p = "http://www.plan.1lo.gorzow.pl/plany/" +
                 Sources.getID(TextFromForm, "o", Sources.klasy) +
                 ".html";
+        Elements s;
 
         @Override
         protected Void doInBackground(Void... params) {
@@ -148,7 +151,7 @@ public class Settings extends AppCompatActivity {
             try {
                 Document doc = Jsoup.connect(p).get();
                 doc.outputSettings(new Document.OutputSettings().prettyPrint(false));
-                Elements s = doc.getElementsByClass("l").append("\n\n");
+                s = doc.getElementsByClass("l").append("\n\n");
                 FileHandling.writeStringAsFile(s.text(), "zapisanaklasa", getApplicationContext());
             } catch (Exception e) {
                 e.printStackTrace();
@@ -160,8 +163,19 @@ public class Settings extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
-            String n = FileHandling.readFileAsString("zapisanaklasa", getApplicationContext());
-
+            /**
+             * write arraylist to file
+             */
+            File file = new File(getFilesDir(), "t.tmp");
+            try {
+                FileOutputStream fos = new FileOutputStream(file);
+                ObjectOutputStream oos = new ObjectOutputStream(fos);
+                oos.writeObject(s);
+                oos.close();
+                Toast.makeText(Settings.this, "Zapisano: " + TextFromForm, Toast.LENGTH_SHORT).show();
+            }catch (IOException e){
+                Toast.makeText(Settings.this, "Błąd: "+ e , Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

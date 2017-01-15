@@ -1,4 +1,5 @@
-package jakubkorsak.puszkin.PlanViewFragments;
+package jakubkorsak.puszkin;
+
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -14,14 +15,10 @@ import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
 
-import jakubkorsak.puszkin.R;
-import jakubkorsak.puszkin.Sources;
-
 /**
- * Created by jakub on 11.01.17.
+ * A simple {@link Fragment} subclass.
  */
-
-public class Piatek extends Fragment {
+public class PlanViewFragment extends Fragment {
 
 
     String p;
@@ -37,22 +34,23 @@ public class Piatek extends Fragment {
     TextView lekcja8;
     TextView lekcja9;
 
-    public static Piatek newInstance(int index){
-        Piatek p = new Piatek();
+
+    public static PlanViewFragment newInstance(int index){
+        PlanViewFragment p = new PlanViewFragment();
         Bundle args = new Bundle();
         args.putInt("index", index);
         p.setArguments(args);
-
         return p;
     }
-    public int getShownIndex() {
-        return getArguments().getInt("index", 0);
+
+    public int getIndex(){
+        return getArguments().getInt("index");
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_plan_view, container, false);
 
         lekcja0 = (TextView)view.findViewById(R.id.lekcja_0);
@@ -68,16 +66,18 @@ public class Piatek extends Fragment {
 
         h = getActivity().getIntent().getExtras().getString(Sources.TAG);
         p = "http://www.plan.1lo.gorzow.pl/plany/" + h + ".html";
-        new doIt().execute();
+        new GetPlanInBackground().execute();
         return view;
     }
-    public class doIt extends AsyncTask<Void, Void, Void> {
+
+
+
+    public class GetPlanInBackground extends AsyncTask<Void, Void, Void> {
 
         ArrayList<String> lekcjeArray;
 
         @Override
         protected Void doInBackground(Void... params) {
-
 
             try {
                 Document doc = Jsoup.connect(p).get();
@@ -96,28 +96,44 @@ public class Piatek extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+            int planOperator = 0;
+            switch(getIndex()){
+                case 0:
+                    break;
+                case 1:
+                    planOperator+=1;
+                    break;
+                case 2:
+                    planOperator+=2;
+                    break;
+                case 3:
+                    planOperator+=3;
+                    break;
+                case 4:
+                    planOperator+=4;
+                    break;
+            }
             try {
-                if (lekcjeArray.size() >= 5)
-                    lekcja0.setText(lekcjeArray.get(4).replaceAll("-", ""));
-                if (lekcjeArray.size() >= 10)
-                    lekcja1.setText(lekcjeArray.get(9).replaceAll("-", ""));
-                if (lekcjeArray.size() >= 15)
-                    lekcja2.setText(lekcjeArray.get(14).replaceAll("-", ""));
-                if (lekcjeArray.size() >= 20)
-                    lekcja3.setText(lekcjeArray.get(19).replaceAll("-", ""));
-                if (lekcjeArray.size() >= 25)
-                    lekcja4.setText(lekcjeArray.get(24).replaceAll("-", ""));
-                if (lekcjeArray.size() >= 30)
-                    lekcja5.setText(lekcjeArray.get(29).replaceAll("-", ""));
-                if (lekcjeArray.size() >= 35)
-                    lekcja6.setText(lekcjeArray.get(34).replaceAll("-", ""));
-                if (lekcjeArray.size() >= 40)
-                    lekcja7.setText(lekcjeArray.get(39).replaceAll("-", ""));
-                if (lekcjeArray.size() >= 45)
-                    lekcja8.setText(lekcjeArray.get(44).replaceAll("-", ""));
-
-                if (lekcjeArray.size() >= 50)
-                    lekcja9.setText(lekcjeArray.get(49).replaceAll("-", ""));
+                if (lekcjeArray.size() >= planOperator + 1)
+                    lekcja0.setText(lekcjeArray.get(planOperator).replaceAll("-", ""));
+                if (lekcjeArray.size() >= planOperator + 6)
+                    lekcja1.setText(lekcjeArray.get(planOperator + 5).replaceAll("-", ""));
+                if (lekcjeArray.size() >= planOperator + 11)
+                    lekcja2.setText(lekcjeArray.get(planOperator + 10).replaceAll("-", ""));
+                if (lekcjeArray.size() >= planOperator + 16)
+                    lekcja3.setText(lekcjeArray.get(planOperator + 15).replaceAll("-", ""));
+                if (lekcjeArray.size() >= planOperator + 21)
+                    lekcja4.setText(lekcjeArray.get(planOperator + 20).replaceAll("-", ""));
+                if (lekcjeArray.size() >= planOperator + 26)
+                    lekcja5.setText(lekcjeArray.get(planOperator + 25).replaceAll("-", ""));
+                if (lekcjeArray.size() >= planOperator + 31)
+                    lekcja6.setText(lekcjeArray.get(planOperator + 30).replaceAll("-", ""));
+                if (lekcjeArray.size() >= planOperator + 36)
+                    lekcja7.setText(lekcjeArray.get(planOperator + 35).replaceAll("-", ""));
+                if (lekcjeArray.size() >= planOperator + 41)
+                    lekcja8.setText(lekcjeArray.get(planOperator + 40).replaceAll("-", ""));
+                if (lekcjeArray.size() >= planOperator + 46)
+                    lekcja9.setText(lekcjeArray.get(planOperator + 45).replaceAll("-", ""));
             }catch (NullPointerException ignored){
                 lekcja0.setText(R.string.brak_internetu);
             }

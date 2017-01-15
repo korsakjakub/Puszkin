@@ -47,4 +47,7 @@
     <string name="lekcja9">15:15–16:00</string>
     <string name="pobierz_strone">Pobierz stronę</string>
     <string name="brak_internetu">Nie mam połączenia z internetem.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

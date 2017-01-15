@@ -20,14 +20,15 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-
-import jakubkorsak.puszkin.PlanViewFragments.Czwartek;
-import jakubkorsak.puszkin.PlanViewFragments.Piatek;
-import jakubkorsak.puszkin.PlanViewFragments.Poniedzialek;
-import jakubkorsak.puszkin.PlanViewFragments.Sroda;
-import jakubkorsak.puszkin.PlanViewFragments.Wtorek;
 
 public class PlanView extends AppCompatActivity{
 
@@ -128,9 +129,11 @@ public class PlanView extends AppCompatActivity{
         return super.onOptionsItemSelected(item);
     }
 
-    public class downloadPageInBackground extends AsyncTask<Void, Void, Void> {
+    public class downloadPageInBackground extends AsyncTask<Void, Void, Void>
+            implements Serializable{
 
         String p = "http://www.plan.1lo.gorzow.pl/plany/" + title + ".html";
+        Elements s;
 
         @Override
         protected Void doInBackground(Void... params) {
@@ -138,8 +141,8 @@ public class PlanView extends AppCompatActivity{
             try {
                 Document doc = Jsoup.connect(p).get();
                 doc.outputSettings(new Document.OutputSettings().prettyPrint(false));
-                Elements s = doc.getElementsByClass("l").append("\n\n");
-                FileHandling.writeStringAsFile(s.text(), "zapisanaklasa", getApplicationContext());
+                s = doc.getElementsByClass("l").append("\n\n");
+                //FileHandling.writeStringAsFile(s.text(), "zapisanaklasa", getApplicationContext());
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -150,9 +153,28 @@ public class PlanView extends AppCompatActivity{
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
-            String n = FileHandling.readFileAsString("zapisanaklasa", getApplicationContext());
+            /**
+             * write arraylist to file
+             */
+            try {
+                FileOutputStream fos = new FileOutputStream("t.tmp");
+                ObjectOutputStream oos = new ObjectOutputStream(fos);
+                oos.writeObject(s);
+                oos.close();
+            }catch (IOException ignored){}
             Toast.makeText(PlanView.this, "Zapisano", Toast.LENGTH_SHORT).show();
 
+            /**
+             * read arraylist from file
+             */
+            try {
+                FileInputStream fis = new FileInputStream("t.tmp");
+                ObjectInputStream ois = new ObjectInputStream(fis);
+                ArrayList a = (ArrayList) ois.readObject();
+                ois.close();
+            }catch (IOException ignored){} catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -166,15 +188,15 @@ public class PlanView extends AppCompatActivity{
         public Fragment getItem(int position) {
             switch (position){
                 case 0:
-                    return Poniedzialek.newInstance(0);
+                    return PlanViewFragment.newInstance(0);
                 case 1:
-                    return Wtorek.newInstance(1);
+                    return PlanViewFragment.newInstance(1);
                 case 2:
-                    return Sroda.newInstance(2);
+                    return PlanViewFragment.newInstance(2);
                 case 3:
-                    return Czwartek.newInstance(3);
+                    return PlanViewFragment.newInstance(3);
                 case 4:
-                    return Piatek.newInstance(4);
+                    return PlanViewFragment.newInstance(4);
                 default:
                     return null;
             }

@@ -13,8 +13,8 @@ import android.webkit.WebViewClient;
 
 public class DzienniczekView extends AppCompatActivity {
 
-    FloatingActionButton fab;
-    WebView w;
+    FloatingActionButton floatingActionButton;
+    WebView webView;
     String path;
 
 
@@ -22,24 +22,25 @@ public class DzienniczekView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view);
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            fab.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#b53f3f")));
+            floatingActionButton.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#b53f3f")));
         }
-        w = (WebView) findViewById(R.id.w);
-        w.setWebViewClient(new WebViewClient());
-        WebSettings s = w.getSettings();
-        s.setJavaScriptEnabled(true);
-        s.setBuiltInZoomControls(true);
-        s.setDisplayZoomControls(false);
+        webView = (WebView) findViewById(R.id.w);
+        webView.setWebViewClient(new WebViewClient());
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        //To włącza funkcjonalność zoomu pinch-to-zoom
+        webSettings.setBuiltInZoomControls(true);
+        //To wyłącza brzydkie przyciski sterujące zoomem
+        webSettings.setDisplayZoomControls(false);
             path = "http://aplikacje.vulcan.pl/dziennik/00081/dzienniczek.aspx?view=Oceny";
-
-        w.loadUrl(path);
+        webView.loadUrl(path);
     }
 }

@@ -13,8 +13,8 @@ import org.jsoup.safety.Whitelist;
 
 public class HarmonogramZastepstwa extends AppCompatActivity {
 
-    String p;
-    TextView t;
+    String path;
+    TextView textView;
     String senderActivity;
 
     @Override
@@ -35,52 +35,64 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
 
 
 
-        t = (TextView)findViewById(R.id.textView);
+        textView = (TextView)findViewById(R.id.textView);
 
         senderActivity = getIntent().getExtras().getString(Sources.SENDER_ACTIVITY);
         assert senderActivity != null;
         switch (senderActivity) {
             case "harmonogram":
-                p = "http://www.zso1.edu.gorzow.pl/?lng=1&view=k&k=23";
+                path = "http://www.zso1.edu.gorzow.pl/?lng=1&view=k&k=23";
                 toolbar.setTitle("Harmonogram");
-                new doIt().execute();
+                new GetPlanInBackground().execute();
                 break;
             case "zastepstwa":
-                p = "http://www.zso1.edu.gorzow.pl/?lng=1&view=k&k=20";
+                path = "http://www.zso1.edu.gorzow.pl/?lng=1&view=k&k=20";
                 toolbar.setTitle("Zastępstwa");
-                new doIt().execute();
+                new GetPlanInBackground().execute();
                 break;
         }
     }
 
 
-    public class doIt extends AsyncTask<Void, Void, Void> {
-        String words;
-        String s;
+    public class GetPlanInBackground extends AsyncTask<Void, Void, Void> {
+        String taskOutput;
+        String containerString;
 
         @Override
         protected Void doInBackground(Void... params) {
 
             try {
-                Document doc = Jsoup.connect(p).get();
-                doc.outputSettings(new Document.OutputSettings().prettyPrint(false));
-                doc.select("br").append("\\n");
-                doc.select("p").prepend("\\n\\n");
+                //pobiera Obiekt docoment z adresu path
+                Document document = Jsoup.connect(path).get();
+                //prettyPrint(false) pozostawia whitespaces
+                document.outputSettings(new Document.OutputSettings().prettyPrint(false));
+                //zaznacza klasy "br" i dodaje na końcu każdej "\\n"
+                document.select("br").append("\\n");
+                //to samo z klasami "path", ale dodaje na początku
+                document.select("path").prepend("\\n\\n");
+
 
                 switch (senderActivity) {
+                    //jeżeli użytkownik nacisnął zastępstwa
                     case "zastepstwa":
-                        s = doc.getElementsContainingText("Zastępstwa")
+                        //wyszukuje wszystkie obiekty zawierające frazę "Zastępstwa", zaznacza
+                        //w tych obszarach klasy "tekst" i zamienia pierwszy przypadek "Zastępstwa"
+                        //na pusty element <- na stronie internetowej napis jest zawsze 2 razy.
+                        containerString = document.getElementsContainingText("Zastępstwa")
                                 .select("div.tekst")
                                 .html().replaceFirst("Zastępstwa", "");
                         break;
 
                     case "harmonogram":
-                        s = doc.getElementsContainingText("Harmonogram")
-                                .select("p")
+                        //jak wyżej, ale zaznacza obiekty "path", ponieważ 2 bliźniacze strony
+                        //internetowe jakimś cudem mogą mieć zupełnie różnie wprowadzane dane smh...
+                        containerString = document.getElementsContainingText("Harmonogram")
+                                .select("path")
                                 .html();
                         break;
                 }
-                words = Jsoup.clean(s
+                //Tutaj zarządzane są wszystkie whitespaces i usuwam napis "drukuj" bo nie pasuje do kontekstu
+                taskOutput = Jsoup.clean(containerString
                                 .replaceAll("\\\\n", "\n")
                                 .replaceAll("<sup>", ":")
                                 .replaceAll("&nbsp;", " ")
@@ -89,7 +101,8 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
                         , "", Whitelist.none(), new Document.OutputSettings().prettyPrint(false));
             } catch (Exception e) {
                 e.printStackTrace();
-                words = e.toString();
+                //w razie errorów użytkownik przynajmniej dowie się co było nie tak
+                taskOutput = e.toString();
             }
             return null;
         }
@@ -97,8 +110,8 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-
-            t.setText(words);
+            //jeśli wszystko się udało nasze textView dostaje nowy kontent w postaci taskOutput
+            textView.setText(taskOutput);
         }
     }
 

@@ -197,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
      * Sprawdza wartości nazw i tagów przycisków po czym odpowiednio ustawia ich widoczność
      *
      * @param button   przycisk który ma być sprawdzony
-     * @param textView tekst który znajduje się w jednym layoucie z przyciskiem
+     * @param textView tekst który znajduje się webView jednym layoucie z przyciskiem
      * @param source   String który mówi funkcji o który przycisk chodzi
      */
     private void setTextAndTagAndSetVisibilityOfTheButtonsView(Button button, TextView textView, String source) {

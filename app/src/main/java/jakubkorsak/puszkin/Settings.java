@@ -81,14 +81,21 @@ public class Settings extends AppCompatActivity {
         deleteAll.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-
-                String file = getFilesDir() +  "/ZAPIS_" +
-                        FileHandling.readFileAsString(Sources.TWOJA_KLASA_SAVED,
-                                getApplicationContext()).toUpperCase();
-
-                FileHandling.writeStringAsFile("", file, getApplicationContext());
-                FileHandling.writeStringAsFile("", Sources.zrodla[0], getApplicationContext());
-                FileHandling.writeStringAsFile("", Sources.zrodla[1], getApplicationContext());
+                String twojaZapisana = "";
+                try {
+                    twojaZapisana = "ZAPIS_" + Sources.getID(FileHandling.readFileAsString(Sources.TWOJA_KLASA_SAVED,
+                            getApplicationContext()), "o", Sources.klasy);
+                }catch (IndexOutOfBoundsException ignored){
+                }
+                if((new File(getFilesDir(), twojaZapisana)).exists()){
+                    deleteFile(twojaZapisana);
+                }
+                if((new File(getFilesDir(), Sources.zrodla[0])).exists()) {
+                    deleteFile(Sources.zrodla[0]);
+                }
+                if((new File(getFilesDir(), Sources.zrodla[1])).exists()){
+                    deleteFile(Sources.zrodla[1]);
+                }
                 Toast.makeText(Settings.this, "Usunięto", Toast.LENGTH_SHORT).show();
                 recreate();
             }
@@ -109,7 +116,8 @@ public class Settings extends AppCompatActivity {
             public void onClick(View v) {
                 new AlertDialog.Builder(Settings.this)
                         .setNeutralButton("OK", null)
-                        .setMessage("Wersja: " + version + "\n\nFeedback: jakub.korsak@puszkin.eu")
+                        .setMessage("Wersja: " + version + "\nTwórca: Jakub Korsak" +
+                                "\nFeedback: jakub.korsak@puszkin.eu")
                         .setTitle("Info")
                         .show();
             }
@@ -127,14 +135,20 @@ public class Settings extends AppCompatActivity {
      * ImageView
      */
     private void checkIfFilesNonNull(){
+        File fileTwojaZapisana = new File(getFilesDir(), "");
+        try {
+            fileTwojaZapisana = new File(getFilesDir() + "/" + "ZAPIS_" + Sources.getID(FileHandling.readFileAsString(Sources.zrodla[1],
+                    getApplicationContext()), "o", Sources.klasy));
+        }catch (IndexOutOfBoundsException ignored){
+        }
         File fileOstatniaKlasa = new File(getFilesDir() + "/" + Sources.zrodla[0]);
         File fileTwojaKlasa = new File(getFilesDir() + "/" + Sources.zrodla[1]);
-        if (fileOstatniaKlasa.exists() && FileHandling.readFileAsString(Sources.zrodla[0], getApplicationContext()) != "") {
+        if (fileOstatniaKlasa.exists()) {
             ostatniaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_online));
         }else{
             ostatniaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_invisible));
         }
-        if (fileTwojaKlasa.exists() && FileHandling.readFileAsString(Sources.zrodla[1], getApplicationContext()) != "") {
+        if (fileTwojaKlasa.exists() && fileTwojaZapisana.exists()) {
             twojaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_online));
         }else{
             twojaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_invisible));
@@ -142,18 +156,18 @@ public class Settings extends AppCompatActivity {
     }
 
 
-
+    //pobiera stronę wskazaną z EditText
     public class downloadPageInBackground extends AsyncTask<Void, Void, Void> {
 
         String p = "http://www.plan.1lo.gorzow.pl/plany/" +
                 Sources.getID(TextFromForm, "o", Sources.klasy) +
                 ".html";
-
         @Override
         protected Void doInBackground(Void... params) {
             try {
                 Document doc = Jsoup.connect(p).get();
-                FileHandling.writeStringAsFile(doc.html(), "ZAPIS_" + TextFromForm.toUpperCase(), getApplicationContext());
+                FileHandling.writeStringAsFile(doc.html(), "ZAPIS_" + Sources.getID(TextFromForm, "o", Sources.klasy),
+                        getApplicationContext());
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -626,6 +626,7 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item name="action_bar_activity_content" type="id"/>
@@ -737,7 +738,6 @@
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCphmItPXXZfK2Hj3wxWvepr39kn6H4gB4</string>
     <string name="google_storage_bucket" translatable="false">puszkin-39d78.appspot.com</string>
     <string name="harmonogram">Harmonogram</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="i">I</string>
     <string name="info">Info</string>
     <string name="lekcja0">7:15–8:00</string>
@@ -759,9 +759,11 @@
     <string name="path_password_strike_through">M3.27,4.27 L19.74,20.74</string>
     <string name="plan_lekcji">Plan Lekcji</string>
     <string name="pobierz_strone">Pobierz stronę</string>
+    <string name="pokaz_zapisane">Pokaż zapisane</string>
     <string name="search_menu_title">Search</string>
     <string name="stan_zapisow">Stan zapisów</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="szara_kulka">szara kulka</string>
     <string name="title_activity_zastepstwa">Zastepstwa</string>
     <string name="twoja_klasa">Twoja klasa</string>
     <string name="usun_wszystkie_zapisane">Usuń wszystkie zapisane</string>

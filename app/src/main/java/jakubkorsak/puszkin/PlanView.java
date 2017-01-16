@@ -28,7 +28,7 @@ public class PlanView extends AppCompatActivity{
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     private ViewPager mViewPager;
-    String title;
+    String pathParameter;
     Toolbar toolbar;
 
     @Override
@@ -48,20 +48,20 @@ public class PlanView extends AppCompatActivity{
             }
         });
         toolbar.setTitleTextColor(Color.WHITE);
-        title = getIntent().getStringExtra(Sources.TAG);
+        pathParameter = getIntent().getStringExtra(Sources.TAG);
         /**
         zmienia tytuł toolbaru i zmienia wg. o1 -> 1A
          lub n1 -> jakieś imię lub s1 -> jakiś gabinet
          */
-        if(title.contains("o")) {
+        if(pathParameter.contains("o")) {
             toolbar.setTitle("Klasa " + Sources.getIndex
-                    (title, "o", Sources.index, Sources.klasy).toUpperCase());
-        }else if(title.contains("n")){
+                    (pathParameter, "o", Sources.index, Sources.klasy).toUpperCase());
+        }else if(pathParameter.contains("n")){
             toolbar.setTitle(Sources.getIndex
-                    (title, "n", Sources.index, Sources.Nauczyciele).toUpperCase());
-        }else if(title.contains("s")){
+                    (pathParameter, "n", Sources.index, Sources.Nauczyciele).toUpperCase());
+        }else if(pathParameter.contains("s")){
             toolbar.setTitle(Sources.getIndex
-                    (title, "s", Sources.index, Sources.Gabinety).toUpperCase());
+                    (pathParameter, "s", Sources.index, Sources.Gabinety).toUpperCase());
         }
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
@@ -93,11 +93,15 @@ public class PlanView extends AppCompatActivity{
         return true;
     }
 
+    /**
+     * sprawdza który item został wybrany i wg. tego przyporządkowuje onClickListener
+     * @param item pozycja z menu
+     * @return true
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent goToSettings = new Intent(PlanView.this, Settings.class);
             startActivity(goToSettings);
@@ -106,19 +110,22 @@ public class PlanView extends AppCompatActivity{
             new downloadPageInBackground().execute();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
+    //klasa zajmująca się pobraniem strony do trybu offline
+    //wywoływana przez onClickListener przycisku z menu
     public class downloadPageInBackground extends AsyncTask<Void, Void, Void>{
 
-        String p = "http://www.plan.1lo.gorzow.pl/plany/" + title + ".html";
+        String p = "http://www.plan.1lo.gorzow.pl/plany/" + pathParameter + ".html";
 
         @Override
         protected Void doInBackground(Void... params) {
-            String fileName = "ZAPIS_" + Sources.getIndex(title, "o", Sources.index, Sources.klasy).toUpperCase();
+            //plik do którego będzie zapisywane
+            String fileName = "ZAPIS_" + pathParameter;
             File file = new File(getFilesDir(), fileName);
 
+            //jeśli nie istnieje ściągnąć z JSoup
             if(!file.exists()) {
                 try {
                     Document doc = Jsoup.connect(p).get();
@@ -136,7 +143,10 @@ public class PlanView extends AppCompatActivity{
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-
+            /**
+             * TODO: interface to give the fragment a callback about downloaded page and whether it is loaded
+             * TODO: from offline
+             */
         }
     }
 
@@ -146,6 +156,11 @@ public class PlanView extends AppCompatActivity{
             super(fm);
         }
 
+        /**
+         *
+         * @param position zakładka z tabbedActivity
+         * @return nowa instancja PlanViewFragment z indeksem wg. position lub null
+         */
         @Override
         public Fragment getItem(int position) {
             switch (position){

@@ -48,15 +48,14 @@
                 android:id="@+id/delete_all"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/info"
                 android:text="@string/usun_wszystkie_zapisane"
                 android:layout_weight="1" />
 
             <Button
-                android:text="Button"
+                android:text="@string/pokaz_zapisane"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/button4"
+                android:id="@+id/show_saved_files"
                 android:layout_weight="1" />
         </LinearLayout>
 
@@ -118,7 +117,8 @@
                     android:id="@+id/twoja_klasa_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@android:drawable/presence_invisible" />
+                    app:srcCompat="@android:drawable/presence_invisible"
+                    android:contentDescription="@string/szara_kulka" />
                 <TextView
                     android:id="@+id/twoja_klasa_textView"
                     android:layout_width="wrap_content"
@@ -137,7 +137,8 @@
                     android:id="@+id/ostatnia_klasa_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@android:drawable/presence_invisible" />
+                    app:srcCompat="@android:drawable/presence_invisible"
+                    android:contentDescription="@string/szara_kulka" />
                 <TextView
                     android:id="@+id/ostatnia_klasa_textView"
                     android:layout_width="wrap_content"

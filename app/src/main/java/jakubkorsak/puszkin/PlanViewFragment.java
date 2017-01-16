@@ -22,8 +22,8 @@ import java.util.ArrayList;
 public class PlanViewFragment extends Fragment {
 
 
-    String p;
-    String h;
+    String path;
+    String pathParameter;
     TextView lekcja0;
     TextView lekcja1;
     TextView lekcja2;
@@ -37,13 +37,17 @@ public class PlanViewFragment extends Fragment {
 
 
     public static PlanViewFragment newInstance(int index){
-        PlanViewFragment p = new PlanViewFragment();
+        PlanViewFragment planViewFragment = new PlanViewFragment();
         Bundle args = new Bundle();
         args.putInt("index", index);
-        p.setArguments(args);
-        return p;
+        planViewFragment.setArguments(args);
+        return planViewFragment;
     }
 
+    /**
+     * przyda się przy AsyncTasku
+     * @return parametr dany przez PlanView przy new PlanViewFragment.newInstance(index);
+     */
     public int getIndex(){
         return getArguments().getInt("index");
     }
@@ -52,8 +56,10 @@ public class PlanViewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_plan_view, container, false);
 
+        //inicjowanie elementów UI
         lekcja0 = (TextView)view.findViewById(R.id.lekcja_0);
         lekcja1 = (TextView)view.findViewById(R.id.lekcja_1);
         lekcja2 = (TextView)view.findViewById(R.id.lekcja_2);
@@ -65,9 +71,11 @@ public class PlanViewFragment extends Fragment {
         lekcja8 = (TextView)view.findViewById(R.id.lekcja_8);
         lekcja9 = (TextView)view.findViewById(R.id.lekcja_9);
 
-        h = getActivity().getIntent().getExtras().getString(Sources.TAG);
-        p = "http://www.plan.1lo.gorzow.pl/plany/" + h + ".html";
+        //bierzemy pathParameter z intenta
+        pathParameter = getActivity().getIntent().getExtras().getString(Sources.TAG);
+        path = "http://www.plan.1lo.gorzow.pl/plany/" + pathParameter + ".html";
 
+        //pobieramy plan z AsyncTasku
         new GetPlanInBackground().execute();
 
         return view;
@@ -77,26 +85,37 @@ public class PlanViewFragment extends Fragment {
 
     public class GetPlanInBackground extends AsyncTask<Void, Void, Void> {
 
+        //Lista do której zapiszemy lekcje
         ArrayList<String> lekcjeArray;
-        String fileName = "ZAPIS_" + Sources.getIndex(h, "o", Sources.index, Sources.klasy).toUpperCase();
-        File saved = new File(getActivity().getFilesDir(), fileName);
+        //plik z którego ewentualnie będą ładowane pliki
+        String fileName;
+        File saved;
 
         @Override
         protected Void doInBackground(Void... params) {
-            Document doc;
+            Document document;
+
+            fileName = "ZAPIS_" + pathParameter;
+            saved = new File(getActivity().getFilesDir(), fileName);
             try {
+                //jeżeli nie istnieje Jsoup weźmie dane z internetu
                 if(!saved.exists()) {
-                    doc = Jsoup.connect(p).get();
+                    document = Jsoup.connect(path).get();
                 }
+                //jeżeli istnieje spróbuje załadować z niego kontent
                 else{
-                    doc = Jsoup.parse(FileHandling.
+                    document = Jsoup.parse(FileHandling.
                             readFileAsString(fileName, getActivity().getApplicationContext()));
                 }
-                doc.outputSettings(new Document.OutputSettings().prettyPrint(false));
-                Elements s = doc.getElementsByClass("l");
-                lekcjeArray = new ArrayList<>(s.size());
-                for (int i = 0; i < s.size(); i++) {
-                    lekcjeArray.add(s.get(i).text());
+                //prettyPrint(false) <- zostawia whitespaces
+                document.outputSettings(new Document.OutputSettings().prettyPrint(false));
+                //Zbiera do Elements wszystkie obiekty z klasą "l"
+                Elements lessons = document.getElementsByClass("l");
+
+                //ładuje lessons do lekcjeArray (ArrayList zdaje się lepiej reagować na castowanie do String)
+                lekcjeArray = new ArrayList<>(lessons.size());
+                for (int i = 0; i < lessons.size(); i++) {
+                    lekcjeArray.add(lessons.get(i).text());
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -107,6 +126,8 @@ public class PlanViewFragment extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+            //sprawdzamy którą zakładkę tabelki chciał PlanView
+            //ten planOperator zajmuje się zbieraniem odpowiednich danych z lekjeArray
             int planOperator = 0;
             switch(getIndex()){
                 case 0:
@@ -125,6 +146,10 @@ public class PlanViewFragment extends Fragment {
                     break;
             }
             try {
+                //sprawdza długość lekcjeArray wg. potrzeb i ładuje kontent z lekcjeArray do
+                //lekcji$n
+                //niektóre plany lekcji mogą mieć mniej niż 50 komórek, stąd bez warunków szybko
+                //otrzymalibyśmy NullPointerException albo IndexOutOfBoundsException
                 if (lekcjeArray.size() >= planOperator + 1)
                     lekcja0.setText(lekcjeArray.get(planOperator).replaceAll("-", ""));
                 if (lekcjeArray.size() >= planOperator + 6)
@@ -146,6 +171,7 @@ public class PlanViewFragment extends Fragment {
                 if (lekcjeArray.size() >= planOperator + 46)
                     lekcja9.setText(lekcjeArray.get(planOperator + 45).replaceAll("-", ""));
             }catch (NullPointerException ignored){
+                //NullPointerException -> brak internetu w tym przypadku
                 lekcja0.setText(R.string.brak_internetu);
             }
         }

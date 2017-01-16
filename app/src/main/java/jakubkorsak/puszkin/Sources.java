@@ -117,22 +117,19 @@ public class Sources {
 
     /**
      * n - nauczyciel
-     * s - sala
+     * containerString - sala
      * o - oddział
      *
-     * @param prefix to jest ta część odpowiedzialna za (n, s, o)
+     * @param prefix to jest ta część odpowiedzialna za (n, containerString, o)
      * @param source to jest część odpowiedzialna za indeks obiektu
-     * @return String w postaci h = "(n, s, o) + indeks tego obiektu"
+     * @return String webView postaci pathParameter = "(n, containerString, o) + indeks tego obiektu"
      **/
      /*
      * Zasada działania:
-     * dostajemy input h, jakiś ciąg znaków. Sprawdzamy czy znajduje się on w którejś z tablic w Sources
-     * jeśli tak, to zwracamy dany "prefix" + indeks w jakim znaleziono tą wartość + 1 bo
+     * dostajemy input pathParameter, jakiś ciąg znaków. Sprawdzamy czy znajduje się on webView którejś z tablic webView Sources
+     * jeśli tak, to zwracamy dany "prefix" + indeks webView jakim znaleziono tą wartość + 1 bo
      * tablice liczą od 0.
      *
-     * Jeśli nie ma tego ciągu znaków w tablicy (nie powinno się zdarzyć) dostaniemy jakiś
-     * NullPointerException albo coś takiego. Zaznaczam, że nie powinno się to nigdy zdarzyć ze
-     * względu na to, że wartość inputu h pochodzi z tablicy z Resources.
      */
     static String getID(String h, String prefix, String[] source) {
         int i = 0;
@@ -148,10 +145,10 @@ public class Sources {
 
 
     /**
-     * @param h      "[o,n,s] + index[1;18]"
-     * @param prefix w tej wersji jest to zawsze "o" ale w późniejszych wersjach rozszerzę tą funkcję
-     * @param source tablica do której ma porównywać "h"
-     * @return odpowiadająca nazwa klasy w postaci "[1;3] + [A;F]"
+     * @param h      "[o,n,containerString] + index[1;18]"
+     * @param prefix webView tej wersji jest to zawsze "o" ale webView późniejszych wersjach rozszerzę tą funkcję
+     * @param source tablica do której ma porównywać "pathParameter"
+     * @return odpowiadająca nazwa klasy webView postaci "[1;3] + [A;F]"
      */
     static String getIndex(String h, String prefix, String[] source, String[] output) {
         int i = 0;

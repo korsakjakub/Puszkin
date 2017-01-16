@@ -37,15 +37,17 @@ public class SNPlanView extends AppCompatActivity {
             }
         });
         toolbar.setTitleTextColor(Color.WHITE);
-        //get sender
         sender = getIntent().getStringExtra("sender");
-        toolbar.setTitle(sender);
 
         list = (ListView) findViewById(R.id.lista);
         ArrayList<String> arrayList = new ArrayList<>();
+
+        //ładowanie danych do listy i nadanie nazwy toolbarowi
         if(sender.equals("Gabinety")){
             arrayList.addAll(Arrays.asList(Sources.Gabinety));
+            toolbar.setTitle("Gabinety");
         }else if(sender.equals("Nauczyciele")){
+            toolbar.setTitle("Nauczyciele");
             arrayList.addAll(Arrays.asList(Sources.Nauczyciele));
         }
 
@@ -60,6 +62,7 @@ public class SNPlanView extends AppCompatActivity {
 
                 pressedItem = list.getItemAtPosition(position).toString();
 
+                //np "Jan Kowalski" -> "n1"
                 if(sender.equals("Gabinety")){
                     tag = Sources.getID(pressedItem, "s", Sources.Gabinety);
                 }else
@@ -67,12 +70,13 @@ public class SNPlanView extends AppCompatActivity {
                     tag = Sources.getID(pressedItem, "n", Sources.Nauczyciele);
                 }
 
-                Intent intent = new Intent(SNPlanView.this, PlanView.class);
+
+                Intent goToPlanView = new Intent(SNPlanView.this, PlanView.class);
                 Bundle b = new Bundle();
                 b.putString(Sources.SENDER_ACTIVITY, Sources.TYPE_OF_WEB_VIEW[0]);
                 b.putString(Sources.TAG, tag);
-                intent.putExtras(b);
-                startActivity(intent);
+                goToPlanView.putExtras(b);
+                startActivity(goToPlanView);
             }
 
         });

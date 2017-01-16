@@ -13,6 +13,7 @@ import java.util.List;
 
 public class PlanLekcji extends AppCompatActivity {
 
+    //lista przycisków dla łatwiejszej inicjalizacji
     private static final int[] BUTTON_IDS = {
             R.id.klasa1,
             R.id.klasa2,
@@ -34,8 +35,6 @@ public class PlanLekcji extends AppCompatActivity {
             R.id.klasa18,
     };
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +51,7 @@ public class PlanLekcji extends AppCompatActivity {
             }
         });
 
+        //inicjalizacja przycisków i nadanie im OnClickListenera
         List<Button> buttons = new ArrayList<>(BUTTON_IDS.length);
         for(int id : BUTTON_IDS){
             Button button = (Button)findViewById(id);
@@ -64,6 +64,7 @@ public class PlanLekcji extends AppCompatActivity {
             });
             buttons.add(button);
         }
+
         Button nauczyciele = (Button)findViewById(R.id.Nauczyciele);
         assert nauczyciele != null;
         nauczyciele.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +72,7 @@ public class PlanLekcji extends AppCompatActivity {
             public void onClick(View v) {
                 Button b = (Button)v;
                 Intent intent = new Intent(PlanLekcji.this, SNPlanView.class);
+                //żeby odbiorca intentu wiedział kto go przysłał
                 intent.putExtra("sender", b.getText().toString());
                 startActivity(intent);
             }
@@ -82,6 +84,7 @@ public class PlanLekcji extends AppCompatActivity {
             public void onClick(View v) {
                 Button b = (Button)v;
                 Intent intent = new Intent(PlanLekcji.this, SNPlanView.class);
+                //żeby odbiorca intentu wiedział kto go przysłał
                 intent.putExtra("sender", b.getText().toString());
                 startActivity(intent);
             }

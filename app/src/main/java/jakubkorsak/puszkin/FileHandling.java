@@ -8,15 +8,15 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileHandling {
+class FileHandling {
     /**
      * Odczytuje plik pod daną ścieżką
      *
-     * @param fileName nazwa pliku w domyślnej ścieżce aplikacji
+     * @param fileName nazwa pliku webView domyślnej ścieżce aplikacji
      * @param context  kontekst sendera
      * @return zawartość pliku
      */
-    public static String readFileAsString(String fileName, Context context) {
+    static String readFileAsString(String fileName, Context context) {
         StringBuilder stringBuilder = new StringBuilder();
         String line;
         BufferedReader in;
@@ -26,17 +26,16 @@ public class FileHandling {
 
         } catch (IOException ignored) {
         }
-
         return stringBuilder.toString();
     }
 
     /**
      * Tworzy/nadpisuje plik pod daną ścieżką
-     * @param fileContents To co ma zapisać w pliku
-     * @param fileName nazwa pliku w domyślnej ścieżce aplikacji
-     * @param context konekst sendera
+     * @param fileContents To co ma zapisać webView pliku
+     * @param fileName nazwa pliku webView domyślnej ścieżce aplikacji
+     * @param context kontekst sendera
      */
-    public static void writeStringAsFile(final String fileContents, String fileName, Context context) {
+    static void writeStringAsFile(final String fileContents, String fileName, Context context) {
         try {
             FileWriter out = new FileWriter(new File(context.getFilesDir(), fileName));
             out.write(fileContents);

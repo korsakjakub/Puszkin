@@ -5,36 +5,36 @@
     density="xhdpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="7817125514769"
+    timestamp="7980430235768"
     token="-416647866239221738"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="342" />
+        duration="155" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="56" />
+        duration="11" />
     <task
         name="verifier"
-        duration="3" />
+        duration="0" />
 
     <artifact
         location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
         type="DEX" />
 
     <build
-        timestamp="7180403768874"
-        verifier="FULL_BUILD_REQUESTED" >
+        timestamp="7657435594705"
+        verifier="MANIFEST_FILE_CHANGE" >
         <artifact
             location="/home/jakub/Documents/Projects/Puszkin/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="7817125514769"
+        timestamp="7980430235768"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"

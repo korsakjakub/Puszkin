@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
@@ -14,11 +13,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".MainActivity" />
         <activity android:name=".PlanLekcji" />
         <activity android:name=".Settings" />
-        <activity android:name=".PlanView"/>
+        <activity android:name=".PlanView" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">
@@ -28,10 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NauczycieleView" />
-        <activity android:name=".SaleView" />
-        <activity android:name=".DzienniczekView"/>
-        <activity android:name=".HarmonogramZastepstwa"/>
+        <activity android:name=".DzienniczekView" />
+        <activity android:name=".HarmonogramZastepstwa" />
+        <activity android:name=".SNPlanView"/>
     </application>
 
 </manifest>

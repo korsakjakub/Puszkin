@@ -36,12 +36,12 @@
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_alert_dialog_material.xml"
     },
     {
-        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/design_layout_tab_icon.xml",
-        "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/layout/design_layout_tab_icon.xml"
-    },
-    {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/design_text_input_password_icon.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/layout/design_text_input_password_icon.xml"
+    },
+    {
+        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/design_layout_tab_icon.xml",
+        "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/layout/design_layout_tab_icon.xml"
     },
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
@@ -60,16 +60,16 @@
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/notification_action_tombstone.xml"
     },
     {
-        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
-        "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_activity_chooser_view.xml"
+        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
+        "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_screen_simple.xml"
     },
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/activity_web_view.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/layout/activity_web_view.xml"
     },
     {
-        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
-        "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_screen_simple.xml"
+        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
+        "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_activity_chooser_view.xml"
     },
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/row.xml",
@@ -132,10 +132,6 @@
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/layout/design_layout_tab_text.xml"
     },
     {
-        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/activity_nauczyciele.xml",
-        "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/layout/activity_nauczyciele.xml"
-    },
-    {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/notification_template_part_chronometer.xml"
     },
@@ -196,6 +192,10 @@
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_action_mode_close_item_material.xml"
     },
     {
+        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/activity_snplan_view.xml",
+        "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/layout/activity_snplan_view.xml"
+    },
+    {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/layout/abc_action_menu_item_layout.xml"
     },
@@ -214,10 +214,6 @@
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/layout/design_navigation_item.xml"
-    },
-    {
-        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/activity_gabinety.xml",
-        "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/layout/activity_gabinety.xml"
     },
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/design_bottom_sheet_dialog.xml",

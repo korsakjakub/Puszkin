@@ -67,9 +67,12 @@ public class PlanViewFragment extends Fragment {
 
         h = getActivity().getIntent().getExtras().getString(Sources.TAG);
         p = "http://www.plan.1lo.gorzow.pl/plany/" + h + ".html";
+
         new GetPlanInBackground().execute();
+
         return view;
     }
+
 
 
     public class GetPlanInBackground extends AsyncTask<Void, Void, Void> {

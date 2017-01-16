@@ -29,6 +29,7 @@ public class PlanView extends AppCompatActivity{
 
     private ViewPager mViewPager;
     String title;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class PlanView extends AppCompatActivity{
         setContentView(R.layout.activity_plan_view);
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -73,6 +74,7 @@ public class PlanView extends AppCompatActivity{
          * więc kiedy użytkownik włączy plan otworzy mu się od razu
          * plan na dzisiejszy dzień
          */
+
         Date date = new Date();
         Calendar c = Calendar.getInstance();
         c.setTime(date);
@@ -81,7 +83,6 @@ public class PlanView extends AppCompatActivity{
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-
     }
 
 
@@ -118,9 +119,7 @@ public class PlanView extends AppCompatActivity{
             String fileName = "ZAPIS_" + Sources.getIndex(title, "o", Sources.index, Sources.klasy).toUpperCase();
             File file = new File(getFilesDir(), fileName);
 
-            boolean fileIsntEmpty = !FileHandling.readFileAsString(fileName, getApplicationContext()).equals("");
-
-            if(!file.exists() && fileIsntEmpty) {
+            if(!file.exists()) {
                 try {
                     Document doc = Jsoup.connect(p).get();
                     FileHandling.writeStringAsFile(

@@ -115,7 +115,6 @@ public class Sources {
             "ostatnia", "twoja"
     };
 
-
     /**
      * n - nauczyciel
      * s - sala

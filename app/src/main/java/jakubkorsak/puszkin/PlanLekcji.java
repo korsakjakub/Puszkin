@@ -69,7 +69,9 @@ public class PlanLekcji extends AppCompatActivity {
         nauczyciele.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PlanLekcji.this, NauczycieleView.class);
+                Button b = (Button)v;
+                Intent intent = new Intent(PlanLekcji.this, SNPlanView.class);
+                intent.putExtra("sender", b.getText().toString());
                 startActivity(intent);
             }
         });
@@ -78,7 +80,9 @@ public class PlanLekcji extends AppCompatActivity {
         gabinety.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PlanLekcji.this, SaleView.class);
+                Button b = (Button)v;
+                Intent intent = new Intent(PlanLekcji.this, SNPlanView.class);
+                intent.putExtra("sender", b.getText().toString());
                 startActivity(intent);
             }
         });

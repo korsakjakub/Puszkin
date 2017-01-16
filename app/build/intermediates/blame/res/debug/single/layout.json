@@ -20,6 +20,10 @@
         "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/layout/activity_splash_screen.xml"
     },
     {
+        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/fragment_lista_plikow.xml",
+        "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/layout/fragment_lista_plikow.xml"
+    },
+    {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout/activity_dzienniczek.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/layout/activity_dzienniczek.xml"
     },

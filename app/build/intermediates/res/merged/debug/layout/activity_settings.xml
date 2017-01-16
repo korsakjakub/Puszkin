@@ -16,15 +16,12 @@
         app:popupTheme="@style/AppTheme.PopupOverlay"
         app:title="Ustawienia" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/toolbar">
-
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:id="@+id/relative_layout"
         android:paddingLeft="16dp"
         android:paddingRight="16dp">
 
@@ -100,7 +97,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/stan_plików"
             android:layout_marginTop="5dp"
             android:orientation="vertical">
@@ -144,10 +141,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/ostatnio_wybrana" />
+
             </LinearLayout>
 
         </LinearLayout>
     </RelativeLayout>
-</ScrollView>
+    <!--
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment"
+        android:layout_below="@id/relative_layout"
+        tools:layout="@layout/fragment_lista_plikow"
+        android:layout_marginTop="50dp" />
+-->
 
 </RelativeLayout>

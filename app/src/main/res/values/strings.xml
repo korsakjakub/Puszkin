@@ -49,4 +49,5 @@
     <string name="brak_internetu">Nie mam połączenia z internetem.</string>
     <string name="pokaz_zapisane">Pokaż zapisane</string>
     <string name="szara_kulka">szara kulka</string>
+    <string name="zapisane_pliki">Zapisane pliki</string>
 </resources>

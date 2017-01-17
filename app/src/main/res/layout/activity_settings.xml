@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_settings"
@@ -20,10 +20,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
         android:id="@+id/relative_layout"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp">
+        android:paddingRight="16dp"
+        android:layout_marginTop="56dp">
 
         <Button
             android:id="@+id/info"
@@ -85,75 +85,40 @@
             android:layout_toRightOf="@+id/editText"
             android:text="@string/zapis" />
 
-        <TextView
-            android:id="@+id/stan_plików"
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/editText"
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/stan_zapisow" />
+            android:layout_alignTop="@+id/editText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/stan_plików"
-            android:layout_marginTop="5dp"
-            android:orientation="vertical">
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/twoja_klasa_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@android:drawable/presence_invisible"
-                    android:contentDescription="@string/szara_kulka" />
-                <TextView
-                    android:id="@+id/twoja_klasa_textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/twoja_klasa" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/ostatnia_klasa_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@android:drawable/presence_invisible"
-                    android:contentDescription="@string/szara_kulka" />
-                <TextView
-                    android:id="@+id/ostatnia_klasa_textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/ostatnio_wybrana" />
-
-            </LinearLayout>
-
-        </LinearLayout>
     </RelativeLayout>
-    <!--
-    <fragment
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/fragment"
-        android:layout_below="@id/relative_layout"
-        tools:layout="@layout/fragment_lista_plikow"
-        android:layout_marginTop="50dp" />
--->
 
-</RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/design_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="50dp"
+        app:elevation="4dp"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        android:textAlignment="gravity">
+
+        <TextView
+            android:id="@+id/bottomsheet_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/zapisane_pliki"
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

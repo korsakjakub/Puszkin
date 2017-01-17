@@ -1,4 +1,4 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,254 +6,268 @@
     android:orientation="horizontal"
     android:weightSum="2">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tableLayout"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/r0">
+
+                <TextView
+                    android:text="@string/lekcja0"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/godzina_0"
+                    android:textSize="24sp"
+                    android:layout_weight="1"
+                    android:paddingLeft="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lekcja_0"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:paddingRight="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/r1"
+                android:background="@color/colorPrimaryLight">
+
+                <TextView
+                    android:text="@string/lekcja1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/godzina_1"
+                    android:textSize="24sp"
+                    android:layout_weight="1"
+                    android:paddingLeft="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lekcja_1"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:paddingRight="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/r2">
+
+                <TextView
+                    android:text="@string/lekcja2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/godzina_2"
+                    android:textSize="24sp"
+                    android:layout_weight="1"
+                    android:paddingLeft="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lekcja_2"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:paddingRight="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/r3"
+                android:background="@color/colorPrimaryLight">
+
+                <TextView
+                    android:text="@string/lekcja3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/godzina_3"
+                    android:textSize="24sp"
+                    android:layout_weight="1"
+                    android:paddingLeft="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lekcja_3"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:paddingRight="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/r4">
+
+                <TextView
+                    android:text="@string/lekcja4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/godzina_4"
+                    android:textSize="24sp"
+                    android:layout_weight="1"
+                    android:paddingLeft="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lekcja_4"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:paddingRight="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/r5"
+                android:background="@color/colorPrimaryLight">
+
+                <TextView
+                    android:text="@string/lekcja5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/godzina_5"
+                    android:textSize="24sp"
+                    android:layout_weight="1"
+                    android:paddingLeft="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lekcja_5"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:paddingRight="16dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/r6">
+
+                <TextView
+                    android:text="@string/lekcja6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/godzina_6"
+                    android:textSize="24sp"
+                    android:layout_weight="1"
+                    android:paddingLeft="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lekcja_6"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:paddingRight="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/r7"
+                android:background="@color/colorPrimaryLight">
+
+                <TextView
+                    android:text="@string/lekcja7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/godzina_7"
+                    android:textSize="24sp"
+                    android:layout_weight="1"
+                    android:paddingLeft="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lekcja_7"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:paddingRight="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/r8">
+
+                <TextView
+                    android:text="@string/lekcja8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/godzina_8"
+                    android:textSize="24sp"
+                    android:layout_weight="1"
+                    android:paddingLeft="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lekcja_8"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:paddingRight="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/r9"
+                android:background="@color/colorPrimaryLight">
+
+                <TextView
+                    android:text="@string/lekcja9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/godzina_9"
+                    android:textSize="24sp"
+                    android:layout_weight="1"
+                    android:paddingLeft="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lekcja_9"
+                    android:textSize="18sp"
+                    android:layout_weight="1"
+                    android:paddingRight="16dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tableLayout"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/r0">
-
-            <TextView
-                android:text="@string/lekcja0"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/godzina_0"
-                android:textSize="24sp"
-                android:layout_weight="1"
-                android:paddingLeft="16dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/lekcja_0"
-                android:textSize="18sp"
-                android:layout_weight="1"
-                android:paddingRight="16dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/r1"
-            android:background="@color/colorPrimaryLight">
-
-            <TextView
-                android:text="@string/lekcja1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/godzina_1"
-                android:textSize="24sp"
-                android:layout_weight="1"
-                android:paddingLeft="16dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/lekcja_1"
-                android:textSize="18sp"
-                android:layout_weight="1"
-                android:paddingRight="16dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/r2">
-
-            <TextView
-                android:text="@string/lekcja2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/godzina_2"
-                android:textSize="24sp"
-                android:layout_weight="1"
-                android:paddingLeft="16dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/lekcja_2"
-                android:textSize="18sp"
-                android:layout_weight="1"
-                android:paddingRight="16dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/r3"
-            android:background="@color/colorPrimaryLight">
-
-            <TextView
-                android:text="@string/lekcja3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/godzina_3"
-                android:textSize="24sp"
-                android:layout_weight="1"
-                android:paddingLeft="16dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/lekcja_3"
-                android:textSize="18sp"
-                android:layout_weight="1"
-                android:paddingRight="16dp" />
-
-        </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/r4">
-
-        <TextView
-            android:text="@string/lekcja4"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/godzina_4"
-            android:textSize="24sp"
-            android:layout_weight="1"
-            android:paddingLeft="16dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/lekcja_4"
-            android:textSize="18sp"
-            android:layout_weight="1"
-            android:paddingRight="16dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/r5"
-        android:background="@color/colorPrimaryLight">
-
-        <TextView
-            android:text="@string/lekcja5"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/godzina_5"
-            android:textSize="24sp"
-            android:layout_weight="1"
-            android:paddingLeft="16dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/lekcja_5"
-            android:textSize="18sp"
-            android:layout_weight="1"
-            android:paddingRight="16dp" />
-    </LinearLayout>
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/r6">
-
-        <TextView
-            android:text="@string/lekcja6"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/godzina_6"
-            android:textSize="24sp"
-            android:layout_weight="1"
-            android:paddingLeft="16dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/lekcja_6"
-            android:textSize="18sp"
-            android:layout_weight="1"
-            android:paddingRight="16dp" />
-    </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/r7"
-            android:background="@color/colorPrimaryLight">
-
-            <TextView
-                android:text="@string/lekcja7"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/godzina_7"
-                android:textSize="24sp"
-                android:layout_weight="1"
-                android:paddingLeft="16dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/lekcja_7"
-                android:textSize="18sp"
-                android:layout_weight="1"
-                android:paddingRight="16dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/r8">
-
-            <TextView
-                android:text="@string/lekcja8"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/godzina_8"
-                android:textSize="24sp"
-                android:layout_weight="1"
-                android:paddingLeft="16dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/lekcja_8"
-                android:textSize="18sp"
-                android:layout_weight="1"
-                android:paddingRight="16dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/r9"
-            android:background="@color/colorPrimaryLight">
-
-            <TextView
-                android:text="@string/lekcja9"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/godzina_9"
-                android:textSize="24sp"
-                android:layout_weight="1"
-                android:paddingLeft="16dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/lekcja_9"
-                android:textSize="18sp"
-                android:layout_weight="1"
-                android:paddingRight="16dp" />
-        </LinearLayout>
-    </LinearLayout>
-
-</ScrollView>
+</RelativeLayout>

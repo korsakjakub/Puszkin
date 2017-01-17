@@ -5,18 +5,17 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.jsoup.Jsoup;
@@ -32,15 +31,18 @@ public class Settings extends AppCompatActivity {
     PackageInfo pInfo;
     Button info;
     Button zapisButton;
-    ImageView ostatniaKlasaImageView;
-    ImageView twojaKlasaImageView;
+    Button pokazZapisane;
     Button deleteAll;
     String TextFromForm;
+    private ProgressBar spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+
+
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -58,10 +60,10 @@ public class Settings extends AppCompatActivity {
         assert editText != null;
         editText.setHint("np. 1a");
 
-        twojaKlasaImageView = (ImageView)findViewById(R.id.twoja_klasa_image);
-        ostatniaKlasaImageView = (ImageView)findViewById(R.id.ostatnia_klasa_image);
 
-        checkIfFilesNonNull();
+        spinner = (ProgressBar)findViewById(R.id.progressBar1);
+        spinner.setVisibility(View.GONE);
+
         zapisButton = (Button)findViewById(R.id.zapis_button);
         findViewById(R.id.activity_settings);
         zapisButton.setOnClickListener(new View.OnClickListener(){
@@ -100,7 +102,6 @@ public class Settings extends AppCompatActivity {
                 if((new File(getFilesDir(), Sources.zrodla[1])).exists()){
                     deleteFile(Sources.zrodla[1]);
                 }
-                Toast.makeText(Settings.this, "Usunięto", Toast.LENGTH_SHORT).show();
                 recreate();
             }
         });
@@ -126,37 +127,53 @@ public class Settings extends AppCompatActivity {
                         .show();
             }
         });
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        checkIfFilesNonNull();
-    }
 
-    /**
-     * sprawdza czy istnieją pliki z zapisanymi nazwami przycisków i odpowiednio dopasowuje źródła
-     * ImageView
-     */
-    private void checkIfFilesNonNull(){
-        File fileTwojaZapisana = new File(getFilesDir(), "");
-        try {
-            fileTwojaZapisana = new File(getFilesDir() + "/" + "ZAPIS_" + Sources.getID(FileHandling.readFileAsString(Sources.zrodla[1],
-                    getApplicationContext()), "o", Sources.klasy));
-        }catch (IndexOutOfBoundsException ignored){
-        }
-        File fileOstatniaKlasa = new File(getFilesDir() + "/" + Sources.zrodla[0]);
-        File fileTwojaKlasa = new File(getFilesDir() + "/" + Sources.zrodla[1]);
-        if (fileOstatniaKlasa.exists()) {
-            ostatniaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_online));
-        }else{
-            ostatniaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_invisible));
-        }
-        if (fileTwojaKlasa.exists() && fileTwojaZapisana.exists()) {
-            twojaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_online));
-        }else{
-            twojaKlasaImageView.setImageDrawable(ContextCompat.getDrawable(Settings.this, R.drawable.presence_invisible));
-        }
+        View bottomSheet = findViewById(R.id.design_bottom_sheet);
+        final BottomSheetBehavior behavior = BottomSheetBehavior.from(bottomSheet);
+        behavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+            @Override
+            public void onStateChanged(@NonNull View bottomSheet, int newState) {
+                switch (newState){
+                    case BottomSheetBehavior.STATE_DRAGGING:
+                        Log.i("BottomSheetCallback", "BottomSheetBehavior.STATE_DRAGGING");
+                        break;
+                    case BottomSheetBehavior.STATE_SETTLING:
+                        Log.i("BottomSheetCallback", "BottomSheetBehavior.STATE_SETTLING");
+                        break;
+                    case BottomSheetBehavior.STATE_EXPANDED:
+                        Log.i("BottomSheetCallback", "BottomSheetBehavior.STATE_EXPANDED");
+                        break;
+                    case BottomSheetBehavior.STATE_COLLAPSED:
+                        Log.i("BottomSheetCallback", "BottomSheetBehavior.STATE_COLLAPSED");
+                        break;
+                    case BottomSheetBehavior.STATE_HIDDEN:
+                        Log.i("BottomSheetCallback", "BottomSheetBehavior.STATE_HIDDEN");
+                        break;
+                }
+
+                ((TextView)findViewById(R.id.bottomsheet_text)).setText("Lista plików");
+            }
+
+
+            @Override
+            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+                Log.i("BottomSheetCallback", "slideOffset: " + slideOffset);
+            }
+        });
+
+        pokazZapisane = (Button)findViewById(R.id.show_saved_files);
+        pokazZapisane.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (behavior.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
+                    behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                } else {
+                    behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+            }
+        });
     }
 
 
@@ -166,6 +183,7 @@ public class Settings extends AppCompatActivity {
         String p = "http://www.plan.1lo.gorzow.pl/plany/" +
                 Sources.getID(TextFromForm, "o", Sources.klasy) +
                 ".html";
+
         @Override
         protected Void doInBackground(Void... params) {
             try {
@@ -177,15 +195,19 @@ public class Settings extends AppCompatActivity {
             }
             return null;
         }
-    }
 
-
-    public static class ListaPlikow extends Fragment {
-        @Nullable
         @Override
-        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        protected void onPreExecute() {
+            super.onPreExecute();
+            spinner.setVisibility(View.VISIBLE);
+        }
 
-            return super.onCreateView(inflater, container, savedInstanceState);
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+
+            spinner.setVisibility(View.GONE);
+            Toast.makeText(Settings.this, "Zakończono", Toast.LENGTH_SHORT).show();
         }
     }
 }

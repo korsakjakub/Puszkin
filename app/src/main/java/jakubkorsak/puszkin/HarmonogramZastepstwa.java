@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.jsoup.Jsoup;
@@ -16,6 +17,7 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
     String path;
     TextView textView;
     String senderActivity;
+    private ProgressBar spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,10 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
 
 
 
+        spinner = (ProgressBar)findViewById(R.id.progressBar1);
+        spinner.setVisibility(View.VISIBLE);
         textView = (TextView)findViewById(R.id.textView);
+        textView.setVisibility(View.GONE);
 
         senderActivity = getIntent().getExtras().getString(Sources.SENDER_ACTIVITY);
         assert senderActivity != null;
@@ -63,13 +68,13 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
 
             try {
                 //pobiera Obiekt docoment z adresu path
-                Document document = Jsoup.connect(path).get();
+                Document document = Jsoup.connect(path).timeout(10000).get();
                 //prettyPrint(false) pozostawia whitespaces
                 document.outputSettings(new Document.OutputSettings().prettyPrint(false));
                 //zaznacza klasy "br" i dodaje na końcu każdej "\\n"
-                document.select("br").append("\\n");
+                document.select("br");//.append("\\n");
                 //to samo z klasami "path", ale dodaje na początku
-                document.select("path").prepend("\\n\\n");
+                document.select("path");//.prepend("\\n\\n");
 
 
                 switch (senderActivity) {
@@ -84,20 +89,23 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
                         break;
 
                     case "harmonogram":
-                        //jak wyżej, ale zaznacza obiekty "path", ponieważ 2 bliźniacze strony
+                        //jak wyżej, ale zaznacza obiekty "p", ponieważ 2 bliźniacze strony
                         //internetowe jakimś cudem mogą mieć zupełnie różnie wprowadzane dane smh...
                         containerString = document.getElementsContainingText("Harmonogram")
-                                .select("path")
+                                .select("p")
                                 .html();
+                        //do sprawdzających: jeżeli nie działa to znaczy, że kod źródłowy strony znowu
+                        //się zmienił...
                         break;
                 }
                 //Tutaj zarządzane są wszystkie whitespaces i usuwam napis "drukuj" bo nie pasuje do kontekstu
                 taskOutput = Jsoup.clean(containerString
                                 .replaceAll("\\\\n", "\n")
+                                .replaceAll("\r", "")
                                 .replaceAll("<sup>", ":")
                                 .replaceAll("&nbsp;", " ")
                                 .replaceAll("drukuj", "")
-                                .replaceAll("\n\n\n", "\n")
+                                .replaceAll("\\n\\n", "\n")
                         , "", Whitelist.none(), new Document.OutputSettings().prettyPrint(false));
             } catch (Exception e) {
                 e.printStackTrace();
@@ -111,6 +119,9 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             //jeśli wszystko się udało nasze textView dostaje nowy kontent w postaci taskOutput
+
+            spinner.setVisibility(View.GONE);
+            textView.setVisibility(View.VISIBLE);
             textView.setText(taskOutput);
         }
     }

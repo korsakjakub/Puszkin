@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.jsoup.Jsoup;
@@ -34,6 +35,7 @@ public class PlanViewFragment extends Fragment {
     TextView lekcja7;
     TextView lekcja8;
     TextView lekcja9;
+    private ProgressBar spinner;
 
 
     public static PlanViewFragment newInstance(int index){
@@ -70,6 +72,8 @@ public class PlanViewFragment extends Fragment {
         lekcja7 = (TextView)view.findViewById(R.id.lekcja_7);
         lekcja8 = (TextView)view.findViewById(R.id.lekcja_8);
         lekcja9 = (TextView)view.findViewById(R.id.lekcja_9);
+        spinner = (ProgressBar)view.findViewById(R.id.progressBar1);
+        spinner.setVisibility(View.VISIBLE);
 
         //bierzemy pathParameter z intenta
         pathParameter = getActivity().getIntent().getExtras().getString(Sources.TAG);
@@ -150,29 +154,42 @@ public class PlanViewFragment extends Fragment {
                 //lekcji$n
                 //niektóre plany lekcji mogą mieć mniej niż 50 komórek, stąd bez warunków szybko
                 //otrzymalibyśmy NullPointerException albo IndexOutOfBoundsException
-                if (lekcjeArray.size() >= planOperator + 1)
+                if (lekcjeArray.size() >= planOperator + 1) {
                     lekcja0.setText(lekcjeArray.get(planOperator).replaceAll("-", ""));
-                if (lekcjeArray.size() >= planOperator + 6)
+                }
+                if (lekcjeArray.size() >= planOperator + 6) {
                     lekcja1.setText(lekcjeArray.get(planOperator + 5).replaceAll("-", ""));
-                if (lekcjeArray.size() >= planOperator + 11)
+                }
+                if (lekcjeArray.size() >= planOperator + 11) {
                     lekcja2.setText(lekcjeArray.get(planOperator + 10).replaceAll("-", ""));
-                if (lekcjeArray.size() >= planOperator + 16)
+                }
+                if (lekcjeArray.size() >= planOperator + 16) {
                     lekcja3.setText(lekcjeArray.get(planOperator + 15).replaceAll("-", ""));
-                if (lekcjeArray.size() >= planOperator + 21)
+                }
+                if (lekcjeArray.size() >= planOperator + 21) {
                     lekcja4.setText(lekcjeArray.get(planOperator + 20).replaceAll("-", ""));
-                if (lekcjeArray.size() >= planOperator + 26)
+                }
+                if (lekcjeArray.size() >= planOperator + 26) {
                     lekcja5.setText(lekcjeArray.get(planOperator + 25).replaceAll("-", ""));
-                if (lekcjeArray.size() >= planOperator + 31)
+                }
+                if (lekcjeArray.size() >= planOperator + 31) {
                     lekcja6.setText(lekcjeArray.get(planOperator + 30).replaceAll("-", ""));
-                if (lekcjeArray.size() >= planOperator + 36)
+                }
+                if (lekcjeArray.size() >= planOperator + 36) {
+                    lekcja0.setVisibility(View.VISIBLE);
                     lekcja7.setText(lekcjeArray.get(planOperator + 35).replaceAll("-", ""));
-                if (lekcjeArray.size() >= planOperator + 41)
+                }
+                if (lekcjeArray.size() >= planOperator + 41) {
                     lekcja8.setText(lekcjeArray.get(planOperator + 40).replaceAll("-", ""));
-                if (lekcjeArray.size() >= planOperator + 46)
+                }
+                if (lekcjeArray.size() >= planOperator + 46) {
                     lekcja9.setText(lekcjeArray.get(planOperator + 45).replaceAll("-", ""));
+                }
+                spinner.setVisibility(View.GONE);
             }catch (NullPointerException ignored){
                 //NullPointerException -> brak internetu w tym przypadku
                 lekcja0.setText(R.string.brak_internetu);
+                spinner.setVisibility(View.GONE);
             }
         }
     }

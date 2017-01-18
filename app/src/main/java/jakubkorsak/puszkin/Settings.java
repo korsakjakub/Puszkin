@@ -41,6 +41,7 @@ public class Settings extends AppCompatActivity {
     ArrayList<String> nauczycieleIndex = new ArrayList<>();
     ArrayList<String> gabinetyIndex = new ArrayList<>();
     StringBuilder str = new StringBuilder("Pliki: \n\n");
+    ArrayList<String> existingFiles = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +50,16 @@ public class Settings extends AppCompatActivity {
 
 
         for(int i = 1; i <= 18; i++) {
-            lekcjeIndex.add(i-1, "o" + i);
-            Log.i("Zapisy array ", "Dodano " + lekcjeIndex.get(i-1));
+            lekcjeIndex.add(0, "o" + i);
+            Log.i("Zapisy array ", "Dodano " + lekcjeIndex.get(0));
         }
         for(int i = 1; i <= 48; i++){
-            nauczycieleIndex.add(i-1, "n" + i);
-            Log.i("Zapisy array ", "Dodano " + nauczycieleIndex.get(i-1));
+            nauczycieleIndex.add(0, "n" + i);
+            Log.i("Zapisy array ", "Dodano " + nauczycieleIndex.get(0));
         }
         for(int i = 1; i <= 32; i++){
-            gabinetyIndex.add(i-1, "s" + i);
-            Log.i("Zapisy array ", "Dodano " + gabinetyIndex.get(i-1));
+            gabinetyIndex.add(0, "s" + i);
+            Log.i("Zapisy array ", "Dodano " + gabinetyIndex.get(0));
         }
 
         try {
@@ -67,7 +68,8 @@ public class Settings extends AppCompatActivity {
                     str.append("Klasa: ")
                             .append(Sources.getIndex(lekcjeIndex.get(i), "o", Sources.index, Sources.klasy))
                             .append(", \n");
-                    Log.i("Znaleziono", "klasa " + lekcjeIndex.get(i));
+                    existingFiles.add(0, lekcjeIndex.get(i));
+                    Log.i("Znaleziono", "klasa " + lekcjeIndex.get(0));
                 }
             }
             for (int i = 0; i <= nauczycieleIndex.size() - 1; i++) {
@@ -75,7 +77,8 @@ public class Settings extends AppCompatActivity {
                     str.append("Nauczyciel: ")
                             .append(Sources.getIndex(nauczycieleIndex.get(i), "n", Sources.index, Sources.Nauczyciele))
                             .append(", \n");
-                    Log.i("Znaleziono", "nauczyciel " + nauczycieleIndex.get(i));
+                    existingFiles.add(0, nauczycieleIndex.get(i));
+                    Log.i("Znaleziono", "nauczyciel " + nauczycieleIndex.get(0));
                 }
             }
             for (int i = 0; i <= gabinetyIndex.size() - 1; i++) {
@@ -83,7 +86,8 @@ public class Settings extends AppCompatActivity {
                     str.append("Sala: ")
                             .append(Sources.getIndex(gabinetyIndex.get(i), "s", Sources.index, Sources.Gabinety))
                             .append(", \n");
-                    Log.i("Znaleziono", "sala " + gabinetyIndex.get(i));
+                    existingFiles.add(0, gabinetyIndex.get(i));
+                    Log.i("Znaleziono", "sala " + gabinetyIndex.get(0));
                 }
             }
         }catch (NullPointerException e){
@@ -115,10 +119,16 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 TextFromForm = editText.getText().toString();
-                FileHandling.writeStringAsFile(TextFromForm, Sources.TWOJA_KLASA_SAVED, getApplicationContext());
                 if (Arrays.asList(Sources.klasy).contains(TextFromForm)) {
-                    new downloadPageInBackground().execute();
-                    FileHandling.writeStringAsFile(TextFromForm, Sources.zrodla[1], getApplicationContext());
+                    new downloadPageInBackground(new OnTaskCompleted() {
+                        @Override
+                        public void onTaskCompleted(boolean success) {
+                            if(success)
+                                Toast.makeText(Settings.this, "Pobrano", Toast.LENGTH_SHORT).show();
+                            else
+                                Toast.makeText(Settings.this, "Brak internetu", Toast.LENGTH_SHORT).show();
+                        }
+                    }).execute();
                 }else{
                     Toast.makeText(Settings.this, "Nie ma takiej klasy. Pamiętaj o formacie \"1a\"", Toast.LENGTH_SHORT).show();
                 }
@@ -130,15 +140,8 @@ public class Settings extends AppCompatActivity {
         deleteAll.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String twojaZapisana;
-                try {
-                    twojaZapisana = Sources.getID(FileHandling.readFileAsString(Sources.TWOJA_KLASA_SAVED,
-                            getApplicationContext()), "o", Sources.klasy);
-                }catch (IndexOutOfBoundsException ignored){
-                    twojaZapisana = "";
-                }
-                if((new File(getFilesDir(), twojaZapisana)).exists()){
-                    deleteFile(twojaZapisana);
+                for(int i = 0; i <= existingFiles.size()-1; i++){
+                    deleteFile(existingFiles.get(i));
                 }
                 if((new File(getFilesDir(), Sources.zrodla[0])).exists()) {
                     deleteFile(Sources.zrodla[0]);
@@ -146,6 +149,8 @@ public class Settings extends AppCompatActivity {
                 if((new File(getFilesDir(), Sources.zrodla[1])).exists()){
                     deleteFile(Sources.zrodla[1]);
                 }
+                recreate();
+
             }
         });
         pInfo = null;
@@ -214,24 +219,45 @@ public class Settings extends AppCompatActivity {
             }
         });
     }
-
+    public interface OnTaskCompleted{
+        void onTaskCompleted(boolean success);
+    }
 
     //pobiera stronę wskazaną z EditText
     public class downloadPageInBackground extends AsyncTask<Void, Void, Void> {
 
+        private OnTaskCompleted listener;
+
+        downloadPageInBackground(OnTaskCompleted listener){
+            this.listener = listener;
+        }
+
         String p = "http://www.plan.1lo.gorzow.pl/plany/" +
                 Sources.getID(TextFromForm, "o", Sources.klasy) +
                 ".html";
+        boolean success;
 
         @Override
         protected Void doInBackground(Void... params) {
             try {
+                String s = FileHandling.readFileAsString(Sources.zrodla[1], getApplicationContext());
+                try {
+                    s = Sources.getID(s, "o", Sources.klasy);
+                    deleteFile(s);
+                }catch (IndexOutOfBoundsException e){
+                    Log.i("AsyncTask", "brak wcześniejszej \"twoja_klasa\"");
+                }
                 Document doc = Jsoup.connect(p).get();
                 FileHandling.writeStringAsFile(doc.html(), Sources.getID(TextFromForm, "o", Sources.klasy),
                         getApplicationContext());
+                FileHandling.writeStringAsFile(TextFromForm, Sources.zrodla[1], getApplicationContext());
+
+                success = true;
             } catch (Exception e) {
                 e.printStackTrace();
-                Log.i("AsyncTast", "Brak internetu");
+                Log.i("AsyncTask", "Brak internetu");
+
+                success = false;
             }
             return null;
         }
@@ -246,6 +272,8 @@ public class Settings extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             spinner.setVisibility(View.GONE);
+            recreate();
+            listener.onTaskCompleted(success);
             Log.i("AsyncTask", "Koniec AsyncTasku");
         }
     }

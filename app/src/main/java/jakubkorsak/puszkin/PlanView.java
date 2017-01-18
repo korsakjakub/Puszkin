@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -21,13 +22,9 @@ import org.jsoup.nodes.Document;
 import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
-import java.util.Date;
 
 public class PlanView extends AppCompatActivity{
 
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-
-    private ViewPager mViewPager;
     String pathParameter;
     Toolbar toolbar;
 
@@ -63,10 +60,10 @@ public class PlanView extends AppCompatActivity{
             toolbar.setTitle(Sources.getIndex
                     (pathParameter, "s", Sources.index, Sources.Gabinety).toUpperCase());
         }
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
+        ViewPager mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         /**
@@ -74,12 +71,32 @@ public class PlanView extends AppCompatActivity{
          * więc kiedy użytkownik włączy plan otworzy mu się od razu
          * plan na dzisiejszy dzień
          */
+        int tab = 0;
+        Calendar calendar = Calendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+        switch (day) {
+            case Calendar.MONDAY:
+                //to i tak jest 0
+                break;
+            case Calendar.TUESDAY:
+                tab = 1;
+                break;
+            case Calendar.WEDNESDAY:
+                tab = 2;
+                break;
+            case Calendar.THURSDAY:
+                tab = 3;
+                break;
+            case Calendar.FRIDAY:
+                tab = 4;
+                break;
+            case Calendar.SATURDAY:
+                break;
+            case Calendar.SUNDAY:
+                break;
+        }
 
-        Date date = new Date();
-        Calendar c = Calendar.getInstance();
-        c.setTime(date);
-        int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
-        mViewPager.setCurrentItem(dayOfWeek);
+        mViewPager.setCurrentItem(tab);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
@@ -107,16 +124,37 @@ public class PlanView extends AppCompatActivity{
             startActivity(goToSettings);
             return true;
         } else if(id == R.id.action_download_page){
-            new downloadPageInBackground().execute();
+            new downloadPageInBackground(new OnTaskCompleted() {
+                @Override
+                public void onTaskCompleted(int success) {
+                    if(success == 1)
+                        Toast.makeText(PlanView.this, "Pobrano", Toast.LENGTH_SHORT).show();
+                    else if(success == 0)
+                        Toast.makeText(PlanView.this, "Brak internetu", Toast.LENGTH_SHORT).show();
+                    else if(success == 2)
+                        Toast.makeText(PlanView.this, "Ta klasa znajduje się już w pamięci", Toast.LENGTH_SHORT).show();
+                }
+            }).execute();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
+    public interface OnTaskCompleted{
+        void onTaskCompleted(int success);
+    }
     //klasa zajmująca się pobraniem strony do trybu offline
     //wywoływana przez onClickListener przycisku z menu
     public class downloadPageInBackground extends AsyncTask<Void, Void, Void>{
 
+
+        private OnTaskCompleted listener;
+
+        downloadPageInBackground(OnTaskCompleted listener){
+            this.listener = listener;
+        }
+
+        int success;
         String p = "http://www.plan.1lo.gorzow.pl/plany/" + pathParameter + ".html";
 
         @Override
@@ -133,9 +171,13 @@ public class PlanView extends AppCompatActivity{
                             doc.html(),
                             fileName,
                             getApplicationContext());
+                    success = 1;
                 } catch (IOException e) {
                     e.printStackTrace();
+                    success = 0;
                 }
+            }else{
+                success = 2;
             }
             return null;
         }
@@ -143,10 +185,7 @@ public class PlanView extends AppCompatActivity{
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            /**
-             * TODO: interface to give the fragment a callback about downloaded page and whether it is loaded
-             * TODO: from offline
-             */
+            listener.onTaskCompleted(success);
         }
     }
 

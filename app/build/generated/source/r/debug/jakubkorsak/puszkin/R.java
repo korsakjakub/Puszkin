@@ -3520,18 +3520,19 @@ containing a value of this type.
         public static final int path_password_eye_mask_visible=0x7f060067;
         public static final int path_password_strike_through=0x7f060068;
         public static final int plan_lekcji=0x7f060069;
-        public static final int pobierz_strone=0x7f06006a;
-        public static final int pokaz_zapisane=0x7f06006b;
+        public static final int pliki=0x7f06006a;
+        public static final int pobierz_strone=0x7f06006b;
+        public static final int pokaz_zapisane=0x7f06006c;
         public static final int search_menu_title=0x7f060024;
-        public static final int stan_zapisow=0x7f06006c;
+        public static final int stan_zapisow=0x7f06006d;
         public static final int status_bar_notification_info_overflow=0x7f060025;
-        public static final int szara_kulka=0x7f06006d;
-        public static final int title_activity_zastepstwa=0x7f06006e;
-        public static final int twoja_klasa=0x7f06006f;
-        public static final int usun_wszystkie_zapisane=0x7f060070;
-        public static final int zapis=0x7f060071;
-        public static final int zapisane_pliki=0x7f060072;
-        public static final int zastepstwa=0x7f060073;
+        public static final int szara_kulka=0x7f06006e;
+        public static final int title_activity_zastepstwa=0x7f06006f;
+        public static final int twoja_klasa=0x7f060070;
+        public static final int usun_wszystkie_zapisane=0x7f060071;
+        public static final int zapis=0x7f060072;
+        public static final int zapisane_pliki=0x7f060073;
+        public static final int zastepstwa=0x7f060074;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0800a1;

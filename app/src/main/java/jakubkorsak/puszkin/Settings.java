@@ -22,6 +22,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Settings extends AppCompatActivity {
@@ -36,11 +37,9 @@ public class Settings extends AppCompatActivity {
     String TextFromForm;
     private ProgressBar spinner;
 
-    String [] lekcjeIndex = {
-      "o1", "o2", "o3", "o4", "o5", "o6", "o7", "o8","o9",
-            "o10", "o11", "o12","o13", "o14", "o15", "o16", "o17", "o18"
-    };
-
+    ArrayList<String> lekcjeIndex = new ArrayList<>();
+    ArrayList<String> nauczycieleIndex = new ArrayList<>();
+    ArrayList<String> gabinetyIndex = new ArrayList<>();
     StringBuilder str = new StringBuilder("Pliki: \n\n");
 
     @Override
@@ -48,13 +47,48 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        for(int i = 0; i<=17; i++){
-            if(new File(getFilesDir(), lekcjeIndex[i]).exists()){
-                str.append(Sources.getIndex(lekcjeIndex[i], "o", Sources.index, Sources.klasy)+ "\n");
-            }
+
+        for(int i = 1; i <= 18; i++) {
+            lekcjeIndex.add(i-1, "o" + i);
+            Log.i("Zapisy array ", "Dodano " + lekcjeIndex.get(i-1));
+        }
+        for(int i = 1; i <= 48; i++){
+            nauczycieleIndex.add(i-1, "n" + i);
+            Log.i("Zapisy array ", "Dodano " + nauczycieleIndex.get(i-1));
+        }
+        for(int i = 1; i <= 32; i++){
+            gabinetyIndex.add(i-1, "s" + i);
+            Log.i("Zapisy array ", "Dodano " + gabinetyIndex.get(i-1));
         }
 
-
+        try {
+            for (int i = 0; i <= lekcjeIndex.size() - 1; i++) {
+                if (new File(getFilesDir(), lekcjeIndex.get(i)).exists()) {
+                    str.append("Klasa: ")
+                            .append(Sources.getIndex(lekcjeIndex.get(i), "o", Sources.index, Sources.klasy))
+                            .append(", \n");
+                    Log.i("Znaleziono", "klasa " + lekcjeIndex.get(i));
+                }
+            }
+            for (int i = 0; i <= nauczycieleIndex.size() - 1; i++) {
+                if (new File(getFilesDir(), nauczycieleIndex.get(i)).exists()) {
+                    str.append("Nauczyciel: ")
+                            .append(Sources.getIndex(nauczycieleIndex.get(i), "n", Sources.index, Sources.Nauczyciele))
+                            .append(", \n");
+                    Log.i("Znaleziono", "nauczyciel " + nauczycieleIndex.get(i));
+                }
+            }
+            for (int i = 0; i <= gabinetyIndex.size() - 1; i++) {
+                if (new File(getFilesDir(), gabinetyIndex.get(i)).exists()) {
+                    str.append("Sala: ")
+                            .append(Sources.getIndex(gabinetyIndex.get(i), "s", Sources.index, Sources.Gabinety))
+                            .append(", \n");
+                    Log.i("Znaleziono", "sala " + gabinetyIndex.get(i));
+                }
+            }
+        }catch (NullPointerException e){
+            e.printStackTrace();
+        }
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -84,9 +118,7 @@ public class Settings extends AppCompatActivity {
                 FileHandling.writeStringAsFile(TextFromForm, Sources.TWOJA_KLASA_SAVED, getApplicationContext());
                 if (Arrays.asList(Sources.klasy).contains(TextFromForm)) {
                     new downloadPageInBackground().execute();
-                    Toast.makeText(Settings.this, "Zapisano: " + TextFromForm.toUpperCase(), Toast.LENGTH_SHORT).show();
                     FileHandling.writeStringAsFile(TextFromForm, Sources.zrodla[1], getApplicationContext());
-                    recreate();
                 }else{
                     Toast.makeText(Settings.this, "Nie ma takiej klasy. Pamiętaj o formacie \"1a\"", Toast.LENGTH_SHORT).show();
                 }
@@ -98,11 +130,12 @@ public class Settings extends AppCompatActivity {
         deleteAll.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                String twojaZapisana = "";
+                String twojaZapisana;
                 try {
                     twojaZapisana = Sources.getID(FileHandling.readFileAsString(Sources.TWOJA_KLASA_SAVED,
                             getApplicationContext()), "o", Sources.klasy);
                 }catch (IndexOutOfBoundsException ignored){
+                    twojaZapisana = "";
                 }
                 if((new File(getFilesDir(), twojaZapisana)).exists()){
                     deleteFile(twojaZapisana);
@@ -113,10 +146,8 @@ public class Settings extends AppCompatActivity {
                 if((new File(getFilesDir(), Sources.zrodla[1])).exists()){
                     deleteFile(Sources.zrodla[1]);
                 }
-                recreate();
             }
         });
-
         pInfo = null;
         try {
             pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
@@ -164,8 +195,6 @@ public class Settings extends AppCompatActivity {
                 }
                     ((TextView)findViewById(R.id.bottomsheet_text)).setText(str);
             }
-
-
             @Override
             public void onSlide(@NonNull View bottomSheet, float slideOffset) {
                 Log.i("BottomSheetCallback", "slideOffset: " + slideOffset);
@@ -202,6 +231,7 @@ public class Settings extends AppCompatActivity {
                         getApplicationContext());
             } catch (Exception e) {
                 e.printStackTrace();
+                Log.i("AsyncTast", "Brak internetu");
             }
             return null;
         }
@@ -215,9 +245,8 @@ public class Settings extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-
             spinner.setVisibility(View.GONE);
-            Toast.makeText(Settings.this, "Zakończono", Toast.LENGTH_SHORT).show();
+            Log.i("AsyncTask", "Koniec AsyncTasku");
         }
     }
 }

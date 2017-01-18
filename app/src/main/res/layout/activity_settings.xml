@@ -115,8 +115,8 @@
             android:id="@+id/bottomsheet_text"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/zapisane_pliki"
             android:textAlignment="center"
+            android:textSize="24sp"
             android:textColor="@color/white"/>
 
     </RelativeLayout>

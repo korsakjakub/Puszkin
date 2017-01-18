@@ -99,7 +99,7 @@ public class PlanViewFragment extends Fragment {
         protected Void doInBackground(Void... params) {
             Document document;
 
-            fileName = "ZAPIS_" + pathParameter;
+            fileName = pathParameter;
             saved = new File(getActivity().getFilesDir(), fileName);
             try {
                 //jeżeli nie istnieje Jsoup weźmie dane z internetu

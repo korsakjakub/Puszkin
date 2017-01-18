@@ -122,7 +122,7 @@ public class PlanView extends AppCompatActivity{
         @Override
         protected Void doInBackground(Void... params) {
             //plik do którego będzie zapisywane
-            String fileName = "ZAPIS_" + pathParameter;
+            String fileName = pathParameter;
             File file = new File(getFilesDir(), fileName);
 
             //jeśli nie istnieje ściągnąć z JSoup

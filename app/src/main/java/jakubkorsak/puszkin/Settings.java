@@ -36,11 +36,23 @@ public class Settings extends AppCompatActivity {
     String TextFromForm;
     private ProgressBar spinner;
 
+    String [] lekcjeIndex = {
+      "o1", "o2", "o3", "o4", "o5", "o6", "o7", "o8","o9",
+            "o10", "o11", "o12","o13", "o14", "o15", "o16", "o17", "o18"
+    };
+
+    StringBuilder str = new StringBuilder("Pliki: \n\n");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        for(int i = 0; i<=17; i++){
+            if(new File(getFilesDir(), lekcjeIndex[i]).exists()){
+                str.append(Sources.getIndex(lekcjeIndex[i], "o", Sources.index, Sources.klasy)+ "\n");
+            }
+        }
 
 
 
@@ -59,7 +71,6 @@ public class Settings extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.editText);
         assert editText != null;
         editText.setHint("np. 1a");
-
 
         spinner = (ProgressBar)findViewById(R.id.progressBar1);
         spinner.setVisibility(View.GONE);
@@ -89,7 +100,7 @@ public class Settings extends AppCompatActivity {
             public void onClick(View v){
                 String twojaZapisana = "";
                 try {
-                    twojaZapisana = "ZAPIS_" + Sources.getID(FileHandling.readFileAsString(Sources.TWOJA_KLASA_SAVED,
+                    twojaZapisana = Sources.getID(FileHandling.readFileAsString(Sources.TWOJA_KLASA_SAVED,
                             getApplicationContext()), "o", Sources.klasy);
                 }catch (IndexOutOfBoundsException ignored){
                 }
@@ -151,8 +162,7 @@ public class Settings extends AppCompatActivity {
                         Log.i("BottomSheetCallback", "BottomSheetBehavior.STATE_HIDDEN");
                         break;
                 }
-
-                ((TextView)findViewById(R.id.bottomsheet_text)).setText("Lista plików");
+                    ((TextView)findViewById(R.id.bottomsheet_text)).setText(str);
             }
 
 
@@ -188,7 +198,7 @@ public class Settings extends AppCompatActivity {
         protected Void doInBackground(Void... params) {
             try {
                 Document doc = Jsoup.connect(p).get();
-                FileHandling.writeStringAsFile(doc.html(), "ZAPIS_" + Sources.getID(TextFromForm, "o", Sources.klasy),
+                FileHandling.writeStringAsFile(doc.html(), Sources.getID(TextFromForm, "o", Sources.klasy),
                         getApplicationContext());
             } catch (Exception e) {
                 e.printStackTrace();

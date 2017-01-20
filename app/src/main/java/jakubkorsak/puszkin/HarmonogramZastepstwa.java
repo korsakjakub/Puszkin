@@ -35,8 +35,6 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
             }
         });
 
-
-
         spinner = (ProgressBar)findViewById(R.id.progressBar1);
         spinner.setVisibility(View.VISIBLE);
         textView = (TextView)findViewById(R.id.textView);

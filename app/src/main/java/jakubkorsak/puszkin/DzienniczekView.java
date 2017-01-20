@@ -40,7 +40,7 @@ public class DzienniczekView extends AppCompatActivity {
         webSettings.setBuiltInZoomControls(true);
         //To wyłącza brzydkie przyciski sterujące zoomem
         webSettings.setDisplayZoomControls(false);
-            path = "http://aplikacje.vulcan.pl/dziennik/00081/dzienniczek.aspx?view=Oceny";
+        path = "http://aplikacje.vulcan.pl/dziennik/00081/dzienniczek.aspx?view=Oceny";
         webView.loadUrl(path);
     }
 }

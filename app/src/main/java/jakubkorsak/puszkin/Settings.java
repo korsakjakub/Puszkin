@@ -49,21 +49,34 @@ public class Settings extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
 
+        /**
+         * ładuję dane do ArrayList odpowiedniej nazwy
+         */
         for(int i = 1; i <= 18; i++) {
+            //wszystkie oddziały
             lekcjeIndex.add(0, "o" + i);
             Log.i("Zapisy array ", "Dodano " + lekcjeIndex.get(0));
         }
         for(int i = 1; i <= 48; i++){
+            //wszyscy nauczyciele
             nauczycieleIndex.add(0, "n" + i);
             Log.i("Zapisy array ", "Dodano " + nauczycieleIndex.get(0));
         }
         for(int i = 1; i <= 32; i++){
+            //wszystkie gabinety
             gabinetyIndex.add(0, "s" + i);
             Log.i("Zapisy array ", "Dodano " + gabinetyIndex.get(0));
         }
 
+        /**
+         * sprawdza czy znaleziono któryś z plików o nazwie tej komórki listy, po czym dopisuje do
+         * StringBuildera nazwy tych które znalazł
+         * + dopisuje do listy existingFiles znalezione. Trzyma ich spis żeby można było je
+         * w razie czego usunąć.
+         */
         try {
             for (int i = 0; i <= lekcjeIndex.size() - 1; i++) {
+                //oddziały
                 if (new File(getFilesDir(), lekcjeIndex.get(i)).exists()) {
                     str.append("Klasa: ")
                             .append(Sources.getIndex(lekcjeIndex.get(i), "o", Sources.index, Sources.klasy))
@@ -73,6 +86,7 @@ public class Settings extends AppCompatActivity {
                 }
             }
             for (int i = 0; i <= nauczycieleIndex.size() - 1; i++) {
+                //nauczyciele
                 if (new File(getFilesDir(), nauczycieleIndex.get(i)).exists()) {
                     str.append("Nauczyciel: ")
                             .append(Sources.getIndex(nauczycieleIndex.get(i), "n", Sources.index, Sources.Nauczyciele))
@@ -82,6 +96,7 @@ public class Settings extends AppCompatActivity {
                 }
             }
             for (int i = 0; i <= gabinetyIndex.size() - 1; i++) {
+                //gabinety
                 if (new File(getFilesDir(), gabinetyIndex.get(i)).exists()) {
                     str.append("Sala: ")
                             .append(Sources.getIndex(gabinetyIndex.get(i), "s", Sources.index, Sources.Gabinety))
@@ -91,6 +106,7 @@ public class Settings extends AppCompatActivity {
                 }
             }
         }catch (NullPointerException e){
+            Log.e("Checking for files", "błędny rozmiar listy");
             e.printStackTrace();
         }
 
@@ -119,6 +135,7 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 TextFromForm = editText.getText().toString();
+                //sprawdzamy czy to co wpisał użytkownik jest nazwą klasy
                 if (Arrays.asList(Sources.klasy).contains(TextFromForm)) {
                     new downloadPageInBackground(new OnTaskCompleted() {
                         @Override
@@ -136,6 +153,9 @@ public class Settings extends AppCompatActivity {
         });
 
 
+        /**
+         * tutaj usuwane są istniejące pliki klas
+         */
         deleteAll = (Button)findViewById(R.id.delete_all);
         deleteAll.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -153,6 +173,9 @@ public class Settings extends AppCompatActivity {
 
             }
         });
+        /**
+         * prosty alert z informacjami o mnie i o wersji aplikacji
+         */
         pInfo = null;
         try {
             pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
@@ -175,7 +198,9 @@ public class Settings extends AppCompatActivity {
             }
         });
 
-
+        /**
+        Cała logika dot. bottomSheet
+         */
         View bottomSheet = findViewById(R.id.design_bottom_sheet);
         final BottomSheetBehavior behavior = BottomSheetBehavior.from(bottomSheet);
         behavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
@@ -235,10 +260,12 @@ public class Settings extends AppCompatActivity {
         String p = "http://www.plan.1lo.gorzow.pl/plany/" +
                 Sources.getID(TextFromForm, "o", Sources.klasy) +
                 ".html";
+
         boolean success;
 
         @Override
         protected Void doInBackground(Void... params) {
+            //sprawdzamy czy wcześniej ta klasa nie została już zapisana jako twojaKlasa
             try {
                 String s = FileHandling.readFileAsString(Sources.zrodla[1], getApplicationContext());
                 try {
@@ -247,21 +274,24 @@ public class Settings extends AppCompatActivity {
                 }catch (IndexOutOfBoundsException e){
                     Log.i("AsyncTask", "brak wcześniejszej \"twoja_klasa\"");
                 }
+                //pobieramy stronę do pamięci urządzenia
                 Document doc = Jsoup.connect(p).get();
                 FileHandling.writeStringAsFile(doc.html(), Sources.getID(TextFromForm, "o", Sources.klasy),
                         getApplicationContext());
+                //informacja do MainActivity żeby mógł odczytać czy ma wyświetlać przycisk twojaKlasaButton
                 FileHandling.writeStringAsFile(TextFromForm, Sources.zrodla[1], getApplicationContext());
-
-                success = true;
+                success = true; //udało się wykonać
             } catch (Exception e) {
                 e.printStackTrace();
                 Log.i("AsyncTask", "Brak internetu");
-
-                success = false;
+                success = false; //nie udało sie wykonać
             }
             return null;
         }
 
+        /**
+         * włączamy spinner
+         */
         @Override
         protected void onPreExecute() {
             super.onPreExecute();

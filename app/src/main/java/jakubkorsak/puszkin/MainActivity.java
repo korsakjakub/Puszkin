@@ -16,16 +16,16 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button planSave;
+    Button planSaveButton;
     TextView planSaveText;
     Button zastepstwa;
     Button planLekcji;
     Button harmonogram;
     Button dzienniczek;
-    Button settings;
-    Button facebook;
-    Button puszkinowaPomoc;
-    Button twojaKlasa;
+    Button settingsButton;
+    Button facebookButtonILO;
+    Button facebookButtonPuszkinowaPomoc;
+    Button twojaKlasaButton;
     TextView twojaKlasaText;
 
     int onBackCounter = 0;
@@ -90,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
                 bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "button");
                 mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
 
-
                 Intent intent = new Intent(MainActivity.this, DzienniczekView.class);
                 Bundle b = new Bundle();
                 b.putString(Sources.SENDER_ACTIVITY, Sources.TYPE_OF_WEB_VIEW[3]);
@@ -99,19 +98,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**bierze szerokość ekranu, żeby przyciski planSaveButton i twojaKlasaButton zajmowały całą szerokość
+         * kiedy widoczny jest tylko jeden z nich i dzieliły się po 50% kiedy widoczne są oba
+         */
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int width = displayMetrics.widthPixels;
 
 
+        /**
+         * przycisk wyświetlający ostatnio przeglądaną klasę (z wyłączeniem klasy wynikającej z naciśnięcia
+         * twojaKlasaButton
+         */
         planSaveText = (TextView) findViewById(R.id.text_ostatnia);
-        planSave = (Button) findViewById(R.id.plan_save);
-        planSave.setWidth(width);
-        setTextAndTagAndSetVisibilityOfTheButtonsView(planSave, planSaveText, Sources.zrodla[1]);
-        planSave.setOnClickListener(new View.OnClickListener() {
+        planSaveButton = (Button) findViewById(R.id.plan_save);
+        planSaveButton.setWidth(width);
+        setTextAndTagAndSetVisibilityOfTheButtonsView(planSaveButton, planSaveText, Sources.zrodla[1]);
+        planSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PlanView.class);//DzienniczekView.class);
+                Intent intent = new Intent(MainActivity.this, PlanView.class);
                 String tag = Sources.getID(FileHandling.readFileAsString(Sources.zrodla[0],
                         getApplicationContext()), "o", Sources.klasy);
                 Bundle b = new Bundle();
@@ -122,14 +128,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        twojaKlasa = (Button) findViewById(R.id.twoja_klasa);
+        /**
+        przycisk wyświetlający zapisaną w ustawieniach klasę.
+         */
+        twojaKlasaButton = (Button) findViewById(R.id.twoja_klasa);
         twojaKlasaText = (TextView) findViewById(R.id.text_twoja);
-        twojaKlasa.setWidth(width);
-        setTextAndTagAndSetVisibilityOfTheButtonsView(twojaKlasa, twojaKlasaText, Sources.zrodla[1]);
-        twojaKlasa.setOnClickListener(new View.OnClickListener() {
+        twojaKlasaButton.setWidth(width);
+        setTextAndTagAndSetVisibilityOfTheButtonsView(twojaKlasaButton, twojaKlasaText, Sources.zrodla[1]);
+        twojaKlasaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PlanView.class);//DzienniczekView.class);
+                Intent intent = new Intent(MainActivity.this, PlanView.class);
                 String tag = Sources.getID(FileHandling.readFileAsString(Sources.zrodla[1],
                         getApplicationContext()), "o", Sources.klasy);
                 Bundle b = new Bundle();
@@ -139,9 +148,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        settings = (Button) findViewById(R.id.info);
-        assert settings != null;
-        settings.setOnClickListener(new View.OnClickListener() {
+        settingsButton = (Button) findViewById(R.id.info);
+        assert settingsButton != null;
+        settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Settings.class);
@@ -149,23 +158,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        facebook = (Button) findViewById(R.id.facebook);
-        assert facebook != null;
-        facebook.setOnClickListener(new View.OnClickListener() {
+        /**
+         * deep-link do aplikacji Facebook do strony szkoły
+         */
+        facebookButtonILO = (Button) findViewById(R.id.facebook);
+        assert facebookButtonILO != null;
+        facebookButtonILO.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://www.facebook.com/n/?puszkingorzow";
+                String url = "https://www.facebookButtonILO.com/n/?puszkingorzow";
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW);
                 browserIntent.setData(Uri.parse(url));
                 startActivity(browserIntent);
             }
         });
-        puszkinowaPomoc = (Button) findViewById(R.id.facebook2);
-        assert puszkinowaPomoc != null;
-        puszkinowaPomoc.setOnClickListener(new View.OnClickListener() {
+        /**
+         * deep-link do aplikacji Facebook do grupy uczniowskiej (~500-600 osób)
+         */
+        facebookButtonPuszkinowaPomoc = (Button) findViewById(R.id.facebook2);
+        assert facebookButtonPuszkinowaPomoc != null;
+        facebookButtonPuszkinowaPomoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://www.facebook.com/groups/puszkinowapomoc";
+                String url = "https://www.facebookButtonILO.com/groups/puszkinowapomoc";
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW);
                 browserIntent.setData(Uri.parse(url));
                 startActivity(browserIntent);
@@ -173,14 +188,20 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * sprawdza czy planSaveButton i twojaKlasaButton nie wyprodukują NullPointerException
+     */
     @Override
     protected void onResume() {
         super.onResume();
         resetOnBackCounter();
-        setTextAndTagAndSetVisibilityOfTheButtonsView(planSave, planSaveText, Sources.zrodla[0]);
-        setTextAndTagAndSetVisibilityOfTheButtonsView(twojaKlasa, twojaKlasaText, Sources.zrodla[1]);
+        setTextAndTagAndSetVisibilityOfTheButtonsView(planSaveButton, planSaveText, Sources.zrodla[0]);
+        setTextAndTagAndSetVisibilityOfTheButtonsView(twojaKlasaButton, twojaKlasaText, Sources.zrodla[1]);
     }
 
+    /**
+     * dodaję ostrzeżenie przed omylnym wyjściem z aplikacji
+     */
     @Override
     public void onBackPressed() {
 

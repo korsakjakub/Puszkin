@@ -128,8 +128,7 @@ class Sources {
      * Zasada działania:
      * dostajemy input pathParameter, jakiś ciąg znaków. Sprawdzamy czy znajduje się on webView którejś z tablic webView Sources
      * jeśli tak, to zwracamy dany "prefix" + indeks webView jakim znaleziono tą wartość + 1 bo
-     * tablice liczą od 0.
-     *
+     * tablice mają indeksy zaczynające się od 0.
      */
     static String getID(String h, String prefix, String[] source) {
         int i = 0;
@@ -145,7 +144,7 @@ class Sources {
 
 
     /**
-     * @param h      "[o,n,containerString] + index[1;18]"
+     * @param h "[o,n,containerString] + index[1;18]"
      * @param prefix webView tej wersji jest to zawsze "o" ale webView późniejszych wersjach rozszerzę tą funkcję
      * @param source tablica do której ma porównywać "pathParameter"
      * @return odpowiadająca nazwa klasy webView postaci "[1;3] + [A;F]"

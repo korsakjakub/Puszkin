@@ -36,6 +36,7 @@ public class PlanView extends AppCompatActivity{
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        assert toolbar!=null;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -61,8 +62,6 @@ public class PlanView extends AppCompatActivity{
                     (pathParameter, "s", Sources.index, Sources.Gabinety).toUpperCase());
         }
         SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
-        // Set up the ViewPager with the sections adapter.
         ViewPager mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
@@ -105,7 +104,6 @@ public class PlanView extends AppCompatActivity{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -143,8 +141,9 @@ public class PlanView extends AppCompatActivity{
     public interface OnTaskCompleted{
         void onTaskCompleted(int success);
     }
-    //klasa zajmująca się pobraniem strony do trybu offline
-    //wywoływana przez onClickListener przycisku z menu
+    /**klasa zajmująca się pobraniem strony do trybu offline
+     * wywoływana przez onClickListener przycisku z menu
+     */
     public class downloadPageInBackground extends AsyncTask<Void, Void, Void>{
 
 

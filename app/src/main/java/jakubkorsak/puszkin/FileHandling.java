@@ -23,7 +23,6 @@ class FileHandling {
         try {
             in = new BufferedReader(new FileReader(new File(context.getFilesDir(), fileName)));
             while ((line = in.readLine()) != null) stringBuilder.append(line);
-
         } catch (IOException ignored) {
         }
         return stringBuilder.toString();

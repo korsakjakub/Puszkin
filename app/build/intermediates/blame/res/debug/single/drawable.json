@@ -196,12 +196,12 @@
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/res/drawable/abc_ic_ab_back_material.xml"
     },
     {
-        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
-        "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/drawable/design_snackbar_background.xml"
-    },
-    {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable/presence_online.png",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/drawable/presence_online.png"
+    },
+    {
+        "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
+        "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.1.0/res/drawable/design_snackbar_background.xml"
     },
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",

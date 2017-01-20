@@ -7,8 +7,8 @@ android {
         applicationId "jakubkorsak.puszkin"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 4
-        versionName "2.2"
+        versionCode 5
+        versionName "Unicycling Gorilla"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }

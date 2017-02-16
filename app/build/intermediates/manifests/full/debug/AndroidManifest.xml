@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="jakubkorsak.puszkin"
     android:versionCode="5"
-    android:versionName="Unicycling Gorilla" >
+    android:versionName="2.3 Unicycling Gorilla" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -22,7 +22,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/icon"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >

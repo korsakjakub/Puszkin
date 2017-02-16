@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "285424349625",
+    "firebase_url": "https://puszkin-39d78.firebaseio.com",
+    "project_id": "puszkin-39d78",
+    "storage_bucket": "puszkin-39d78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285424349625:android:1785d3914bb8c6e1",
+        "android_client_info": {
+          "package_name": "jakubkorsak.puszkin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285424349625-avmomlc72ma9oc2eufb15lr3gnb8vqi0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "jakubkorsak.puszkin",
+            "certificate_hash": "9A43426FAC1F5E9BDAA9F4036401CF8B7FA8B696"
+          }
+        },
+        {
+          "client_id": "285424349625-t69hm11ticbtg0dkv82jeu64hgkrk85n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCphmItPXXZfK2Hj3wxWvepr39kn6H4gB4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285424349625-t69hm11ticbtg0dkv82jeu64hgkrk85n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

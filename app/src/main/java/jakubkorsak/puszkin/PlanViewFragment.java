@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ import org.jsoup.select.Elements;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,17 +27,8 @@ public class PlanViewFragment extends Fragment {
 
     String path;
     String pathParameter;
-    TextView lekcja0;
-    TextView lekcja1;
-    TextView lekcja2;
-    TextView lekcja3;
-    TextView lekcja4;
-    TextView lekcja5;
-    TextView lekcja6;
-    TextView lekcja7;
-    TextView lekcja8;
-    TextView lekcja9;
     private ProgressBar spinner;
+    List<LinearLayout> rows;
 
 
     public static PlanViewFragment newInstance(int index){
@@ -54,6 +47,18 @@ public class PlanViewFragment extends Fragment {
         return getArguments().getInt("index");
     }
 
+    private static final int[] ROW_IDS = {
+            R.id.r0,
+            R.id.r1,
+            R.id.r2,
+            R.id.r3,
+            R.id.r4,
+            R.id.r5,
+            R.id.r6,
+            R.id.r7,
+            R.id.r8,
+            R.id.r9,
+    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,19 +66,15 @@ public class PlanViewFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_plan_view, container, false);
 
-        //inicjowanie elementów UI
-        lekcja0 = (TextView)view.findViewById(R.id.lekcja_0);
-        lekcja1 = (TextView)view.findViewById(R.id.lekcja_1);
-        lekcja2 = (TextView)view.findViewById(R.id.lekcja_2);
-        lekcja3 = (TextView)view.findViewById(R.id.lekcja_3);
-        lekcja4 = (TextView)view.findViewById(R.id.lekcja_4);
-        lekcja5 = (TextView)view.findViewById(R.id.lekcja_5);
-        lekcja6 = (TextView)view.findViewById(R.id.lekcja_6);
-        lekcja7 = (TextView)view.findViewById(R.id.lekcja_7);
-        lekcja8 = (TextView)view.findViewById(R.id.lekcja_8);
-        lekcja9 = (TextView)view.findViewById(R.id.lekcja_9);
         spinner = (ProgressBar)view.findViewById(R.id.progressBar1);
         spinner.setVisibility(View.VISIBLE);
+
+        rows = new ArrayList<>(ROW_IDS.length);
+        for(int id : ROW_IDS){
+            LinearLayout row = (LinearLayout)view.findViewById(id);
+            row.setVisibility(View.INVISIBLE);
+            rows.add(row);
+        }
 
         //bierzemy pathParameter z intenta
         pathParameter = getActivity().getIntent().getExtras().getString(Sources.TAG);
@@ -91,6 +92,7 @@ public class PlanViewFragment extends Fragment {
 
         //Lista do której zapiszemy lekcje
         ArrayList<String> lekcjeArray;
+        ArrayList<String> godzinyArray;
         //plik z którego ewentualnie będą ładowane pliki
         String fileName;
         File saved;
@@ -115,11 +117,16 @@ public class PlanViewFragment extends Fragment {
                 document.outputSettings(new Document.OutputSettings().prettyPrint(false));
                 //Zbiera do Elements wszystkie obiekty z klasą "l"
                 Elements lessons = document.getElementsByClass("l");
+                Elements hours = document.getElementsByClass("g");
 
                 //ładuje lessons do lekcjeArray (ArrayList zdaje się lepiej reagować na castowanie do String)
                 lekcjeArray = new ArrayList<>(lessons.size());
                 for (int i = 0; i < lessons.size(); i++) {
                     lekcjeArray.add(lessons.get(i).text());
+                }
+                godzinyArray = new ArrayList<>(hours.size());
+                for (int i = 0; i < hours.size(); i++){
+                    godzinyArray.add(hours.get(i).text());
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -155,40 +162,70 @@ public class PlanViewFragment extends Fragment {
                 //niektóre plany lekcji mogą mieć mniej niż 50 komórek, stąd bez warunków szybko
                 //otrzymalibyśmy NullPointerException albo IndexOutOfBoundsException
                 if (lekcjeArray.size() >= planOperator + 1) {
-                    lekcja0.setText(lekcjeArray.get(planOperator).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.lekcja_0))
+                            .setText(lekcjeArray.get(planOperator).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.godzina_0)).setText(godzinyArray.get(0));
+                    rows.get(0).setVisibility(View.VISIBLE);
                 }
                 if (lekcjeArray.size() >= planOperator + 6) {
-                    lekcja1.setText(lekcjeArray.get(planOperator + 5).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.lekcja_1))
+                            .setText(lekcjeArray.get(planOperator + 5).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.godzina_1)).setText(godzinyArray.get(1));
+                    rows.get(1).setVisibility(View.VISIBLE);
                 }
                 if (lekcjeArray.size() >= planOperator + 11) {
-                    lekcja2.setText(lekcjeArray.get(planOperator + 10).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.lekcja_2))
+                            .setText(lekcjeArray.get(planOperator + 10).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.godzina_2)).setText(godzinyArray.get(2));
+                    rows.get(2).setVisibility(View.VISIBLE);
                 }
                 if (lekcjeArray.size() >= planOperator + 16) {
-                    lekcja3.setText(lekcjeArray.get(planOperator + 15).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.lekcja_3))
+                            .setText(lekcjeArray.get(planOperator + 15).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.godzina_3)).setText(godzinyArray.get(3));
+                    rows.get(3).setVisibility(View.VISIBLE);
                 }
                 if (lekcjeArray.size() >= planOperator + 21) {
-                    lekcja4.setText(lekcjeArray.get(planOperator + 20).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.lekcja_4))
+                            .setText(lekcjeArray.get(planOperator + 20).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.godzina_4)).setText(godzinyArray.get(4));
+                    rows.get(4).setVisibility(View.VISIBLE);
                 }
                 if (lekcjeArray.size() >= planOperator + 26) {
-                    lekcja5.setText(lekcjeArray.get(planOperator + 25).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.lekcja_5))
+                            .setText(lekcjeArray.get(planOperator + 25).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.godzina_5)).setText(godzinyArray.get(5));
+                    rows.get(5).setVisibility(View.VISIBLE);
                 }
                 if (lekcjeArray.size() >= planOperator + 31) {
-                    lekcja6.setText(lekcjeArray.get(planOperator + 30).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.lekcja_6))
+                            .setText(lekcjeArray.get(planOperator +30).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.godzina_6)).setText(godzinyArray.get(6));
+                    rows.get(6).setVisibility(View.VISIBLE);
                 }
                 if (lekcjeArray.size() >= planOperator + 36) {
-                    lekcja0.setVisibility(View.VISIBLE);
-                    lekcja7.setText(lekcjeArray.get(planOperator + 35).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.lekcja_7))
+                            .setText(lekcjeArray.get(planOperator + 35).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.godzina_7)).setText(godzinyArray.get(7));
+                    rows.get(7).setVisibility(View.VISIBLE);
                 }
                 if (lekcjeArray.size() >= planOperator + 41) {
-                    lekcja8.setText(lekcjeArray.get(planOperator + 40).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.lekcja_8))
+                            .setText(lekcjeArray.get(planOperator + 40).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.godzina_8)).setText(godzinyArray.get(8));
+                    rows.get(8).setVisibility(View.VISIBLE);
                 }
                 if (lekcjeArray.size() >= planOperator + 46) {
-                    lekcja9.setText(lekcjeArray.get(planOperator + 45).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.lekcja_9))
+                            .setText(lekcjeArray.get(planOperator + 45).replaceAll("-", ""));
+                    ((TextView)getView().findViewById(R.id.godzina_9)).setText(godzinyArray.get(9));
+                    rows.get(9).setVisibility(View.VISIBLE);
                 }
+
                 spinner.setVisibility(View.GONE);
             }catch (NullPointerException ignored){
                 //NullPointerException -> brak internetu w tym przypadku
-                lekcja0.setText(R.string.brak_internetu);
+                ((TextView)getView().findViewById(R.id.lekcja_0)).setText(R.string.brak_internetu);
                 spinner.setVisibility(View.GONE);
             }
         }

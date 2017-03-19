@@ -715,7 +715,13 @@ int drawable abc_textfield_search_default_mtrl_alpha 0x7f020050
 int drawable abc_textfield_search_material 0x7f020051
 int drawable abc_vector_test 0x7f020052
 int drawable avd_hide_password 0x7f020053
+int drawable avd_hide_password_1 0x7f020081
+int drawable avd_hide_password_2 0x7f020082
+int drawable avd_hide_password_3 0x7f020083
 int drawable avd_show_password 0x7f020054
+int drawable avd_show_password_1 0x7f020084
+int drawable avd_show_password_2 0x7f020085
+int drawable avd_show_password_3 0x7f020086
 int drawable common_full_open_on_phone 0x7f020055
 int drawable common_google_signin_btn_icon_dark 0x7f020056
 int drawable common_google_signin_btn_icon_dark_disabled 0x7f020057

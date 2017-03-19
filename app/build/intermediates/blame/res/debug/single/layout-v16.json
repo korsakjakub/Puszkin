@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout-v16/notification_template_custom_big.xml",
+        "source": "/Users/jakub/.android/build-cache/4e862dfe711a7c5349acdeaadb600fd6cd465bc2/output/res/layout-v16/notification_template_custom_big.xml"
+    },
+    {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout-v16/notification_template_custom_big.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/layout-v16/notification_template_custom_big.xml"
     }

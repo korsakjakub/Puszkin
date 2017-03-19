@@ -1,10 +1,18 @@
 [
     {
+        "merged": "/Users/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
+        "source": "/Users/jakub/.android/build-cache/534b646ff6b095f81a1b8b1a0153fba5a1690ae8/output/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
+    },
+    {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.1.1/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
     },
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.1.1/res/drawable-anydpi-v21/design_ic_visibility.xml"
+    },
+    {
+        "merged": "/Users/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
+        "source": "/Users/jakub/.android/build-cache/534b646ff6b095f81a1b8b1a0153fba5a1690ae8/output/res/drawable-anydpi-v21/design_ic_visibility.xml"
     }
 ]

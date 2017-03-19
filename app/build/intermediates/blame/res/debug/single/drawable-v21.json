@@ -1,7 +1,23 @@
 [
     {
+        "merged": "/Users/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-v21/design_password_eye.xml",
+        "source": "/Users/jakub/.android/build-cache/534b646ff6b095f81a1b8b1a0153fba5a1690ae8/output/res/drawable-v21/design_password_eye.xml"
+    },
+    {
+        "merged": "/Users/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/jakub/.android/build-cache/4e862dfe711a7c5349acdeaadb600fd6cd465bc2/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-v21/avd_hide_password.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.1.1/res/drawable-v21/avd_hide_password.xml"
+    },
+    {
+        "merged": "/Users/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/jakub/.android/build-cache/4e862dfe711a7c5349acdeaadb600fd6cd465bc2/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/jakub/.android/build-cache/4e862dfe711a7c5349acdeaadb600fd6cd465bc2/output/res/drawable-v21/abc_edit_text_material.xml"
     },
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-v21/avd_show_password.xml",
@@ -16,8 +32,16 @@
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.1.1/res/drawable-v21/design_bottom_navigation_item_background.xml"
     },
     {
+        "merged": "/Users/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-v21/avd_hide_password.xml",
+        "source": "/Users/jakub/.android/build-cache/534b646ff6b095f81a1b8b1a0153fba5a1690ae8/output/res/drawable-v21/avd_hide_password.xml"
+    },
+    {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "source": "/Users/jakub/.android/build-cache/4e862dfe711a7c5349acdeaadb600fd6cd465bc2/output/res/drawable-v21/notification_action_background.xml"
     },
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-v21/design_password_eye.xml",
@@ -30,5 +54,13 @@
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml",
+        "source": "/Users/jakub/.android/build-cache/534b646ff6b095f81a1b8b1a0153fba5a1690ae8/output/res/drawable-v21/design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "/Users/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/drawable-v21/avd_show_password.xml",
+        "source": "/Users/jakub/.android/build-cache/534b646ff6b095f81a1b8b1a0153fba5a1690ae8/output/res/drawable-v21/avd_show_password.xml"
     }
 ]

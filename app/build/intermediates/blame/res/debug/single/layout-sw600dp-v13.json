@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "/Users/jakub/.android/build-cache/534b646ff6b095f81a1b8b1a0153fba5a1690ae8/output/res/layout-sw600dp-v13/design_layout_snackbar.xml"
+    },
+    {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/exploded-aar/com.android.support/design/25.1.1/res/layout-sw600dp-v13/design_layout_snackbar.xml"
     }

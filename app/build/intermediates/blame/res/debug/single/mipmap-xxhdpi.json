@@ -2,5 +2,9 @@
     {
         "merged": "/home/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
         "source": "/home/jakub/Documents/Projects/Puszkin/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/jakub/Documents/Projects/Puszkin/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
+        "source": "/Users/jakub/Documents/Projects/Puszkin/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     }
 ]

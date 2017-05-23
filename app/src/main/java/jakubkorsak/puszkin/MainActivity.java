@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
         facebookButtonILO.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://www.facebookButtonILO.com/n/?puszkingorzow";
+                String url = "https://www.facebook.com/n/?puszkingorzow";
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW);
                 browserIntent.setData(Uri.parse(url));
                 startActivity(browserIntent);
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
         facebookButtonPuszkinowaPomoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://www.facebookButtonILO.com/groups/puszkinowapomoc";
+                String url = "https://www.facebook.com/groups/puszkinowapomoc";
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW);
                 browserIntent.setData(Uri.parse(url));
                 startActivity(browserIntent);

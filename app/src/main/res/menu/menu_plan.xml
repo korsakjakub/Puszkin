@@ -5,4 +5,9 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_download_page"
+        android:orderInCategory="100"
+        android:title="@string/pobierz_strone"
+        app:showAsAction="never" />
 </menu>

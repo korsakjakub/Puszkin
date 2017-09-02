@@ -12,13 +12,14 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class SNPlanView extends AppCompatActivity {
 
-    private ListView list;
-    private String pressedItem;
     String sender;
     String tag;
+    private ListView list;
+    private String pressedItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +39,17 @@ public class SNPlanView extends AppCompatActivity {
         });
         toolbar.setTitleTextColor(Color.WHITE);
         sender = getIntent().getStringExtra("sender");
+        String nauczycieleRaw = FileHandling.readFileAsString("nauczyciele", getApplicationContext());
+
+
+        // List nauczyciele = new ArrayList();
+        // nauczyciele.addAll(Arrays.asList(nauczycieleRaw.split("\n")));
+        // nauczyciele.addAll(nauczycieleRaw.split("\n"));
 
         list = (ListView) findViewById(R.id.lista);
         ArrayList<String> arrayList = new ArrayList<>();
+
+        List<String> output = Arrays.asList(nauczycieleRaw.split("\n"));
 
         //ładowanie danych do listy i nadanie nazwy toolbarowi
         if(sender.equals("Gabinety")){
@@ -51,7 +60,7 @@ public class SNPlanView extends AppCompatActivity {
             arrayList.addAll(Arrays.asList(Sources.Nauczyciele));
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.row, arrayList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.row, output);//nauczycieleRaw.split("\n"));
 
         list.setAdapter(adapter);
         list.setClickable(true);

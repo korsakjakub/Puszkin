@@ -57,7 +57,7 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
     }
 
 
-    public class GetPlanInBackground extends AsyncTask<Void, Void, Void> {
+    private class GetPlanInBackground extends AsyncTask<Void, Void, Void> {
         String taskOutput;
         String containerString;
 

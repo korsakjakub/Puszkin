@@ -47,7 +47,8 @@ public class PlanView extends AppCompatActivity{
         });
         toolbar.setTitleTextColor(Color.WHITE);
         pathParameter = getIntent().getStringExtra(Sources.TAG);
-        /**
+
+        /*
         zmienia tytuł toolbaru i zmienia wg. o1 -> 1A
          lub n1 -> jakieś imię lub s1 -> jakiś gabinet
          */
@@ -65,10 +66,10 @@ public class PlanView extends AppCompatActivity{
         ViewPager mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        /**
-         * biorę dzień tygodnia i wg. niego ustawiam domyślny tab
-         * więc kiedy użytkownik włączy plan otworzy mu się od razu
-         * plan na dzisiejszy dzień
+        /*
+          biorę dzień tygodnia i wg. niego ustawiam domyślny tab
+          więc kiedy użytkownik włączy plan otworzy mu się od razu
+          plan na dzisiejszy dzień
          */
         int tab = 0;
         Calendar calendar = Calendar.getInstance();
@@ -104,7 +105,7 @@ public class PlanView extends AppCompatActivity{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_plan, menu);
         return true;
     }
 
@@ -138,23 +139,22 @@ public class PlanView extends AppCompatActivity{
         return super.onOptionsItemSelected(item);
     }
 
-    public interface OnTaskCompleted{
+    interface OnTaskCompleted {
         void onTaskCompleted(int success);
     }
+
     /**klasa zajmująca się pobraniem strony do trybu offline
      * wywoływana przez onClickListener przycisku z menu
      */
-    public class downloadPageInBackground extends AsyncTask<Void, Void, Void>{
+    private class downloadPageInBackground extends AsyncTask<Void, Void, Void> {
 
-
-        private OnTaskCompleted listener;
-
-        downloadPageInBackground(OnTaskCompleted listener){
-            this.listener = listener;
-        }
 
         int success;
         String p = "http://www.plan.1lo.gorzow.pl/plany/" + pathParameter + ".html";
+        private OnTaskCompleted listener;
+        downloadPageInBackground(OnTaskCompleted listener){
+            this.listener = listener;
+        }
 
         @Override
         protected Void doInBackground(Void... params) {
@@ -188,7 +188,7 @@ public class PlanView extends AppCompatActivity{
         }
     }
 
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    private class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         SectionsPagerAdapter(FragmentManager fm) {
             super(fm);

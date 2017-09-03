@@ -10,10 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class SNPlanView extends AppCompatActivity {
 
     String sender;
@@ -39,7 +35,7 @@ public class SNPlanView extends AppCompatActivity {
         });
         toolbar.setTitleTextColor(Color.WHITE);
         sender = getIntent().getStringExtra("sender");
-        String nauczycieleRaw = FileHandling.readFileAsString("nauczyciele", getApplicationContext());
+        final String nauczycieleRaw = FileHandling.readFileAsString("nauczyciele", getApplicationContext());
 
 
         // List nauczyciele = new ArrayList();
@@ -47,20 +43,23 @@ public class SNPlanView extends AppCompatActivity {
         // nauczyciele.addAll(nauczycieleRaw.split("\n"));
 
         list = (ListView) findViewById(R.id.lista);
-        ArrayList<String> arrayList = new ArrayList<>();
 
-        List<String> output = Arrays.asList(nauczycieleRaw.split("\n"));
+        //List<String> output = Arrays.asList(nauczycieleRaw.split("\n"));
+        final String[] output;
 
         //ładowanie danych do listy i nadanie nazwy toolbarowi
         if(sender.equals("Gabinety")){
-            arrayList.addAll(Arrays.asList(Sources.Gabinety));
             toolbar.setTitle("Gabinety");
-        }else if(sender.equals("Nauczyciele")){
+            output = Sources.Gabinety;
+        } else {
             toolbar.setTitle("Nauczyciele");
-            arrayList.addAll(Arrays.asList(Sources.Nauczyciele));
+            output = nauczycieleRaw.split("\\)");
+            for (String o : output) {
+                o = o.concat(")");
+            }
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.row, output);//nauczycieleRaw.split("\n"));
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.row, output);
 
         list.setAdapter(adapter);
         list.setClickable(true);
@@ -76,7 +75,7 @@ public class SNPlanView extends AppCompatActivity {
                     tag = Sources.getID(pressedItem, "s", Sources.Gabinety);
                 }else
                 if(sender.equals("Nauczyciele")){
-                    tag = Sources.getID(pressedItem, "n", Sources.Nauczyciele);
+                    tag = Sources.getID(pressedItem, "n", output);
                 }
 
 

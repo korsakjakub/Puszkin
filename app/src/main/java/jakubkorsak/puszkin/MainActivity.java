@@ -281,7 +281,7 @@ public class MainActivity extends AppCompatActivity {
                 doc = Jsoup.connect(p).get();
                 Elements nauczyciele = doc.select("a[href*=plany/n]");
                 for (Element nauczyciel : nauczyciele) {
-                    output = output.concat(nauczyciel.text() + " \n ");
+                    output = output.concat(nauczyciel.text() + "\n");
                 }
                 FileHandling.writeStringAsFile(
                         output,

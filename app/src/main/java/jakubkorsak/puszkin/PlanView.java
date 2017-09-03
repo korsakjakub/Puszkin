@@ -48,6 +48,13 @@ public class PlanView extends AppCompatActivity{
         toolbar.setTitleTextColor(Color.WHITE);
         pathParameter = getIntent().getStringExtra(Sources.TAG);
 
+        String nauczyciele = FileHandling.readFileAsString("nauczyciele", getApplicationContext());
+
+        String[] output = nauczyciele.split("\\)");
+        for (int i = 0; i <= output.length - 1; i++) {
+            output[i] += ")";
+        }
+
         /*
         zmienia tytuł toolbaru i zmienia wg. o1 -> 1A
          lub n1 -> jakieś imię lub s1 -> jakiś gabinet
@@ -57,7 +64,7 @@ public class PlanView extends AppCompatActivity{
                     (pathParameter, "o", Sources.index, Sources.klasy).toUpperCase());
         }else if(pathParameter.contains("n")){
             toolbar.setTitle(Sources.getIndex
-                    (pathParameter, "n", Sources.index, Sources.Nauczyciele).toUpperCase());
+                    (pathParameter, "n", Sources.index, output).toUpperCase());
         }else if(pathParameter.contains("s")){
             toolbar.setTitle(Sources.getIndex
                     (pathParameter, "s", Sources.index, Sources.Gabinety).toUpperCase());

@@ -54,8 +54,8 @@ public class SNPlanView extends AppCompatActivity {
         } else {
             toolbar.setTitle("Nauczyciele");
             output = nauczycieleRaw.split("\\)");
-            for (String o : output) {
-                o = o.concat(")");
+            for (int i = 0; i <= output.length - 1; i++) {
+                output[i] += ")";
             }
         }
 

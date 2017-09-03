@@ -28,7 +28,8 @@
         </activity>
         <activity android:name=".DzienniczekView" />
         <activity android:name=".HarmonogramZastepstwa" />
-        <activity android:name=".SNPlanView"/>
+        <activity android:name=".SNPlanView" />
+        <activity android:name=".AktualnosciActivity"></activity>
     </application>
 
 </manifest>

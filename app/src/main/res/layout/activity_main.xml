@@ -37,6 +37,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:baselineAligned="false"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
@@ -51,8 +52,10 @@
                         android:id="@+id/text_ostatnia"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="10dp"
+                        android:layout_marginStart="15dp"
                         android:layout_weight="1"
                         android:text="@string/ostatnio_wybrana" />
 
@@ -75,8 +78,10 @@
                         android:id="@+id/text_twoja"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="15dp"
+                        android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:text="@string/twoja_klasa" />
                     <Button
@@ -132,13 +137,13 @@
                 android:text="@string/dzienniczek" />
 
             <Button
-                android:id="@+id/info"
-                android:layout_width="wrap_content"
+                android:id="@+id/aktualnosci"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="25dp"
-                android:text="@string/i" />
+                android:layout_marginRight="10dp"
+                android:text="@string/aktualnosci" />
+
         </LinearLayout>
         </ScrollView>
 </RelativeLayout>

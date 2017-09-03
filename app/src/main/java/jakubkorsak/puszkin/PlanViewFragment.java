@@ -25,11 +25,22 @@ import java.util.List;
 public class PlanViewFragment extends Fragment {
 
 
+    private static final int[] ROW_IDS = {
+            R.id.r0,
+            R.id.r1,
+            R.id.r2,
+            R.id.r3,
+            R.id.r4,
+            R.id.r5,
+            R.id.r6,
+            R.id.r7,
+            R.id.r8,
+            R.id.r9,
+    };
     String path;
     String pathParameter;
-    private ProgressBar spinner;
     List<LinearLayout> rows;
-
+    private ProgressBar spinner;
 
     public static PlanViewFragment newInstance(int index){
         PlanViewFragment planViewFragment = new PlanViewFragment();
@@ -46,19 +57,6 @@ public class PlanViewFragment extends Fragment {
     public int getIndex(){
         return getArguments().getInt("index");
     }
-
-    private static final int[] ROW_IDS = {
-            R.id.r0,
-            R.id.r1,
-            R.id.r2,
-            R.id.r3,
-            R.id.r4,
-            R.id.r5,
-            R.id.r6,
-            R.id.r7,
-            R.id.r8,
-            R.id.r9,
-    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -87,8 +85,7 @@ public class PlanViewFragment extends Fragment {
     }
 
 
-
-    public class GetPlanInBackground extends AsyncTask<Void, Void, Void> {
+    private class GetPlanInBackground extends AsyncTask<Void, Void, Void> {
 
         //Lista do której zapiszemy lekcje
         ArrayList<String> lekcjeArray;

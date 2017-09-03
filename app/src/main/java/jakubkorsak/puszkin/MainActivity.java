@@ -134,8 +134,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.plan_lekcji).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PlanLekcji.class);
-                startActivity(intent);
+                startActivity(new Intent(MainActivity.this, PlanLekcji.class));
             }
         });
 
@@ -225,14 +224,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.info).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Settings.class);
-                startActivity(intent);
-            }
-        });
-
         /*
             deep-link do aplikacji Facebook do strony szkoły
          */
@@ -255,6 +246,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW);
                 browserIntent.setData(Uri.parse(url));
                 startActivity(browserIntent);
+            }
+        });
+
+        findViewById(R.id.aktualnosci).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AktualnosciActivity.class));
             }
         });
     }

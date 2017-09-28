@@ -248,13 +248,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(browserIntent);
             }
         });
-
-        findViewById(R.id.aktualnosci).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, AktualnosciActivity.class));
-            }
-        });
     }
 
     private boolean checkInternet() {

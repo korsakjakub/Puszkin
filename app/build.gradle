@@ -7,8 +7,8 @@ android {
         applicationId "jakubkorsak.puszkin"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 8
-        versionName "2.6 Suicidal Squirrel"
+        versionCode 9
+        versionName "2.61 Nihilistic Dolphin"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -39,6 +39,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 }
+
 
 
 

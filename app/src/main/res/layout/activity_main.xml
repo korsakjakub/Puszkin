@@ -136,6 +136,14 @@
                 android:layout_marginRight="10dp"
                 android:text="@string/dzienniczek" />
 
+            <Button
+                android:id="@+id/aktualnosci"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/aktualnosci" />
+
         </LinearLayout>
         </ScrollView>
 </RelativeLayout>

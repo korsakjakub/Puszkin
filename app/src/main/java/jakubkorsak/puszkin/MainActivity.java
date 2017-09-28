@@ -172,6 +172,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.aktualnosci).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, AktualnosciView.class));
+            }
+        });
+
         /*
             bierze szerokość ekranu, żeby przyciski planSaveButton i twojaKlasaButton zajmowały całą szerokość
             kiedy widoczny jest tylko jeden z nich i dzieliły się po 50% kiedy widoczne są oba

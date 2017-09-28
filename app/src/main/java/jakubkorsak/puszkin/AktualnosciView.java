@@ -6,17 +6,15 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class DzienniczekView extends AppCompatActivity {
-
-    WebView webView;
-    String path;
-
+public class AktualnosciView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_web_view);
-        webView = (WebView) findViewById(R.id.w);
+        setContentView(R.layout.activity_aktualnosci_view);
+
+        WebView webView = (WebView) findViewById(R.id.webview);
+
         webView.setWebViewClient(new WebViewClient());
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -24,7 +22,7 @@ public class DzienniczekView extends AppCompatActivity {
         webSettings.setBuiltInZoomControls(true);
         //To wyłącza brzydkie przyciski sterujące zoomem
         webSettings.setDisplayZoomControls(false);
-        path = "http://dziennik.1lo.gorzow.pl/";
+        String path = "http://1lo.gorzow.pl";
         webView.loadUrl(path);
     }
 }

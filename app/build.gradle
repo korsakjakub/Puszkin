@@ -36,6 +36,7 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.google.firebase:firebase-appindexing:15.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.google.guava:guava:25.0-android'
 
     implementation(name:'appgrades', ext:'aar')
 

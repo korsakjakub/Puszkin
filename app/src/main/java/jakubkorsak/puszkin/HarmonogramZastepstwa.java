@@ -8,9 +8,17 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.common.base.Charsets;
+import com.google.common.io.ByteStreams;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.safety.Whitelist;
+
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class HarmonogramZastepstwa extends AppCompatActivity {
 
@@ -44,12 +52,14 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
         assert senderActivity != null;
         switch (senderActivity) {
             case "harmonogram":
-                path = "http://www.zso1.edu.gorzow.pl/?lng=1&view=k&k=23";
+                //path = "http://www.zso1.edu.gorzow.pl/?lng=1&view=k&k=23";
+                path = "http://www.zso1.edu.gorzow.pl/print.php5?view=k&lng=1&k=23&t=1559&short=1";
                 toolbar.setTitle("Harmonogram");
                 new GetPlanInBackground().execute();
                 break;
             case "zastepstwa":
-                path = "http://www.zso1.edu.gorzow.pl/?lng=1&view=k&k=20";
+                //path = "http://www.zso1.edu.gorzow.pl/?lng=1&view=k&k=20";
+                path = "http://www.zso1.edu.gorzow.pl/print.php5?view=k&lng=1&k=20&t=4&short=1";
                 toolbar.setTitle("Zastępstwa");
                 new GetPlanInBackground().execute();
                 break;
@@ -61,25 +71,25 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
         //TODO: Change that to HttpURLConnection https://developer.android.com/reference/java/net/HttpURLConnection
         String taskOutput;
         String containerString;
+        String SERVER_DOWN = "Bardzo serdecznie pozdrawiam szkolne serwery, które znowu nie działają.";
 
         @Override
         protected Void doInBackground(Void... params) {
 
-            Document document = null;
+
             try {
-                //pobiera Obiekt docoment z adresu path
-                document = Jsoup.connect(path).timeout(10000).get();
-                //prettyPrint(false) pozostawia whitespaces
-                document.outputSettings(new Document.OutputSettings().prettyPrint(false));
-                //zaznacza klasy "br" i dodaje na końcu każdej "\\n"
-                document.select("br");//.append("\\n");
-                //to samo z klasami "path", ale dodaje na początku
-                document.select("path");//.prepend("\\n\\n");
+                URL url = new URL(path);
+                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+                //taskOutput = IOUtils.toString(in.getInputStream(), "UTF-8");
+                taskOutput = new String(ByteStreams.toByteArray(in), Charsets.UTF_8);
             } catch (Exception e) {
-                e.printStackTrace();
-                //w razie errorów użytkownik przynajmniej dowie się co było nie tak
-                taskOutput = e.toString();
+                taskOutput = SERVER_DOWN;
             }
+
+            if (!taskOutput.equals(SERVER_DOWN)) {
+                Document document = Jsoup.parse(taskOutput);
+
 
                 switch (senderActivity) {
                     //jeżeli użytkownik nacisnął zastępstwa
@@ -103,14 +113,14 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
 
                 //Tutaj zarządzane są wszystkie whitespaces i usuwam napis "drukuj" bo nie pasuje do kontekstu
                 taskOutput = Jsoup.clean(containerString
-                                .replaceAll("\n\n\n\n", "\n")
-                                .replaceAll("\r", "")
-                                .replaceAll("<sup>", ":")
-                                .replaceAll("&nbsp;", " ")
-                                .replaceAll("drukuj", "")
-                                .replaceAll("\\n\\n", "\n")
+                                .replaceAll("&nbsp;", "")
+                                .replaceAll("\n", "\n\n")
+
+                        // sounds good, but doesn't work
+                        //.replaceAll("(((P|p)(oniedzia)(l|ł)ek))|(W|w)(torek)|(Ś|ś)(roda)|(C|c)(zwartek)|(P|p)(i)(a|ą)(tek)", "\n\n")
                         , "", Whitelist.none(), new Document.OutputSettings().prettyPrint(false));
 
+            }
             return null;
         }
 

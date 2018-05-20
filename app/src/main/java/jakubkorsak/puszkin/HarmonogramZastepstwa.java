@@ -24,7 +24,7 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_harmonogram_zastepstwa);
 
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -35,9 +35,9 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
             }
         });
 
-        spinner = (ProgressBar)findViewById(R.id.progressBar1);
+        spinner = findViewById(R.id.progressBar1);
         spinner.setVisibility(View.VISIBLE);
-        textView = (TextView)findViewById(R.id.textView);
+        textView = findViewById(R.id.textView);
         textView.setVisibility(View.GONE);
 
         senderActivity = getIntent().getExtras().getString(Sources.SENDER_ACTIVITY);
@@ -64,16 +64,21 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... params) {
 
+            Document document = null;
             try {
                 //pobiera Obiekt docoment z adresu path
-                Document document = Jsoup.connect(path).timeout(10000).get();
+                document = Jsoup.connect(path).timeout(10000).get();
                 //prettyPrint(false) pozostawia whitespaces
                 document.outputSettings(new Document.OutputSettings().prettyPrint(false));
                 //zaznacza klasy "br" i dodaje na końcu każdej "\\n"
                 document.select("br");//.append("\\n");
                 //to samo z klasami "path", ale dodaje na początku
                 document.select("path");//.prepend("\\n\\n");
-
+            } catch (Exception e) {
+                e.printStackTrace();
+                //w razie errorów użytkownik przynajmniej dowie się co było nie tak
+                taskOutput = e.toString();
+            }
 
                 switch (senderActivity) {
                     //jeżeli użytkownik nacisnął zastępstwa
@@ -92,24 +97,19 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
                         containerString = document.getElementsContainingText("Harmonogram")
                                 .select("p")
                                 .html();
-                        //do sprawdzających: jeżeli nie działa to znaczy, że kod źródłowy strony znowu
-                        //się zmienił...
                         break;
                 }
+
                 //Tutaj zarządzane są wszystkie whitespaces i usuwam napis "drukuj" bo nie pasuje do kontekstu
                 taskOutput = Jsoup.clean(containerString
-                                .replaceAll("\\\\n", "\n")
+                                .replaceAll("\n\n\n\n", "\n")
                                 .replaceAll("\r", "")
                                 .replaceAll("<sup>", ":")
                                 .replaceAll("&nbsp;", " ")
                                 .replaceAll("drukuj", "")
                                 .replaceAll("\\n\\n", "\n")
                         , "", Whitelist.none(), new Document.OutputSettings().prettyPrint(false));
-            } catch (Exception e) {
-                e.printStackTrace();
-                //w razie errorów użytkownik przynajmniej dowie się co było nie tak
-                taskOutput = e.toString();
-            }
+
             return null;
         }
 

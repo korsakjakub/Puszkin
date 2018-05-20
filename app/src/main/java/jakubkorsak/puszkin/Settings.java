@@ -110,7 +110,7 @@ public class Settings extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -122,14 +122,14 @@ public class Settings extends AppCompatActivity {
         });
         assert toolbar != null;
         toolbar.setTitleTextColor(Color.WHITE);
-        editText = (EditText) findViewById(R.id.editText);
+        editText = findViewById(R.id.editText);
         assert editText != null;
         editText.setHint("np. 1a");
 
-        spinner = (ProgressBar)findViewById(R.id.progressBar1);
+        spinner = findViewById(R.id.progressBar1);
         spinner.setVisibility(View.GONE);
 
-        zapisButton = (Button)findViewById(R.id.zapis_button);
+        zapisButton = findViewById(R.id.zapis_button);
         findViewById(R.id.activity_settings);
         zapisButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -156,7 +156,7 @@ public class Settings extends AppCompatActivity {
         /**
          * tutaj usuwane są istniejące pliki klas
          */
-        deleteAll = (Button)findViewById(R.id.delete_all);
+        deleteAll = findViewById(R.id.delete_all);
         deleteAll.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -184,7 +184,7 @@ public class Settings extends AppCompatActivity {
         }
         assert pInfo != null;
         final String version = pInfo.versionName;
-        info = (Button) findViewById(R.id.info);
+        info = findViewById(R.id.info);
         assert info != null;
         info.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -231,7 +231,7 @@ public class Settings extends AppCompatActivity {
             }
         });
 
-        pokazZapisane = (Button)findViewById(R.id.show_saved_files);
+        pokazZapisane = findViewById(R.id.show_saved_files);
         pokazZapisane.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

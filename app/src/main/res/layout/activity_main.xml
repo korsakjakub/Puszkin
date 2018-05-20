@@ -26,12 +26,14 @@
 
             <Button
                 android:id="@+id/plan_lekcji"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/plan_lekcji" />
+                android:text="@string/plan_lekcji"
+                android:textColor="@color/colorPrimary" />
 
 
             <LinearLayout
@@ -56,16 +58,16 @@
                         android:layout_marginLeft="15dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginStart="15dp"
-                        android:layout_weight="1"
                         android:text="@string/ostatnio_wybrana" />
 
                     <Button
                         android:id="@+id/plan_save"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:layout_weight="1"/>
+                        android:textColor="@color/colorPrimary" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -82,15 +84,16 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="15dp"
                         android:layout_marginStart="10dp"
-                        android:layout_weight="1"
                         android:text="@string/twoja_klasa" />
+
                     <Button
                         android:id="@+id/twoja_klasa"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:layout_weight="1"/>
+                        android:textColor="@color/colorPrimary" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -98,51 +101,63 @@
 
             <Button
                 android:id="@+id/zastepstwa"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:text="@string/zastepstwa" />
+                android:text="@string/zastepstwa"
+                android:textColor="@color/colorPrimary" />
 
             <Button
                 android:id="@+id/harmonogram"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:text="@string/harmonogram" />
+                android:text="@string/harmonogram"
+                android:textColor="@color/colorPrimary" />
 
             <Button
                 android:id="@+id/facebook"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:text="@string/facebook_i_lo" />
+                android:text="@string/facebook_i_lo"
+                android:textColor="@color/colorPrimary" />
 
             <Button
                 android:id="@+id/facebook2"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:text="@string/facebook_puszkinowa_pomoc" />
+                android:text="@string/facebook_puszkinowa_pomoc"
+                android:textColor="@color/colorPrimary" />
 
             <Button
                 android:id="@+id/dzienniczek"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:text="@string/dzienniczek" />
+                android:text="@string/dzienniczek"
+                android:textColor="@color/colorPrimary" />
 
             <Button
                 android:id="@+id/aktualnosci"
+                style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:text="@string/aktualnosci" />
+                android:text="@string/aktualnosci"
+                android:textColor="@color/colorPrimary" />
 
         </LinearLayout>
         </ScrollView>

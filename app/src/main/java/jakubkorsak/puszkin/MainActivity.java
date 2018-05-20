@@ -25,6 +25,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import io.appgrades.sdk.Appgrades;
+import io.appgrades.sdk.core.logger.LogLevel;
+
 public class MainActivity extends AppCompatActivity {
 
     Button planSaveButton;
@@ -42,8 +45,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Appgrades.run("QIpEpXH02Du7iss0YSKd", this.getApplicationContext());
+        Appgrades.logger.setLogLevel(LogLevel.VERBOSE);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         assert toolbar != null;
         toolbar.setTitleTextColor(Color.WHITE);
@@ -192,8 +197,8 @@ public class MainActivity extends AppCompatActivity {
             przycisk wyświetlający ostatnio przeglądaną klasę (z wyłączeniem klasy wynikającej z naciśnięcia
             twojaKlasaButton
          */
-        planSaveText = (TextView) findViewById(R.id.text_ostatnia);
-        planSaveButton = (Button) findViewById(R.id.plan_save);
+        planSaveText = findViewById(R.id.text_ostatnia);
+        planSaveButton = findViewById(R.id.plan_save);
         planSaveButton.setWidth(width);
         buttonsVisibility(planSaveButton, planSaveText, Sources.zrodla[1]);
         planSaveButton.setOnClickListener(new View.OnClickListener() {
@@ -213,8 +218,8 @@ public class MainActivity extends AppCompatActivity {
         /*
             przycisk wyświetlający zapisaną w ustawieniach klasę.
          */
-        twojaKlasaButton = (Button) findViewById(R.id.twoja_klasa);
-        twojaKlasaText = (TextView) findViewById(R.id.text_twoja);
+        twojaKlasaButton = findViewById(R.id.twoja_klasa);
+        twojaKlasaText = findViewById(R.id.text_twoja);
         twojaKlasaButton.setWidth(width);
         buttonsVisibility(twojaKlasaButton, twojaKlasaText, Sources.zrodla[1]);
         twojaKlasaButton.setOnClickListener(new View.OnClickListener() {

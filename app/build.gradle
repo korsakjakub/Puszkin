@@ -1,14 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.2'
+    compileSdkVersion 27
     defaultConfig {
         applicationId "jakubkorsak.puszkin"
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 27
         versionCode 9
-        versionName "2.61 Nihilistic Dolphin"
+        versionName "3.0"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -21,23 +20,27 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
     //compile 'com.google.android.gms:play-services-appindexing:10.0.1'
-    compile 'com.android.support:appcompat-v7:25.2.0'
-    compile 'com.android.support:design:25.2.0'
-    compile 'com.squareup.okhttp:okhttp:2.7.2'
-    compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'org.jsoup:jsoup:1.10.1'
-    compile 'com.android.support:support-v4:25.2.0'
-    compile 'com.google.firebase:firebase-core:10.0.1'
-    compile 'com.android.support:recyclerview-v7:25.2.0'
-    compile 'com.google.firebase:firebase-appindexing:10.0.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.squareup.okhttp:okhttp:2.7.2'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'org.jsoup:jsoup:1.10.1'
+    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.google.firebase:firebase-core:15.0.0'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.google.firebase:firebase-appindexing:15.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+
+    implementation(name:'appgrades', ext:'aar')
+
+
+    testImplementation 'junit:junit:4.12'
 }
 
 

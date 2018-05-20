@@ -58,6 +58,7 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
 
 
     private class GetPlanInBackground extends AsyncTask<Void, Void, Void> {
+        //TODO: Change that to HttpURLConnection https://developer.android.com/reference/java/net/HttpURLConnection
         String taskOutput;
         String containerString;
 

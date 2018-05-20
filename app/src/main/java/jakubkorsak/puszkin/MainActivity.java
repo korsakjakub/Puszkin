@@ -28,6 +28,14 @@ import org.jsoup.select.Elements;
 import io.appgrades.sdk.Appgrades;
 import io.appgrades.sdk.core.logger.LogLevel;
 
+//TODO: zso1.gorzow.edu.pl page down
+//TODO: Retru opening page
+//TODO: Kotlin
+//TODO: Ads
+//TODO: Detect Internet
+//TODO: Better Web site scraping
+
+
 public class MainActivity extends AppCompatActivity {
 
     Button planSaveButton;

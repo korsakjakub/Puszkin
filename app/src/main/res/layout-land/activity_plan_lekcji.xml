@@ -44,6 +44,7 @@
 
                 <Button
                     android:id="@+id/klasa1"
+                    style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
@@ -52,6 +53,7 @@
 
                 <Button
                     android:id="@+id/klasa7"
+                    style="@style/Widget.AppCompat.Button.Borderless"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"

@@ -46,6 +46,8 @@
 
                     <Button
                         android:id="@+id/klasa1"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:tag="1"
@@ -53,6 +55,8 @@
 
                     <Button
                         android:id="@+id/klasa7"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:tag="7"
@@ -60,6 +64,8 @@
 
                     <Button
                         android:id="@+id/klasa13"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:tag="13"
@@ -73,6 +79,8 @@
 
                     <Button
                         android:id="@+id/klasa2"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:tag="2"
@@ -80,6 +88,8 @@
 
                     <Button
                         android:id="@+id/klasa8"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -88,6 +98,8 @@
 
                     <Button
                         android:id="@+id/klasa14"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:tag="14"
@@ -101,6 +113,8 @@
 
                     <Button
                         android:id="@+id/klasa3"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:tag="3"
@@ -108,6 +122,8 @@
 
                     <Button
                         android:id="@+id/klasa9"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -116,6 +132,8 @@
 
                     <Button
                         android:id="@+id/klasa15"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:tag="15"
@@ -129,6 +147,8 @@
 
                     <Button
                         android:id="@+id/klasa4"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:tag="4"
@@ -136,6 +156,8 @@
 
                     <Button
                         android:id="@+id/klasa10"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -144,6 +166,8 @@
 
                     <Button
                         android:id="@+id/klasa16"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:tag="16"
@@ -157,6 +181,8 @@
 
                     <Button
                         android:id="@+id/klasa5"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:tag="5"
@@ -164,6 +190,8 @@
 
                     <Button
                         android:id="@+id/klasa11"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -172,9 +200,10 @@
 
                     <Button
                         android:id="@+id/klasa17"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:contextClickable="true"
                         android:tag="17"
                         android:text="@string/_3e" />
                 </LinearLayout>
@@ -186,6 +215,8 @@
 
                     <Button
                         android:id="@+id/klasa6"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:tag="6"
@@ -193,6 +224,8 @@
 
                     <Button
                         android:id="@+id/klasa12"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -201,6 +234,8 @@
 
                     <Button
                         android:id="@+id/klasa18"
+                        android:textColor="@color/colorPrimary"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:tag="18"
@@ -221,21 +256,29 @@
 
         <Button
             android:id="@+id/Nauczyciele"
+            android:textColor="@color/colorPrimary"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:paddingLeft="10dp"
-            android:text="@string/nauczyciele" />
+            android:text="@string/nauczyciele"
+            android:layout_marginStart="10dp"
+            android:paddingStart="10dp" />
 
         <Button
             android:id="@+id/gabinety"
+            android:textColor="@color/colorPrimary"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:paddingRight="10dp"
-            android:text="@string/gabinety" />
+            android:text="@string/gabinety"
+            android:layout_marginEnd="10dp"
+            android:paddingEnd="10dp" />
     </LinearLayout>
 
 

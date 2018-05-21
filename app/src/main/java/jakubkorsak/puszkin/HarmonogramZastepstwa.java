@@ -2,6 +2,7 @@ package jakubkorsak.puszkin;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -26,6 +27,8 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
     TextView textView;
     String senderActivity;
     private ProgressBar spinner;
+    SwipeRefreshLayout swipeRefreshLayout;
+    String SERVER_DOWN = "Bardzo serdecznie pozdrawiam szkolne serwery, które znowu nie działają.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,17 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
         spinner.setVisibility(View.VISIBLE);
         textView = findViewById(R.id.textView);
         textView.setVisibility(View.GONE);
+        swipeRefreshLayout = findViewById(R.id.swipe);
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                if (textView.getText().equals(SERVER_DOWN)) {
+                    new GetPlanInBackground().execute();
+                }
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
 
         senderActivity = getIntent().getExtras().getString(Sources.SENDER_ACTIVITY);
         assert senderActivity != null;
@@ -71,7 +85,7 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
         //TODO: Change that to HttpURLConnection https://developer.android.com/reference/java/net/HttpURLConnection
         String taskOutput;
         String containerString;
-        String SERVER_DOWN = "Bardzo serdecznie pozdrawiam szkolne serwery, które znowu nie działają.";
+
 
         @Override
         protected Void doInBackground(Void... params) {

@@ -25,8 +25,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import io.appgrades.sdk.Appgrades;
-import io.appgrades.sdk.core.logger.LogLevel;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 
 //TODO: Kotlin
 //TODO: Ads
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     int onBackCounter = 0;
 
     Toolbar toolbar;
+    private AdView mAdView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +52,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-        Appgrades.run("QIpEpXH02Du7iss0YSKd", this.getApplicationContext());
-        Appgrades.logger.setLogLevel(LogLevel.VERBOSE);
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

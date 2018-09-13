@@ -15,11 +15,27 @@
       },
       "oauth_client": [
         {
+          "client_id": "285424349625-89a4iik4l7513su3itkg3tigg48b8o42.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "jakubkorsak.puszkin",
+            "certificate_hash": "1815e87b6a1f3c8d418c58bc3fc335228eff202e"
+          }
+        },
+        {
           "client_id": "285424349625-avmomlc72ma9oc2eufb15lr3gnb8vqi0.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "jakubkorsak.puszkin",
-            "certificate_hash": "9A43426FAC1F5E9BDAA9F4036401CF8B7FA8B696"
+            "certificate_hash": "9a43426fac1f5e9bdaa9f4036401cf8b7fa8b696"
+          }
+        },
+        {
+          "client_id": "285424349625-rg52vu7k3hkcjsrp8pkscbcg4lbqp2eq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "jakubkorsak.puszkin",
+            "certificate_hash": "a2073373554da7881701086f261126c42522284e"
           }
         },
         {
@@ -48,7 +64,8 @@
         "ads_service": {
           "status": 2
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-6362398069925713~9827427093"
     }
   ],
   "configuration_version": "1"

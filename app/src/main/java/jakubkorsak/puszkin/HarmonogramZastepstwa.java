@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.common.base.Charsets;
 import com.google.common.io.ByteStreams;
 
@@ -29,6 +31,8 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
     private ProgressBar spinner;
     SwipeRefreshLayout swipeRefreshLayout;
     String SERVER_DOWN = "Bardzo serdecznie pozdrawiam szkolne serwery, które znowu nie działają.";
+    private AdView mAdView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,11 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
 
         spinner = findViewById(R.id.progressBar1);
         spinner.setVisibility(View.VISIBLE);
@@ -127,12 +136,8 @@ public class HarmonogramZastepstwa extends AppCompatActivity {
 
                 //Tutaj zarządzane są wszystkie whitespaces i usuwam napis "drukuj" bo nie pasuje do kontekstu
                 taskOutput = Jsoup.clean(containerString
-                                .replaceAll("&nbsp;", "")
-                                .replaceAll("\n", "\n\n")
-
-                        // sounds good, but doesn't work
-                        //.replaceAll("(((P|p)(oniedzia)(l|ł)ek))|(W|w)(torek)|(Ś|ś)(roda)|(C|c)(zwartek)|(P|p)(i)(a|ą)(tek)", "\n\n")
-                        , "", Whitelist.none(), new Document.OutputSettings().prettyPrint(false));
+                        .replaceAll("&nbsp;", ""), "", Whitelist.none(),
+                        new Document.OutputSettings().prettyPrint(false));
 
             }
             return null;

@@ -16,6 +16,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -27,6 +30,8 @@ public class PlanView extends AppCompatActivity{
 
     String pathParameter;
     Toolbar toolbar;
+    private AdView mAdView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,10 @@ public class PlanView extends AppCompatActivity{
         });
         toolbar.setTitleTextColor(Color.WHITE);
         pathParameter = getIntent().getStringExtra(Sources.TAG);
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         String nauczyciele = FileHandling.readFileAsString("nauczyciele", getApplicationContext());
 

@@ -31,6 +31,7 @@ public class Settings extends AppCompatActivity {
     EditText editText;
     PackageInfo pInfo;
     Button info;
+    Button privacyPolicy;
     Button zapisButton;
     Button pokazZapisane;
     Button deleteAll;
@@ -194,6 +195,17 @@ public class Settings extends AppCompatActivity {
                         .setMessage("Wersja: " + version + "\nTwórca: Jakub Korsak" +
                                 "\nFeedback: jakub.korsak@puszkin.eu")
                         .setTitle("Info")
+                        .show();
+            }
+        });
+
+        privacyPolicy = findViewById(R.id.privacy_policy);
+        privacyPolicy.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(Settings.this)
+                        .setNeutralButton("Oki", null)
+                        .setMessage(R.string.privacy_policy)
                         .show();
             }
         });
